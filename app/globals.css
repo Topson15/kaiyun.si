@@ -102,3 +102,110 @@ header nav a:hover{
     font-size:14px;
   }
 }
+.hero{
+  min-height:690px;
+  padding:105px 0 55px;
+}
+
+.heroGrid{
+  max-width:1380px;
+  grid-template-columns:43% 57%;
+  gap:20px;
+  align-items:center;
+}
+
+.heroGrid > div:first-child{
+  max-width:610px;
+}
+
+.hero .eyebrow{
+  margin-bottom:24px;
+}
+
+.hero h1{
+  font-size:60px;
+  line-height:1.08;
+  letter-spacing:-2px;
+  margin:0 0 26px;
+}
+
+.hero .lead{
+  max-width:590px;
+  font-size:17px;
+  line-height:1.85;
+  margin:0;
+}
+
+.hero .actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  width:590px;
+  max-width:100%;
+  margin-top:38px;
+}
+
+.hero .actions .btn,
+.hero .actions .heroSecondBtn{
+  height:56px;
+  padding:0 20px;
+  border-radius:9px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  font-weight:800;
+  text-align:center;
+}
+
+.hero .actions .btn{
+  background:#45b9f3;
+  color:#041321;
+  box-shadow:none;
+}
+
+.hero .actions .heroSecondBtn{
+  background:#45b9f3;
+  color:#041321;
+  border:none;
+}
+
+.hero .visual{
+  height:470px;
+  transform:translateX(35px);
+}
+
+.hero .orb{
+  width:390px;
+  height:390px;
+}
+
+.hero .pitch{
+  width:305px;
+  height:305px;
+}
+
+@media(max-width:800px){
+  .hero{
+    padding:70px 0 55px;
+  }
+
+  .heroGrid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:46px;
+  }
+
+  .hero .actions{
+    width:100%;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .hero .visual{
+    transform:none;
+    height:330px;
+  }
+}
