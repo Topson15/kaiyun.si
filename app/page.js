@@ -1,6 +1,6 @@
 import SiteHeader from "./site-header";
 import ServiceGauges from "./service-gauges";
-function AppAccess(){return <div className="appGet"><div className="qrBox"><img src="/app-qr.png" alt="" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="https://www.s49tye.vip:9973" target="_blank" rel="noopener noreferrer">https://www.s49tye.vip:9973</a><a href="https://www.vefq9z.vip:9192" target="_blank" rel="noopener noreferrer">https://www.vefq9z.vip:9192</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div></div>}
+function AppAccess({qr="/app-qr.png"}){return <div className="appGet"><div className="qrBox"><img src={qr} alt="" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="https://www.s49tye.vip:9973" target="_blank" rel="noopener noreferrer">https://www.s49tye.vip:9973</a><a href="https://www.vefq9z.vip:9192" target="_blank" rel="noopener noreferrer">https://www.vefq9z.vip:9192</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div></div>}
 
 const articles = [
   ['代理合作前，先确认哪几件事？', '合作指南'],
@@ -55,7 +55,7 @@ export default function Home() {
           <img className="clientArt art-live" src="/app-live.png" alt="" />
           <img className="clientArt art-login" src="/login-client.png" alt="" />
           </div>
-          <div className="clientCopy panel-all"><h3>全站APP</h3><p>全球首家一体化娱乐原生APP，尽显流畅，完美操作。海量体育、电竞顶尖赛事，真人娱乐、彩票投注及电子游艺等，最新最全娱乐项目尽在掌中体验扫码下载，即刻拥有！</p><AppAccess /></div>
+          <div className="clientCopy panel-all"><h3>全站APP</h3><p>全球首家一体化娱乐原生APP，尽显流畅，完美操作。海量体育、电竞顶尖赛事，真人娱乐、彩票投注及电子游艺等，最新最全娱乐项目尽在掌中体验扫码下载，即刻拥有！</p><AppAccess qr="/app-qr-all.png" /></div>
           <div className="clientCopy panel-sport"><h3>体育APP</h3><p>业内赔率最高！覆盖世界各地赛事，让球、大小、半全场、波胆、单双、总入球、连串过关等多元竞猜。更有动画直播，让您体验轻松聊球，娱乐投注两不误。</p><AppAccess /></div>
           <div className="clientCopy panel-live"><h3>真人APP</h3><p>最美荷官在线互动，带您玩转百家乐、骰宝、轮盘、牛牛、炸金花等多款真人视讯游戏。国际标准、公平公正，极致享受尽在开云真人。</p><AppAccess /></div>
           <div className="clientCopy panel-login">
