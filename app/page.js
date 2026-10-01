@@ -71,7 +71,9 @@ export default function Home() {
       </div></section>
 
       <section id="games" className="dark games"><div className="wrap">
-        <h2 className="gameHead">你想要的开云都有 给您带来丰富的娱乐体育</h2>
+        <p className="eyebrow">KAIYUN GAMES</p>
+        <h2 className="gameTitle">开云游戏</h2>
+        <p className="gameLead">我们拥有市面上大多数种类的游戏</p>
         <div className="gameBox">
           <input type="radio" name="gameTab" id="game-sport" defaultChecked />
           <input type="radio" name="gameTab" id="game-live" />
