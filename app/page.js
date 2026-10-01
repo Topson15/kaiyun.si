@@ -1,14 +1,6 @@
 import SiteHeader from "./site-header";
 import ServiceGauges from "./service-gauges";
 function AppAccess(){return <div className="appGet"><div className="qrBox"><img src="/app-qr.png" alt="" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="https://www.s49tye.vip:9973" target="_blank" rel="noopener noreferrer">https://www.s49tye.vip:9973</a><a href="https://www.vefq9z.vip:9192" target="_blank" rel="noopener noreferrer">https://www.vefq9z.vip:9192</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div></div>}
-const cards = [
-  ['体育代理', '体育业务合作与推广方向'],
-  ['代理招商', '合作申请、渠道与流程'],
-  ['代理佣金', '佣金核算与结算说明'],
-  ['代理政策', '有效业绩与合作规范'],
-  ['真人电子', '业务方向与合作信息'],
-  ['合作指南', '从了解政策到建立合作']
-];
 
 const articles = [
   ['代理合作前，先确认哪几件事？', '合作指南'],
@@ -78,15 +70,11 @@ export default function Home() {
         </div>
       </div></section>
 
-      <section id="policy" className="dark"><div className="wrap split">
-        <div><p className="eyebrow">POLICY & SETTLEMENT</p><h2>佣金 · 政策 · 结算</h2><p className="sub darksub">合作前先把规则说清楚。佣金比例、有效业绩和结算周期，应以双方当前确认的合作方案为准。</p><a className="btn" href="#contact">咨询当前合作政策</a></div>
-        <div className="policy"><div><b>01</b><h3>佣金政策</h3><p>了解核算逻辑与适用比例。</p></div><div><b>02</b><h3>有效业绩</h3><p>确认纳入核算的数据范围。</p></div><div><b>03</b><h3>结算周期</h3><p>明确周期、数据与结算条件。</p></div></div>
-      </div></section>
+      <section className="dark darkSlot" aria-label="待添加内容"></section>
 
-      <section id="business" className="light"><div className="wrap">
-        <p className="eyebrow blue">COOPERATION</p><h2>核心合作内容</h2>
-        <p className="sub">从注册、政策到推广，把常用合作信息集中在一个地方。</p>
-        <div className="grid">{cards.map((x,i)=><article className="card" key={x[0]}><span>0{i+1}</span><h3>{x[0]}</h3><p>{x[1]}</p><a href="#contact">了解更多 →</a></article>)}</div>
+      <section id="policy" className="light"><div className="wrap split">
+        <div><p className="eyebrow blue">POLICY & SETTLEMENT</p><h2>佣金 · 政策 · 结算</h2><p className="sub">合作前先把规则说清楚。佣金比例、有效业绩和结算周期，应以双方当前确认的合作方案为准。</p><a className="btn" href="#contact">咨询当前合作政策</a></div>
+        <div className="policy"><div><b>01</b><h3>佣金政策</h3><p>了解核算逻辑与适用比例。</p></div><div><b>02</b><h3>有效业绩</h3><p>确认纳入核算的数据范围。</p></div><div><b>03</b><h3>结算周期</h3><p>明确周期、数据与结算条件。</p></div></div>
       </div></section>
 
       <section id="faq" className="faq"><div className="wrap">
@@ -118,7 +106,7 @@ export default function Home() {
 
       <footer><div className="partners">{Array.from({length:15},(_,i)=>{const n=String(i+1).padStart(2,'0');return <span className="partner" key={n}><img className="off" src={`/partners/${n}-off.png`} alt="" /><img className="on" src={`/partners/${n}-on.png`} alt="" /></span>})}</div><div className="license"><div className="licenseMarks"><img src="/license/mga.png" alt="MGA" /><img src="/license/bvi.png" alt="BVI" /></div><p>开云体育拥有欧洲马耳他（MGA）颁发的合法执照。<br/>注册于英属维尔京群岛，是受国际行业协会认可的合法公司。进行注册并娱乐前，请确保您年满18周岁！</p></div><div className="wrap foot">
         <div><a className="brand" href="/" aria-label="KAIYUN.SI"><img src="/logo.png" alt="开云体育 kaiyun.si" style={{height:46,width:'auto',display:'block'}} /></a><p>代理合作 · 行业资讯 · 长期内容</p></div>
-        <div><b>内容</b><a href="#business">代理合作</a><a href="#policy">佣金政策</a><a href="#insights">行业资讯</a></div>
+        <div><b>内容</b><a href="#policy">代理合作</a><a href="#policy">佣金政策</a><a href="#insights">行业资讯</a></div>
         <div><b>联系</b><a href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram</a><span>@a8802717</span></div>
       </div><div className="copy" style={{border:"none",borderTop:"none",boxShadow:"none"}}>© 2026 KAIYUN.SI · 本站仅提供合作与行业信息，具体政策以实际确认内容为准。</div></footer>
     </main>
