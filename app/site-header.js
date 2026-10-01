@@ -1,11 +1,20 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+
+const links = [
+  ["/", "首页"],
+  ["/cooperation", "代理合作"],
+  ["/commission", "佣金政策"],
+  ["/faq", "常见问题"],
+];
 
 export default function SiteHeader() {
   const barRef = useRef(null);
   const barH = useRef(92);
   const [stuck, setStuck] = useState(false);
+  const path = usePathname();
 
   useEffect(() => {
     let on = false;
@@ -31,10 +40,9 @@ export default function SiteHeader() {
           <img src="/logo.png" alt="开云体育 kaiyun.si" style={{ height: 58, width: "auto", display: "block" }} />
         </a>
         <nav>
-          <a href="/">首页</a>
-          <a href="#policy">代理合作</a>
-          <a href="#policy">佣金政策</a>
-          <a href="#faq">常见问题</a>
+          {links.map(([href, label]) => (
+            <a key={href} href={href} className={path === href ? "is-on" : undefined}>{label}</a>
+          ))}
         </nav>
         <div className="navActions">
           <a className="registerBtn" href="http://5257y.com/" target="_blank" rel="noopener noreferrer">立即注册</a>
