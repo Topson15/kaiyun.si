@@ -107,7 +107,7 @@ export default function Home() {
             ["TOTALLY AMOUNT","80","家","合作支付平台","PAYMENT PLATFORM PARTNERS"],
             ["CURRENT SPEED","90","秒","平均取款时间","AVERAGE TIME OF WITHDRAW"],
             ["TOTALLY AMOUNT","35","家","合作游戏平台","GAMING PROVIDER PARTNERS"]
-          ].map((x)=><li key={x[3]}><div className="svcRing"><div><p>{x[0]}</p><b>{x[1]}</b><span>{x[2]}</span></div></div><h3>{x[3]}</h3><small>{x[4]}</small></li>)}
+          ].map((x)=><li key={x[3]}><div className="svcRing"><i className="svcTicks"></i><i className="svcArc"></i><div><p>{x[0]}</p><b>{x[1]}</b><span>{x[2]}</span></div></div><h3>{x[3]}</h3><small>{x[4]}</small></li>)}
         </ul>
         <ul className="svcList">
           <li><i className="svcIcon speed"></i><div><h3>极速存取转款</h3><p>最新技术自主研发的财务处理系统真正做到极速存、取、转独家网络优化技术，为您提供一流的游戏体验，最大优化网络延迟。</p></div></li>
