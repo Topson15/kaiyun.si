@@ -49,9 +49,9 @@ header nav a:hover{color:#168fd3;}
 .heroStage{position:relative;width:100%;justify-self:end}
 .heroArt{width:100%;max-height:520px;margin:0;object-fit:contain;object-position:right bottom;filter:none;opacity:1;-webkit-mask-image:none;mask-image:none}
 .heroReflect{height:78px;overflow:hidden;margin-top:-6px;-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.35),transparent 72%);mask-image:linear-gradient(to bottom,rgba(0,0,0,.35),transparent 72%);pointer-events:none}
-.heroReflect img{width:100%;display:block;transform:scaleY(-1);filter:blur(10px)}
+.heroReflect img{width:100%;display:block;transform:scaleY(-1);filter:blur(5px)}
 .hero .actions .btn,.hero .actions .heroSecondBtn{border-radius:26px;height:52px;background:#3eb4f5;color:#fff}
 @media(max-width:800px){.heroReflect{height:52px}.heroArt{max-height:380px}}
 .heroArtWrap{position:relative}
-.heroArt{position:relative;z-index:1;-webkit-mask-image:linear-gradient(to bottom,#000 68%,transparent 97%);mask-image:linear-gradient(to bottom,#000 68%,transparent 97%)}
-.heroArtEdge{position:absolute;left:-3%;right:-3%;bottom:0;z-index:0;width:106%;height:38%;object-fit:cover;object-position:center bottom;filter:blur(16px);opacity:.9;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 42%,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 42%,#000 72%,transparent 100%)}
+.heroArt{position:relative;z-index:1;-webkit-mask-image:linear-gradient(to bottom,#000 86%,transparent 100%);mask-image:linear-gradient(to bottom,#000 86%,transparent 100%)}
+.heroArtEdge{position:absolute;left:-3%;right:-3%;bottom:0;z-index:0;width:106%;height:18%;object-fit:cover;object-position:center bottom;filter:blur(8px);opacity:.75;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 42%,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 42%,#000 72%,transparent 100%)}
