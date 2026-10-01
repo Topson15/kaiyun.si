@@ -16,6 +16,7 @@ const articles = [
 export default function Home() {
   return (
     <main>
+      <div className="homeStage">
       <header>
         <div className="nav">
           <a className="brand" href="/" aria-label="KAIYUN.SI">
@@ -52,6 +53,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
 
       <section id="business" className="light"><div className="wrap">
         <p className="eyebrow blue">COOPERATION</p><h2>核心合作内容</h2>
