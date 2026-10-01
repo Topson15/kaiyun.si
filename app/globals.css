@@ -30,3 +30,10 @@ header nav a:hover{color:#168fd3;}
 .hero .orb{width:390px;height:390px;}
 .hero .pitch{width:305px;height:305px;}
 @media(max-width:800px){.hero{padding:70px 0 55px;}.heroGrid{grid-template-columns:1fr;}.hero h1{font-size:46px;}.hero .actions{width:100%;grid-template-columns:1fr 1fr;gap:12px;}.hero .visual{transform:none;height:330px;}}
+
+.partners{max-width:1180px;margin:36px auto 0;padding:0 20px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px}
+.partner{position:relative;width:92px;height:36px;flex:0 0 92px}
+.partner img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .2s ease}
+.partner .on{opacity:0}
+.partner:hover .off{opacity:0}
+.partner:hover .on{opacity:1}
