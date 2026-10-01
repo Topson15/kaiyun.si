@@ -85,10 +85,7 @@ header nav a:hover{color:#168fd3;}
 @keyframes clientCopyIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
 
-.csDock{position:fixed;left:18px;bottom:18px;z-index:1200;font-family:inherit}
-.csFab{position:relative;width:58px;height:58px;border:0;border-radius:50%;background:#168ad3;color:#fff;font-weight:800;box-shadow:0 10px 24px rgba(22,138,211,.35);cursor:pointer}
-.csFab i{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 5px;border-radius:99px;background:#e23b3b;color:#fff;font-style:normal;font-size:11px;line-height:18px}
-.csPanel{position:absolute;left:0;bottom:70px;width:min(340px,calc(100vw - 36px));height:min(460px,70vh);background:#fff;border-radius:16px;box-shadow:0 18px 50px rgba(7,20,34,.28);display:flex;flex-direction:column;overflow:hidden}
+.csDock{position:fixed;right:18px;bottom:18px;z-index:1200;font-family:inherit}.csFab{position:relative;width:58px;height:58px;border:0;border-radius:50%;background:#168ad3;color:#fff;font-weight:800;box-shadow:0 10px 24px rgba(22,138,211,.35);cursor:pointer}.csFab::after{content:"";position:absolute;top:1px;right:1px;width:13px;height:13px;border-radius:50%;background:#ff3b30;border:2px solid #fff;box-shadow:0 0 0 0 rgba(255,59,48,.7);animation:csPing 1.6s ease-out infinite}.csFab:has(i)::after,.csDock.is-open .csFab::after{display:none}@keyframes csPing{70%{box-shadow:0 0 0 8px rgba(255,59,48,0)}}.csFab i{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 5px;border-radius:99px;background:#ff3b30;color:#fff;font-style:normal;font-size:11px;line-height:18px;border:2px solid #fff}.csPanel{position:absolute;right:0;bottom:70px;width:min(340px,calc(100vw - 36px));height:min(460px,70vh);background:#fff;border-radius:16px;box-shadow:0 18px 50px rgba(7,20,34,.28);display:flex;flex-direction:column;overflow:hidden}
 .csHead{background:#168ad3;color:#fff;padding:14px 16px;display:flex;flex-direction:column;gap:2px}
 .csHead b{font-size:16px}.csHead span{font-size:12px;opacity:.85}
 .csLog{flex:1;overflow:auto;padding:14px;background:#f4f8fc;display:flex;flex-direction:column;gap:8px}
