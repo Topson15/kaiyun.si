@@ -1,5 +1,6 @@
 import SiteHeader from "./site-header";
 import ServiceGauges from "./service-gauges";
+import PolicyZoom from "./policy-zoom";
 function AppAccess({qr="/app-qr.png"}){return <div className="appGet"><div className="qrBox"><img src={qr} alt="" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="http://5257y.com/" target="_blank" rel="noopener noreferrer">http://5257y.com/</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div></div>}
 
 const articles = [
@@ -100,7 +101,7 @@ export default function Home() {
 
       <section id="policy" className="light"><div className="wrap split">
         <div><p className="eyebrow blue">POLICY & SETTLEMENT</p><p className="policyName">开云体育佣金政策</p><h2>佣金 · 政策 · 结算</h2><p className="sub">合作前先把规则说清楚。佣金比例、有效业绩和结算周期，应以双方当前确认的合作方案为准。</p><a className="btn" href="#contact">咨询当前合作政策</a></div>
-        <img className="policyShot" src="/policy-sheet.png" alt="开云体育佣金政策" />
+        <PolicyZoom />
       </div></section>
 
       <section id="faq" className="faq"><div className="wrap">
