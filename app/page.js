@@ -23,8 +23,8 @@ export default function Home() {
         <div className="glow"></div>
         <div className="wrap heroGrid">
           <div>
-            <p className="eyebrow">KAIYUN · PARTNERSHIP</p>
-            <h1>开云体育<br/><em>代理合作</em></h1>
+            <p className="eyebrow">kaiyun.si</p>
+            <h1>开云体育官方<br/><em>代理合作</em></h1>
             <p className="lead">了解代理合作、佣金政策、结算规则与推广方向。把常用合作信息集中整理，让合作更清晰、更简单。</p>
             <div className="actions">
               <a className="btn" href="http://5257y.com/" target="_blank" rel="noopener noreferrer">开云体育注册</a>
