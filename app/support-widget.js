@@ -103,7 +103,7 @@ export default function SupportWidget() {
   }
 
   return (
-    <div className="csDock">
+    <div className={open ? "csDock is-open" : "csDock"}>
       {open && (
         <section className="csPanel" aria-label="在线客服">
           <header className="csHead">
