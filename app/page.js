@@ -1,4 +1,5 @@
 import SiteHeader from "./site-header";
+import ServiceGauges from "./service-gauges";
 function AppAccess(){return <div className="appGet"><div className="qrBox"><img src="/app-qr.png" alt="" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="https://www.s49tye.vip:9973" target="_blank" rel="noopener noreferrer">https://www.s49tye.vip:9973</a><a href="https://www.vefq9z.vip:9192" target="_blank" rel="noopener noreferrer">https://www.vefq9z.vip:9192</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div></div>}
 const cards = [
   ['体育代理', '体育业务合作与推广方向'],
@@ -101,14 +102,7 @@ export default function Home() {
       <section id="service" className="service"><div className="wrap">
         <p className="eyebrow blue">QUALITY SERVICE</p>
         <h2 className="clientTitle">优质服务</h2>
-        <ul className="svcStats">
-          {[
-            ["CURRENT SPEED","60","秒","平均存款时间","AVERAGE TIME OF DEPOSIT"],
-            ["TOTALLY AMOUNT","80","家","合作支付平台","PAYMENT PLATFORM PARTNERS"],
-            ["CURRENT SPEED","90","秒","平均取款时间","AVERAGE TIME OF WITHDRAW"],
-            ["TOTALLY AMOUNT","35","家","合作游戏平台","GAMING PROVIDER PARTNERS"]
-          ].map((x)=><li key={x[3]}><div className="svcRing"><i className="svcTicks"></i><i className="svcArc"></i><div><p>{x[0]}</p><b>{x[1]}</b><span>{x[2]}</span></div></div><h3>{x[3]}</h3><small>{x[4]}</small></li>)}
-        </ul>
+        <ServiceGauges />
         <ul className="svcList">
           <li><i className="svcIcon speed"></i><div><h3>极速存取转款</h3><p>最新技术自主研发的财务处理系统真正做到极速存、取、转独家网络优化技术，为您提供一流的游戏体验，最大优化网络延迟。</p></div></li>
           <li><i className="svcIcon match"></i><div><h3>海量赛事种类</h3><p>每天为您提供近千场精彩体育赛事，更有真人、彩票、电子游戏等多种娱乐方式选择，让您拥有完美游戏体验。</p></div></li>
