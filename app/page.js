@@ -42,17 +42,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="business" className="light"><div className="wrap">
-        <p className="eyebrow blue">COOPERATION</p><h2>核心合作内容</h2>
-        <p className="sub">从注册、政策到推广，把常用合作信息集中在一个地方。</p>
-        <div className="grid">{cards.map((x,i)=><article className="card" key={x[0]}><span>0{i+1}</span><h3>{x[0]}</h3><p>{x[1]}</p><a href="#contact">了解更多 →</a></article>)}</div>
-      </div></section>
-
-      <section id="policy" className="dark"><div className="wrap split">
-        <div><p className="eyebrow">POLICY & SETTLEMENT</p><h2>佣金 · 政策 · 结算</h2><p className="sub darksub">合作前先把规则说清楚。佣金比例、有效业绩和结算周期，应以双方当前确认的合作方案为准。</p><a className="btn" href="#contact">咨询当前合作政策</a></div>
-        <div className="policy"><div><b>01</b><h3>佣金政策</h3><p>了解核算逻辑与适用比例。</p></div><div><b>02</b><h3>有效业绩</h3><p>确认纳入核算的数据范围。</p></div><div><b>03</b><h3>结算周期</h3><p>明确周期、数据与结算条件。</p></div></div>
-      </div></section>
-
       <section id="insights" className="client"><div className="wrap">
         <h2 className="clientTitle">APP下载</h2>
         <div className="clientBox">
@@ -85,6 +74,17 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div></section>
+
+      <section id="policy" className="dark"><div className="wrap split">
+        <div><p className="eyebrow">POLICY & SETTLEMENT</p><h2>佣金 · 政策 · 结算</h2><p className="sub darksub">合作前先把规则说清楚。佣金比例、有效业绩和结算周期，应以双方当前确认的合作方案为准。</p><a className="btn" href="#contact">咨询当前合作政策</a></div>
+        <div className="policy"><div><b>01</b><h3>佣金政策</h3><p>了解核算逻辑与适用比例。</p></div><div><b>02</b><h3>有效业绩</h3><p>确认纳入核算的数据范围。</p></div><div><b>03</b><h3>结算周期</h3><p>明确周期、数据与结算条件。</p></div></div>
+      </div></section>
+
+      <section id="business" className="light"><div className="wrap">
+        <p className="eyebrow blue">COOPERATION</p><h2>核心合作内容</h2>
+        <p className="sub">从注册、政策到推广，把常用合作信息集中在一个地方。</p>
+        <div className="grid">{cards.map((x,i)=><article className="card" key={x[0]}><span>0{i+1}</span><h3>{x[0]}</h3><p>{x[1]}</p><a href="#contact">了解更多 →</a></article>)}</div>
       </div></section>
 
       <section id="faq" className="faq"><div className="wrap">
