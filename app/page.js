@@ -1,6 +1,6 @@
 import SiteHeader from "./site-header";
 import ServiceGauges from "./service-gauges";
-function AppAccess({qr="/app-qr.png"}){return <div className="appGet"><div className="qrBox"><img src={qr} alt="" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="https://www.s49tye.vip:9973" target="_blank" rel="noopener noreferrer">https://www.s49tye.vip:9973</a><a href="https://www.vefq9z.vip:9192" target="_blank" rel="noopener noreferrer">https://www.vefq9z.vip:9192</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div></div>}
+function AppAccess({qr="/app-qr.png"}){return <div className="appGet"><div className="qrBox"><img src={qr} alt="" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="http://5257y.com/" target="_blank" rel="noopener noreferrer">http://5257y.com/</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div></div>}
 
 const articles = [
   ['代理合作前，先确认哪几件事？', '合作指南'],
