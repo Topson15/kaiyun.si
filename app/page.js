@@ -99,8 +99,8 @@ export default function Home() {
       </div></section>
 
       <section id="policy" className="light"><div className="wrap split">
-        <div><p className="eyebrow blue">POLICY & SETTLEMENT</p><h2>佣金 · 政策 · 结算</h2><p className="sub">合作前先把规则说清楚。佣金比例、有效业绩和结算周期，应以双方当前确认的合作方案为准。</p><a className="btn" href="#contact">咨询当前合作政策</a></div>
-        <div className="policy"><div><b>01</b><h3>佣金政策</h3><p>了解核算逻辑与适用比例。</p></div><div><b>02</b><h3>有效业绩</h3><p>确认纳入核算的数据范围。</p></div><div><b>03</b><h3>结算周期</h3><p>明确周期、数据与结算条件。</p></div></div>
+        <div><p className="eyebrow blue">POLICY & SETTLEMENT</p><p className="policyName">开云体育佣金政策</p><h2>佣金 · 政策 · 结算</h2><p className="sub">合作前先把规则说清楚。佣金比例、有效业绩和结算周期，应以双方当前确认的合作方案为准。</p><a className="btn" href="#contact">咨询当前合作政策</a></div>
+        <img className="policyShot" src="/policy-sheet.png" alt="开云体育佣金政策" />
       </div></section>
 
       <section id="faq" className="faq"><div className="wrap">
