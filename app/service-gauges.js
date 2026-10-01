@@ -18,16 +18,19 @@ export default function ServiceGauges() {
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
-      setOn(true);
-      io.disconnect();
-    }, { threshold: 0.4 });
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.35) setOn(true);
+      else if (!entry.isIntersecting) setOn(false);
+    }, { threshold: [0, 0.35] });
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
   useEffect(() => {
-    if (!on) return;
+    if (!on) {
+      setVals([0, 0, 0, 0]);
+      setSweep(0);
+      return;
+    }
     const targets = gauges.map((item) => item[1]);
     const start = performance.now();
     const dur = 1500;
