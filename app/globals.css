@@ -42,3 +42,13 @@ header nav a:hover{color:#168fd3;}
 .licenseMarks{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;justify-items:center;margin-bottom:18px}
 .licenseMarks img{width:min(195px,80%);height:auto;display:block;filter:grayscale(1) brightness(1.6);transition:filter .2s ease}.licenseMarks img:hover{filter:none}
 .license p{margin:0;color:#8ea0b4;font-size:14px;line-height:1.9}
+
+.hero{min-height:640px;padding:36px 0 8px;align-items:center}
+.heroGrid{grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);gap:12px;align-items:end}
+.heroCopy,.heroGrid>div:first-child{align-self:center;padding:12px 0 28px}
+.heroStage{position:relative;width:100%;justify-self:end}
+.heroArt{width:100%;max-height:520px;margin:0;object-fit:contain;object-position:right bottom;filter:none;opacity:1;-webkit-mask-image:none;mask-image:none}
+.heroReflect{height:78px;overflow:hidden;margin-top:-6px;-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.42),transparent 78%);mask-image:linear-gradient(to bottom,rgba(0,0,0,.42),transparent 78%);pointer-events:none}
+.heroReflect img{width:100%;display:block;transform:scaleY(-1)}
+.hero .actions .btn,.hero .actions .heroSecondBtn{border-radius:26px;height:52px;background:#3eb4f5;color:#fff}
+@media(max-width:800px){.heroReflect{height:52px}.heroArt{max-height:380px}}
