@@ -1,3 +1,4 @@
+import SiteHeader from "./site-header";
 const cards = [
   ['体育代理', '体育业务合作与推广方向'],
   ['代理招商', '合作申请、渠道与流程'],
@@ -16,23 +17,7 @@ const articles = [
 export default function Home() {
   return (
     <main>
-      <header>
-        <div className="nav">
-          <a className="brand" href="/" aria-label="KAIYUN.SI">
-            <img src="/logo.png" alt="开云体育 kaiyun.si" style={{height:58,width:'auto',display:'block'}} />
-          </a>
-          <nav>
-            <a href="/">首页</a>
-            <a href="#business">代理合作</a>
-            <a href="#policy">佣金政策</a>
-            <a href="#faq">常见问题</a>
-          </nav>
-          <div className="navActions">
-            <a className="registerBtn" href="http://5257y.com/" target="_blank" rel="noopener noreferrer">立即注册</a>
-            <a className="serviceBtn" href="https://t.me/caijin101" target="_blank" rel="noopener noreferrer">彩金客服</a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="hero">
         <div className="glow"></div>
