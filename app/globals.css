@@ -40,5 +40,5 @@ header nav a:hover{color:#168fd3;}
 
 .license{max-width:920px;margin:8px auto 36px;padding:0 28px;text-align:center}
 .licenseMarks{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;justify-items:center;margin-bottom:18px}
-.licenseMarks img{width:min(195px,80%);height:auto;display:block;filter:grayscale(1) brightness(1.6)}
+.licenseMarks img{width:min(195px,80%);height:auto;display:block;filter:grayscale(1) brightness(1.6);transition:filter .2s ease}.licenseMarks img:hover{filter:none}
 .license p{margin:0;color:#8ea0b4;font-size:14px;line-height:1.9}
