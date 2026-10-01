@@ -84,11 +84,11 @@ export default function Home() {
         <a className="btn gold" href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram：@a8802717</a>
       </div></section>
 
-      <footer><div className="wrap foot">
+      <footer><div className="partners">{Array.from({length:15},(_,i)=>{const n=String(i+1).padStart(2,'0');return <span className="partner" key={n}><img className="off" src={`/partners/${n}-off.png`} alt="" /><img className="on" src={`/partners/${n}-on.png`} alt="" /></span>})}</div><div className="wrap foot">
         <div><a className="brand" href="/" aria-label="KAIYUN.SI"><img src="/logo.png" alt="开云体育 kaiyun.si" style={{height:46,width:'auto',display:'block'}} /></a><p>代理合作 · 行业资讯 · 长期内容</p></div>
         <div><b>内容</b><a href="#business">代理合作</a><a href="#policy">佣金政策</a><a href="#insights">行业资讯</a></div>
         <div><b>联系</b><a href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram</a><span>@a8802717</span></div>
-      </div><div className="partners">{Array.from({length:15},(_,i)=>{const n=String(i+1).padStart(2,'0');return <span className="partner" key={n}><img className="off" src={`/partners/${n}-off.png`} alt="" /><img className="on" src={`/partners/${n}-on.png`} alt="" /></span>})}</div><div className="copy">© 2026 KAIYUN.SI · 本站仅提供合作与行业信息，具体政策以实际确认内容为准。</div></footer>
+      </div><div className="copy">© 2026 KAIYUN.SI · 本站仅提供合作与行业信息，具体政策以实际确认内容为准。</div></footer>
     </main>
   );
 }
