@@ -32,7 +32,7 @@ export default function Home() {
             </div>
           </div>
           <div className="visual">
-            <img className="heroShot" src="/hero-trophy.png" alt="EURO 2028" />
+            <img className="heroShot" src="/hero-trophy.jpg" alt="EURO 2028" />
           </div>
         </div>
       </section>
