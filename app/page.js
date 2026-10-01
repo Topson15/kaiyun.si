@@ -32,8 +32,7 @@ export default function Home() {
             </div>
           </div>
           <div className="visual">
-            <div className="orb"></div>
-            <div className="pitch"><i></i><strong>K</strong><small>SPORTS · BUSINESS · GROWTH</small></div>
+            <img className="heroShot" src="/hero-trophy.png" alt="EURO 2028" />
           </div>
         </div>
       </section>
