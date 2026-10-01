@@ -57,3 +57,5 @@ header nav a:hover{color:#168fd3;}
 .heroArtEdge{position:absolute;left:-3%;right:-3%;bottom:0;z-index:0;width:106%;height:18%;object-fit:cover;object-position:center bottom;filter:blur(8px);opacity:.75;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 42%,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 42%,#000 72%,transparent 100%)}
 
 .heroStage{transform:translateY(28px)}
+
+.hero .eyebrow{letter-spacing:.4px;text-transform:none}
