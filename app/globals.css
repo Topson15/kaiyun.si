@@ -78,7 +78,7 @@ header nav a:hover{color:#168fd3;}
 .directBox a{display:block;margin:6px 0;color:#168fd3;font-size:13px;word-break:break-all}
 #tab-all:checked ~ .art-all,#tab-sport:checked ~ .art-sport,#tab-live:checked ~ .art-live,#tab-login:checked ~ .art-login,#tab-all:checked ~ .panel-all{display:block}
 @media(max-width:800px){.clientBox{grid-template-areas:"tabs" "art" "copy"}}
-.clientStage{grid-area:art;position:relative;min-height:440px}
+.clientStage{grid-area:art;position:relative;min-height:440px;overflow:hidden}
 .clientArt{display:block;position:absolute;inset:0;width:100%;max-height:440px;margin:auto;object-fit:contain;opacity:0;transform:translateX(28px) scale(.98);transition:opacity .45s ease,transform .5s cubic-bezier(.22,.8,.24,1);pointer-events:none}
 #tab-all:checked ~ .clientStage .art-all,#tab-sport:checked ~ .clientStage .art-sport,#tab-live:checked ~ .clientStage .art-live,#tab-login:checked ~ .clientStage .art-login{opacity:1;transform:none;z-index:1}
 #tab-all:checked ~ .panel-all,#tab-sport:checked ~ .panel-sport,#tab-live:checked ~ .panel-live,#tab-login:checked ~ .panel-login{display:block;animation:clientCopyIn .4s ease}
@@ -98,3 +98,50 @@ header nav a:hover{color:#168fd3;}
 .csForm button{border:0;background:#111;color:#fff;border-radius:999px;padding:0 16px;font-weight:800;cursor:pointer}
 .csForm button:disabled{opacity:.6}
 header nav a.is-on{color:#168fd3}.subpage{max-width:760px}.subpage .sub+.sub{margin-top:12px}
+
+@media(max-width:800px){
+.wrap{padding-left:16px;padding-right:16px}
+header .nav{min-height:0;height:auto;flex-wrap:wrap;align-items:center;row-gap:8px;padding-top:10px;padding-bottom:8px}
+header .brand img{height:44px!important}
+.navActions{margin-left:auto;gap:8px}
+header nav{display:flex;order:3;width:100%;justify-content:space-between;gap:8px;overflow-x:auto}
+header nav a{font-size:14px;white-space:nowrap}
+.registerBtn,.serviceBtn{min-width:auto;height:36px;padding:0 12px;font-size:13px}
+.hero{min-height:auto;padding:24px 0 8px}
+.heroGrid,.split,.gamePanel{grid-template-columns:1fr}
+.heroGrid{gap:4px}
+.heroCopy{max-width:none;padding-bottom:4px}
+.hero h1{font-size:36px;letter-spacing:-1px;margin-bottom:14px}
+.hero .eyebrow{font-size:28px;margin:8px 0 12px}
+.hero .lead{font-size:15px}
+.hero .actions{width:100%;margin-top:20px}
+.heroStage{transform:none;justify-self:center}
+.heroArt{max-height:280px;object-position:center bottom}
+.heroReflect{height:36px}
+.light,.faq,.cta,.games,.client,.service{padding-top:52px;padding-bottom:52px}
+.light h2,.dark h2,.faq h2,.cta h2,.clientTitle,.games h2.gameTitle{font-size:28px;letter-spacing:0}
+.split{gap:28px}
+.policyBtns .btn{flex:1 1 140px}
+.clientBox{grid-template-columns:1fr;grid-template-areas:"tabs" "art" "copy"}
+.clientTabs{flex-direction:row;flex-wrap:wrap;justify-content:center}
+.clientTabs label{padding:8px 12px}
+.clientStage{min-height:240px}
+.clientArt{max-height:240px}
+.appGet{grid-template-columns:1fr;justify-items:center}
+.gameLead{padding:0 8px}
+.gameTabs{gap:8px}
+.gameTabs label{padding:8px 12px;font-size:14px}
+.gameCard{min-height:0;padding:22px 16px}
+.gameCard h3{font-size:26px}
+.svcStats{grid-template-columns:1fr 1fr;gap:18px 8px}
+.svcRing{width:136px;height:136px}
+.svcRing b{font-size:34px}
+.svcList{grid-template-columns:1fr}
+.svcList li{padding:16px}
+.foot{grid-template-columns:1fr 1fr;gap:22px}
+.footBrand,.foot>div:first-child{grid-column:1 / -1;padding-top:0}
+.partners{gap:6px 10px}
+.partner{width:74px;height:30px}
+.csDock{right:12px;bottom:12px}
+.csFab{width:52px;height:52px}
+}
