@@ -43,6 +43,7 @@ export default function Home() {
       </section>
 
       <section id="insights" className="client"><div className="wrap">
+        <p className="eyebrow blue">APP DOWNLOAD</p>
         <h2 className="clientTitle">APP下载</h2>
         <div className="clientBox">
           <input type="radio" name="appTab" id="tab-all" />
