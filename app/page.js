@@ -31,6 +31,7 @@ export default function Home() {
               <a className="ghost heroSecondBtn" href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">了解代理合作</a>
             </div>
           </div>
+          <img className="heroArt" src="/hero-art.png" alt="" />
         </div>
       </section>
 
