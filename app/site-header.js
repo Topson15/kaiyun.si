@@ -32,7 +32,7 @@ export default function SiteHeader() {
         </a>
         <nav>
           <a href="/">首页</a>
-          <a href="#business">代理合作</a>
+          <a href="#policy">代理合作</a>
           <a href="#policy">佣金政策</a>
           <a href="#faq">常见问题</a>
         </nav>
