@@ -48,8 +48,8 @@ header nav a:hover{color:#168fd3;}
 .heroCopy,.heroGrid>div:first-child{align-self:center;padding:12px 0 28px}
 .heroStage{position:relative;width:100%;justify-self:end}
 .heroArt{width:100%;max-height:520px;margin:0;object-fit:contain;object-position:right bottom;filter:none;opacity:1;-webkit-mask-image:none;mask-image:none}
-.heroReflect{height:78px;overflow:hidden;margin-top:-6px;-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.42),transparent 78%);mask-image:linear-gradient(to bottom,rgba(0,0,0,.42),transparent 78%);pointer-events:none}
-.heroReflect img{width:100%;display:block;transform:scaleY(-1)}
+.heroReflect{height:78px;overflow:hidden;margin-top:-6px;-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.35),transparent 72%);mask-image:linear-gradient(to bottom,rgba(0,0,0,.35),transparent 72%);pointer-events:none}
+.heroReflect img{width:100%;display:block;transform:scaleY(-1);filter:blur(10px)}
 .hero .actions .btn,.hero .actions .heroSecondBtn{border-radius:26px;height:52px;background:#3eb4f5;color:#fff}
 @media(max-width:800px){.heroReflect{height:52px}.heroArt{max-height:380px}}
 .heroArtWrap{position:relative}
