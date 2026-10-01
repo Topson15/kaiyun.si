@@ -69,7 +69,7 @@ export default function Home() {
           <div className="clientStage">
           <img className="clientArt art-all" src="/app-all.png" alt="" />
           <img className="clientArt art-sport" src="/app-sport.png" alt="" />
-          <img className="clientArt art-live" src="https://www.kaiyun.com/_next/static/chunks/images/download_image03-15904e3f64df17482189c2f53f60daba.png" alt="" referrerPolicy="no-referrer" />
+          <img className="clientArt art-live" src="/app-live.png" alt="" />
           <img className="clientArt art-login" src="/login-client.png" alt="" />
           </div>
           <div className="clientCopy panel-all"><h3>全站APP</h3><p>全球首家一体化娱乐原生APP，尽显流畅，完美操作。海量体育、电竞顶尖赛事，真人娱乐、彩票投注及电子游艺等，最新最全娱乐项目尽在掌中体验扫码下载，即刻拥有！</p><AppAccess /></div>
