@@ -37,7 +37,7 @@ export default function Home() {
 
       <section id="insights" className="client"><div className="wrap">
         <p className="eyebrow blue">APP DOWNLOAD</p>
-        <h2 className="clientTitle">APP下载</h2>
+        <h2 className="clientTitle">开云APP下载</h2>
         <div className="clientBox">
           <input type="radio" name="appTab" id="tab-all" />
           <input type="radio" name="appTab" id="tab-sport" defaultChecked />
