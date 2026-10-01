@@ -1,4 +1,5 @@
 import SiteHeader from "./site-header";
+function AppAccess(){return <div className="appGet"><div className="qrBox"><img src="/app-qr.png" alt="" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="https://www.s49tye.vip:9973" target="_blank" rel="noopener noreferrer">https://www.s49tye.vip:9973</a><a href="https://www.vefq9z.vip:9192" target="_blank" rel="noopener noreferrer">https://www.vefq9z.vip:9192</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div></div>}
 const cards = [
   ['体育代理', '体育业务合作与推广方向'],
   ['代理招商', '合作申请、渠道与流程'],
@@ -53,22 +54,25 @@ export default function Home() {
       </div></section>
 
       <section id="insights" className="client"><div className="wrap">
-        <h2 className="clientTitle">官方登录器</h2>
+        <h2 className="clientTitle">APP下载</h2>
         <div className="clientBox">
           <input type="radio" name="appTab" id="tab-all" />
-          <input type="radio" name="appTab" id="tab-sport" />
+          <input type="radio" name="appTab" id="tab-sport" defaultChecked />
           <input type="radio" name="appTab" id="tab-live" />
-          <input type="radio" name="appTab" id="tab-login" defaultChecked />
+          <input type="radio" name="appTab" id="tab-login" />
           <div className="clientTabs">
             <label htmlFor="tab-all">全站APP</label>
             <label htmlFor="tab-sport">体育APP</label>
             <label htmlFor="tab-live">真人APP</label>
             <label htmlFor="tab-login">登录器</label>
           </div>
-          <img className="clientArt" src="/login-client.png" alt="" />
-          <div className="clientCopy panel-all"><h3>全站APP</h3><p>覆盖体育、真人、电子等常用入口，安装后可直接打开开云站点。</p></div>
-          <div className="clientCopy panel-sport"><h3>体育APP</h3><p>专注体育赛事与盘口查看，打开即可进入体育相关页面。</p></div>
-          <div className="clientCopy panel-live"><h3>真人APP</h3><p>真人娱乐入口单独整理，便于直接进入对应业务页面。</p></div>
+          <img className="clientArt art-all" src="/app-sport.png" alt="" />
+          <img className="clientArt art-sport" src="/app-sport.png" alt="" />
+          <img className="clientArt art-live" src="/app-sport.png" alt="" />
+          <img className="clientArt art-login" src="/login-client.png" alt="" />
+          <div className="clientCopy panel-all"><h3>全站APP</h3><p>全球首家一体化娱乐原生APP，尽显流畅，完美操作。海量体育、电竞顶尖赛事，真人娱乐、彩票投注及电子游艺等，最新最全娱乐项目尽在掌中体验扫码下载，即刻拥有！</p><AppAccess /></div>
+          <div className="clientCopy panel-sport"><h3>体育APP</h3><p>业内赔率最高！覆盖世界各地赛事，让球、大小、半全场、波胆、单双、总入球、连串过关等多元竞猜。更有动画直播，让您体验轻松聊球，娱乐投注两不误。</p><AppAccess /></div>
+          <div className="clientCopy panel-live"><h3>真人APP</h3><p>最美荷官在线互动，带您玩转百家乐、骰宝、轮盘、牛牛、炸金花等多款真人视讯游戏。国际标准、公平公正，极致享受尽在开云真人。</p><AppAccess /></div>
           <div className="clientCopy panel-login">
             <h3>官方登录器</h3>
             <p>开云倾情打造，自主开发防劫持安全登录器。<br/>登录器支持 Windows｜MAC｜Android系统平台，使用登录器可直接访问开云WEB站点，有效防御和避免站点被拦截/劫持等问题。登录器安装简单，能给玩家提供安全的游戏环境体验！</p>
