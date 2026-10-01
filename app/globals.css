@@ -42,4 +42,4 @@ header nav a:hover{color:#168fd3;}
 .licenseMarks{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;justify-items:center;margin-bottom:18px}
 .licenseMarks img{width:min(195px,80%);height:auto;display:block;filter:grayscale(1) brightness(1.6);transition:filter .2s ease}.licenseMarks img:hover{filter:none}
 .license p{margin:0;color:#8ea0b4;font-size:14px;line-height:1.9}
-.visual{height:540px;position:relative;border-radius:18px;overflow:hidden}.heroShot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}.visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#06111ef2 0%,#06111e66 16%,transparent 34%);pointer-events:none}
+.visual{height:540px;position:relative;border-radius:18px;overflow:hidden}.heroShot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}.visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#06111ee6 0%,#06111e55 12%,transparent 28%);pointer-events:none}
