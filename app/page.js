@@ -32,7 +32,10 @@ export default function Home() {
             </div>
           </div>
           <div className="heroStage">
-            <img className="heroArt" src="/hero-art.png" alt="" />
+            <div className="heroArtWrap">
+              <img className="heroArtEdge" src="/hero-art.png" alt="" />
+              <img className="heroArt" src="/hero-art.png" alt="" />
+            </div>
             <div className="heroReflect" aria-hidden="true"><img src="/hero-art.png" alt="" /></div>
           </div>
         </div>
