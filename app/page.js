@@ -100,7 +100,7 @@ export default function Home() {
       </div></section>
 
       <section id="policy" className="light"><div className="wrap split">
-        <div><p className="eyebrow blue">POLICY & SETTLEMENT</p><p className="policyName">开云体育佣金政策</p><h2>佣金 · 政策 · 结算</h2><p className="sub">合作前先把规则说清楚。佣金比例、有效业绩和结算周期，应以双方当前确认的合作方案为准。</p><a className="btn" href="#contact">咨询当前合作政策</a></div>
+        <div><p className="eyebrow blue">POLICY & SETTLEMENT</p><p className="policyName">开云体育佣金政策</p><h2>佣金 · 政策 · 结算</h2><p className="sub">合作前先把规则说清楚。佣金比例、有效业绩和结算周期，应以双方当前确认的合作方案为准。</p><div className="policyBtns"><span className="btn is-idle">咨询当前合作政策</span><a className="btn" href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">TG：@a8802717</a></div></div>
         <PolicyZoom />
       </div></section>
 
