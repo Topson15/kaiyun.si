@@ -59,3 +59,5 @@ header nav a:hover{color:#168fd3;}
 .heroStage{transform:translateY(28px)}
 
 .hero .eyebrow{letter-spacing:.4px;text-transform:none}
+
+.hero .eyebrow{color:#168ad3;letter-spacing:.2px;text-transform:none;font-size:28px;font-weight:800;line-height:1;margin:0 0 14px}
