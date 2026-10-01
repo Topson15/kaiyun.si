@@ -98,6 +98,25 @@ export default function Home() {
         ].map(x=><details key={x[0]}><summary>{x[0]}<b>＋</b></summary><p>{x[1]}</p></details>)}
       </div></section>
 
+      <section id="service" className="service"><div className="wrap">
+        <p className="eyebrow blue">QUALITY SERVICE</p>
+        <h2 className="clientTitle">优质服务</h2>
+        <ul className="svcStats">
+          {[
+            ["CURRENT SPEED","60","秒","平均存款时间","AVERAGE TIME OF DEPOSIT"],
+            ["TOTALLY AMOUNT","80","家","合作支付平台","PAYMENT PLATFORM PARTNERS"],
+            ["CURRENT SPEED","90","秒","平均取款时间","AVERAGE TIME OF WITHDRAW"],
+            ["TOTALLY AMOUNT","35","家","合作游戏平台","GAMING PROVIDER PARTNERS"]
+          ].map((x)=><li key={x[3]}><div className="svcRing"><div><p>{x[0]}</p><b>{x[1]}</b><span>{x[2]}</span></div></div><h3>{x[3]}</h3><small>{x[4]}</small></li>)}
+        </ul>
+        <ul className="svcList">
+          <li><i className="svcIcon speed"></i><div><h3>极速存取转款</h3><p>最新技术自主研发的财务处理系统真正做到极速存、取、转独家网络优化技术，为您提供一流的游戏体验，最大优化网络延迟。</p></div></li>
+          <li><i className="svcIcon match"></i><div><h3>海量赛事种类</h3><p>每天为您提供近千场精彩体育赛事，更有真人、彩票、电子游戏等多种娱乐方式选择，让您拥有完美游戏体验。</p></div></li>
+          <li><i className="svcIcon lock"></i><div><h3>加密安全管理</h3><p>独家开发，采用128位加密技术和严格的安全管理体系，客户资金得到最完善的保障，让您全情尽享娱乐、赛事投注、无后顾之忧！</p></div></li>
+          <li><i className="svcIcon device"></i><div><h3>三端任您选择</h3><p>引领市场的卓越技术，自主研发了全套终端应用，让您随时随地，娱乐投注随心所欲！7x24小时在线客服提供最贴心、最优质的服务。</p></div></li>
+        </ul>
+      </div></section>
+
       <section id="contact" className="cta"><div className="wrap">
         <p className="eyebrow">WORK WITH JINLI</p><h2>想进一步了解代理合作？</h2><p>联系锦鲤，了解当前合作方式与业务方向。</p>
         <a className="btn gold" href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram：@a8802717</a>
