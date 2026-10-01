@@ -78,3 +78,8 @@ header nav a:hover{color:#168fd3;}
 .directBox a{display:block;margin:6px 0;color:#168fd3;font-size:13px;word-break:break-all}
 #tab-all:checked ~ .art-all,#tab-sport:checked ~ .art-sport,#tab-live:checked ~ .art-live,#tab-login:checked ~ .art-login,#tab-all:checked ~ .panel-all{display:block}
 @media(max-width:800px){.clientBox{grid-template-areas:"tabs" "art" "copy"}}
+.clientStage{grid-area:art;position:relative;min-height:440px}
+.clientArt{display:block;position:absolute;inset:0;width:100%;max-height:440px;margin:auto;object-fit:contain;opacity:0;transform:translateX(28px) scale(.98);transition:opacity .45s ease,transform .5s cubic-bezier(.22,.8,.24,1);pointer-events:none}
+#tab-all:checked ~ .clientStage .art-all,#tab-sport:checked ~ .clientStage .art-sport,#tab-live:checked ~ .clientStage .art-live,#tab-login:checked ~ .clientStage .art-login{opacity:1;transform:none;z-index:1}
+#tab-all:checked ~ .panel-all,#tab-sport:checked ~ .panel-sport,#tab-live:checked ~ .panel-live,#tab-login:checked ~ .panel-login{display:block;animation:clientCopyIn .4s ease}
+@keyframes clientCopyIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}

@@ -66,10 +66,12 @@ export default function Home() {
             <label htmlFor="tab-live">真人APP</label>
             <label htmlFor="tab-login">登录器</label>
           </div>
+          <div className="clientStage">
           <img className="clientArt art-all" src="/app-sport.png" alt="" />
           <img className="clientArt art-sport" src="/app-sport.png" alt="" />
           <img className="clientArt art-live" src="/app-sport.png" alt="" />
           <img className="clientArt art-login" src="/login-client.png" alt="" />
+          </div>
           <div className="clientCopy panel-all"><h3>全站APP</h3><p>全球首家一体化娱乐原生APP，尽显流畅，完美操作。海量体育、电竞顶尖赛事，真人娱乐、彩票投注及电子游艺等，最新最全娱乐项目尽在掌中体验扫码下载，即刻拥有！</p><AppAccess /></div>
           <div className="clientCopy panel-sport"><h3>体育APP</h3><p>业内赔率最高！覆盖世界各地赛事，让球、大小、半全场、波胆、单双、总入球、连串过关等多元竞猜。更有动画直播，让您体验轻松聊球，娱乐投注两不误。</p><AppAccess /></div>
           <div className="clientCopy panel-live"><h3>真人APP</h3><p>最美荷官在线互动，带您玩转百家乐、骰宝、轮盘、牛牛、炸金花等多款真人视讯游戏。国际标准、公平公正，极致享受尽在开云真人。</p><AppAccess /></div>
