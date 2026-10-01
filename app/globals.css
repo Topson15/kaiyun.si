@@ -52,3 +52,6 @@ header nav a:hover{color:#168fd3;}
 .heroReflect img{width:100%;display:block;transform:scaleY(-1)}
 .hero .actions .btn,.hero .actions .heroSecondBtn{border-radius:26px;height:52px;background:#3eb4f5;color:#fff}
 @media(max-width:800px){.heroReflect{height:52px}.heroArt{max-height:380px}}
+.heroArtWrap{position:relative}
+.heroArt{position:relative;z-index:1;-webkit-mask-image:linear-gradient(to bottom,#000 68%,transparent 97%);mask-image:linear-gradient(to bottom,#000 68%,transparent 97%)}
+.heroArtEdge{position:absolute;left:-3%;right:-3%;bottom:0;z-index:0;width:106%;height:38%;object-fit:cover;object-position:center bottom;filter:blur(16px);opacity:.9;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 42%,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 42%,#000 72%,transparent 100%)}
