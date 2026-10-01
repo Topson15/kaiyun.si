@@ -17,7 +17,7 @@ header nav a:hover{color:#168fd3;}
 
 /* ===== HERO V3 ===== */
 .hero{min-height:690px;padding:105px 0 55px;}
-.heroGrid{max-width:1380px;grid-template-columns:43% 57%;gap:20px;align-items:center;}.heroArt{width:100%;max-height:640px;object-fit:contain;object-position:right center;justify-self:end;display:block}
+.heroGrid{max-width:1380px;grid-template-columns:43% 57%;gap:20px;align-items:center;}.heroArt{width:94%;max-height:600px;object-fit:contain;object-position:center center;justify-self:end;display:block}
 .heroGrid > div:first-child{max-width:610px;}
 .hero .eyebrow{margin-bottom:24px;}
 .hero h1{font-size:60px;line-height:1.08;letter-spacing:-2px;margin:0 0 26px;}
