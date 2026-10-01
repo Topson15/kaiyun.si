@@ -1,9 +1,10 @@
 import { append, limited, since, validSession } from "../../../lib/support-store";
-import { configured, pushVisitor } from "../../../lib/telegram-bridge";
+import { configured, pushVisitor, startPolling } from "../../../lib/telegram-bridge";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(req) {
+  startPolling();
   const { searchParams } = new URL(req.url);
   const sessionId = searchParams.get("session") || "";
   if (!validSession(sessionId)) return Response.json({ ok: false }, { status: 400 });
@@ -11,6 +12,7 @@ export async function GET(req) {
 }
 
 export async function POST(req) {
+  startPolling();
   const body = await req.json().catch(() => ({}));
   const sessionId = String(body.sessionId || "");
   const text = String(body.text || "");
