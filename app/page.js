@@ -19,7 +19,7 @@ export default function Home() {
       <header>
         <div className="nav">
           <a className="brand" href="/" aria-label="KAIYUN.SI">
-            <img src="/logo.jpg" alt="开云体育 kaiyun.si" style={{height:58,width:'auto',display:'block'}} />
+            <img src="/logo.png" alt="开云体育 kaiyun.si" style={{height:58,width:'auto',display:'block'}} />
           </a>
           <nav>
             <a href="/">首页</a>
@@ -85,7 +85,7 @@ export default function Home() {
       </div></section>
 
       <footer><div className="wrap foot">
-        <div><a className="brand" href="/" aria-label="KAIYUN.SI"><img src="/logo.jpg" alt="开云体育 kaiyun.si" style={{height:46,width:'auto',display:'block'}} /></a><p>代理合作 · 行业资讯 · 长期内容</p></div>
+        <div><a className="brand" href="/" aria-label="KAIYUN.SI"><img src="/logo.png" alt="开云体育 kaiyun.si" style={{height:46,width:'auto',display:'block'}} /></a><p>代理合作 · 行业资讯 · 长期内容</p></div>
         <div><b>内容</b><a href="#business">代理合作</a><a href="#policy">佣金政策</a><a href="#insights">行业资讯</a></div>
         <div><b>联系</b><a href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram</a><span>@a8802717</span></div>
       </div><div className="copy">© 2026 KAIYUN.SI · 本站仅提供合作与行业信息，具体政策以实际确认内容为准。</div></footer>
