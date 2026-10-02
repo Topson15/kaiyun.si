@@ -54,12 +54,9 @@ function Welcome() {
   return (
     <>
       <p>您好，开云体育祝您财源广进，事事顺利！</p>
-      <p>
-        您可以在此处发消息咨询客服，也可以添加客服联系方式：
-        <a href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram @a8802717</a>
-        {" "}
-        <a href="https://wpa.qq.com/msgrd?v=3&uin=946901189&site=qq&menu=yes" target="_blank" rel="noopener noreferrer">QQ：946901189</a>
-      </p>
+      <p>您可以在此处发消息咨询客服，也可以添加客服联系方式：</p>
+      <p><a href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram @a8802717</a></p>
+      <p><a href="https://wpa.qq.com/msgrd?v=3&uin=946901189&site=qq&menu=yes" target="_blank" rel="noopener noreferrer">QQ：946901189</a></p>
     </>
   );
 }
