@@ -3,7 +3,7 @@ import PageFrame from "../page-frame";
 export const metadata = {
   title: "开云代理合作",
   alternates: { canonical: "/cooperation" },
-  openGraph: { url: "/cooperation" },
+  openGraph: { url: "/cooperation", title: "开云代理合作｜KAIYUN.SI" },
 };
 
 export default function CooperationPage() {

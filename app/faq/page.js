@@ -3,7 +3,7 @@ import PageFrame from "../page-frame";
 export const metadata = {
   title: "开云常见问题",
   alternates: { canonical: "/faq" },
-  openGraph: { url: "/faq" },
+  openGraph: { url: "/faq", title: "开云常见问题｜KAIYUN.SI" },
 };
 
 const faqs = [

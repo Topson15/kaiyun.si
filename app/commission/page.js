@@ -4,7 +4,7 @@ import PolicyZoom from "../policy-zoom";
 export const metadata = {
   title: "开云代理招商",
   alternates: { canonical: "/commission" },
-  openGraph: { url: "/commission" },
+  openGraph: { url: "/commission", title: "开云代理招商｜KAIYUN.SI" },
 };
 
 export default function CommissionPage() {
