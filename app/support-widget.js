@@ -72,6 +72,12 @@ export default function SupportWidget() {
   const logRef = useRef(null);
 
   useEffect(() => {
+    try {
+      if (sessionStorage.getItem("ky_support_ding")) return;
+      sessionStorage.setItem("ky_support_ding", "1");
+    } catch {
+      /* 隐私模式仍播放一次 */
+    }
     playDing();
   }, []);
 
