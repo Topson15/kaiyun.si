@@ -1,6 +1,7 @@
 import { append, limited, since, validSession } from "../../../lib/support-store";
 import { configured, pushVisitor, startPolling } from "../../../lib/telegram-bridge";
 
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 function reply(body, status = 200) {
