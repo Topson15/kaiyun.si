@@ -38,7 +38,7 @@ export default function SiteHeader() {
     <header className={stuck ? "is-stuck" : undefined} style={stuck ? { height: barH.current } : undefined}>
       <div className="nav" ref={barRef}>
         <a className="brand" href="/" aria-label="KAIYUN.SI">
-          <img src="/logo.png" alt="开云体育 kaiyun.si" style={{ height: 58, width: "auto", display: "block" }} />
+          <img decoding="async" src="/logo.webp" alt="开云体育 kaiyun.si" style={{ height: 58, width: "auto", display: "block" }} />
         </a>
         <nav>
           {links.map(([href, label]) => (

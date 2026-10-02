@@ -43,7 +43,7 @@ export default function NewsPage() {
                     <p>{post.excerpt}</p>
                     <Link className="more" href={`/news/${post.id}`}>继续阅读 →</Link>
                   </div>
-                  {post.cover && <img className="newsCover" src={post.cover} alt="" />}
+                  {post.cover && <img loading="lazy" decoding="async" className="newsCover" src={post.cover} alt="" />}
                 </article>
               );
             })}
