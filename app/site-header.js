@@ -19,12 +19,11 @@ export default function SiteHeader() {
 
   useEffect(() => {
     let on = false;
+    const limit = (barRef.current?.offsetHeight ?? 92) + 100;
     const onScroll = () => {
       const y = window.scrollY;
-      const limit = (barRef.current?.offsetHeight ?? barH.current) + 100;
       const next = on ? y > 2 : y > limit;
       if (next !== on) {
-        if (next) barH.current = barRef.current?.offsetHeight ?? barH.current;
         on = next;
         setStuck(next);
       }
@@ -38,7 +37,7 @@ export default function SiteHeader() {
     <header className={stuck ? "is-stuck" : undefined} style={stuck ? { height: barH.current } : undefined}>
       <div className="nav" ref={barRef}>
         <a className="brand" href="/" aria-label="KAIYUN.SI">
-          <img decoding="async" src="/logo.webp" alt="开云体育 kaiyun.si" style={{ height: 58, width: "auto", display: "block" }} />
+          <img decoding="async" fetchPriority="low" width="360" height="109" src="/logo.webp" alt="开云体育 kaiyun.si" style={{ height: 58, width: "auto", display: "block" }} />
         </a>
         <nav>
           {links.map(([href, label]) => (
