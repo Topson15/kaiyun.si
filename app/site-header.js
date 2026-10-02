@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const links = [
-  ["/", "首页"],
-  ["/cooperation", "代理合作"],
-  ["/commission", "佣金政策"],
-  ["/faq", "常见问题"],
+  ["/", "开云体育首页"],
+  ["/cooperation", "开云代理合作"],
+  ["/commission", "开云佣金政策"],
+  ["/faq", "开云常见问题"],
+  ["/news", "开云新闻资讯"],
 ];
 
 export default function SiteHeader() {

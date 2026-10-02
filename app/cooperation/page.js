@@ -1,7 +1,7 @@
 import PageFrame from "../page-frame";
 
 export const metadata = {
-  title: "代理合作",
+  title: "开云代理合作",
   alternates: { canonical: "/cooperation" },
   openGraph: { url: "/cooperation" },
 };
