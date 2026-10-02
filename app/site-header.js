@@ -46,7 +46,7 @@ export default function SiteHeader() {
           ))}
         </nav>
         <div className="navActions">
-          <a className="registerBtn" href="http://5257y.com/" target="_blank" rel="noopener noreferrer">立即注册</a>
+          <a className="registerBtn" href="http://5257y.com/" target="_blank" rel="sponsored noopener noreferrer">立即注册</a>
           <a className="serviceBtn" href="https://t.me/caijin101" target="_blank" rel="noopener noreferrer">彩金客服</a>
         </div>
       </div>

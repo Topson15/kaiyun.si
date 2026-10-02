@@ -16,8 +16,18 @@ const faqs = [
 ];
 
 export default function FaqPage() {
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text },
+    })),
+  };
   return (
     <PageFrame>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <section className="faq">
         <div className="wrap">
           <p className="eyebrow">FAQ</p>
