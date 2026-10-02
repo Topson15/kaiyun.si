@@ -15,7 +15,7 @@ function AppAccess({ qr, alt }) {
   return (
     <div className="appGet">
       <div className="qrBox"><img src={qr} alt={alt} /><b>扫码下载</b><span>支持iOS&Android</span></div>
-      <div className="directBox"><a href="http://5257y.com/" target="_blank" rel="sponsored noopener noreferrer">http://5257y.com/</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div>
+      <div className="directBox"><a href="http://5257y.com/" target="_blank" rel="sponsored noopener noreferrer">http://5257y.com/</a><b>直接访问</b><span>无需下载，手机输入网址即可</span><span>请用国内网络打开即可</span></div>
     </div>
   );
 }
