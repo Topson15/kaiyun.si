@@ -21,7 +21,7 @@ export default function FaqPage() {
       <section className="faq">
         <div className="wrap">
           <p className="eyebrow">FAQ</p>
-          <h2>常见问题</h2>
+          <h2>开云常见问题</h2>
           {faqs.map(([q, a]) => (
             <details key={q}>
               <summary>{q}<b>＋</b></summary>
