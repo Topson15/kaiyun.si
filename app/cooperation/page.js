@@ -1,6 +1,10 @@
 import PageFrame from "../page-frame";
 
-export const metadata = { title: "代理合作" };
+export const metadata = {
+  title: "代理合作",
+  alternates: { canonical: "/cooperation" },
+  openGraph: { url: "/cooperation" },
+};
 
 export default function CooperationPage() {
   return (

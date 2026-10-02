@@ -1,6 +1,10 @@
 import PageFrame from "../page-frame";
 
-export const metadata = { title: "常见问题" };
+export const metadata = {
+  title: "常见问题",
+  alternates: { canonical: "/faq" },
+  openGraph: { url: "/faq" },
+};
 
 const faqs = [
   ["在这里可以了解哪些开云体育信息？", "本站整理开云体育相关介绍、热门赛事与活动资讯，方便访客按需查阅。具体服务内容与规则，请以对应服务页面的最新说明为准。"],
