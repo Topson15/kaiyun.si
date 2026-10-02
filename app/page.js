@@ -129,8 +129,9 @@ export default function Home() {
       </div></section>
 
       <section id="contact" className="cta"><div className="wrap">
-        <p className="eyebrow">WORK WITH JINLI</p><h2>想进一步了解代理合作？</h2><p>联系锦鲤，了解当前合作方式与业务方向。</p>
+        <p className="eyebrow">Want to know more?</p><h2>想进一步了解代理合作？</h2><p>联系锦鲤，了解当前合作方式与业务方向。</p>
         <a className="btn gold" href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram：@a8802717</a>
+        <a className="btn gold" href="https://t.me/kytyk" target="_blank" rel="noopener noreferrer">助手TG：@kytyk</a>
       </div></section>
 
       <footer><div className="partners">{Array.from({length:15},(_,i)=>{const n=String(i+1).padStart(2,'0');return <span className="partner" key={n}><img className="off" src={`/partners/${n}-off.png`} alt="" /><img className="on" src={`/partners/${n}-on.png`} alt="" /></span>})}</div><div className="license"><div className="licenseMarks"><img src="/license/mga.png" alt="MGA" /><img src="/license/bvi.png" alt="BVI" /></div><p>开云体育拥有欧洲马耳他（MGA）颁发的合法执照。<br/>注册于英属维尔京群岛，是受国际行业协会认可的合法公司。进行注册并娱乐前，请确保您年满18周岁！</p></div><div className="wrap foot">
