@@ -173,11 +173,7 @@ export default function SupportWidget() {
         </section>
       )}
       <button className="csFab" type="button" aria-label="打开客服" onClick={() => setOpen((v) => !v)}>
-        {open ? (
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.1 4.7 12 10.6l5.9-5.9 1.4 1.4-5.9 5.9 5.9 5.9-1.4 1.4L12 13.4l-5.9 5.9-1.4-1.4 5.9-5.9-5.9-5.9z" /></svg>
-        ) : (
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 4.8A2.8 2.8 0 0 1 7.8 2h8.4A2.8 2.8 0 0 1 19 4.8v7.2a2.8 2.8 0 0 1-2.8 2.8H10l-4.4 3.3a.9.9 0 0 1-1.4-.7V4.8Z" /></svg>
-        )}
+        {open ? "×" : "客服"}
         {unread > 0 && !open && <i>{unread}</i>}
       </button>
     </div>
