@@ -5,7 +5,6 @@ export const metadata = {
   alternates: { canonical: "/" },
   openGraph: { url: "/", title: "KAIYUN.SI｜代理合作与行业资讯" },
 };
-function AppAccess({qr="/app-qr.png"}){return <div className="appGet"><div className="qrBox"><img src={qr} alt="" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="http://5257y.com/" target="_blank" rel="noopener noreferrer">http://5257y.com/</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div></div>}
 
 const articles = [
   ['代理合作前，先确认哪几件事？', '合作指南'],
@@ -40,41 +39,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="insights" className="client"><div className="wrap">
-        <p className="eyebrow blue">APP DOWNLOAD</p>
-        <h2 className="clientTitle">开云APP下载</h2>
-        <div className="clientBox">
-          <input type="radio" name="appTab" id="tab-all" />
-          <input type="radio" name="appTab" id="tab-sport" defaultChecked />
-          <input type="radio" name="appTab" id="tab-live" />
-          <input type="radio" name="appTab" id="tab-login" />
-          <div className="clientTabs">
-            <label htmlFor="tab-all">全站APP</label>
-            <label htmlFor="tab-sport">体育APP</label>
-            <label htmlFor="tab-live">真人APP</label>
-            <label htmlFor="tab-login">登录器</label>
-          </div>
-          <div className="clientStage">
-          <img className="clientArt art-all" src="/app-all.png" alt="" />
-          <img className="clientArt art-sport" src="/app-sport.png" alt="" />
-          <img className="clientArt art-live" src="/app-live.png" alt="" />
-          <img className="clientArt art-login" src="/login-client.png" alt="" />
-          </div>
-          <div className="clientCopy panel-all"><h3>全站APP</h3><p>全球首家一体化娱乐原生APP，尽显流畅，完美操作。海量体育、电竞顶尖赛事，真人娱乐、彩票投注及电子游艺等，最新最全娱乐项目尽在掌中体验扫码下载，即刻拥有！</p><AppAccess qr="/app-qr-all.png" /></div>
-          <div className="clientCopy panel-sport"><h3>体育APP</h3><p>业内赔率最高！覆盖世界各地赛事，让球、大小、半全场、波胆、单双、总入球、连串过关等多元竞猜。更有动画直播，让您体验轻松聊球，娱乐投注两不误。</p><AppAccess qr="/app-qr-sport.png" /></div>
-          <div className="clientCopy panel-live"><h3>真人APP</h3><p>最美荷官在线互动，带您玩转百家乐、骰宝、轮盘、牛牛、炸金花等多款真人视讯游戏。国际标准、公平公正，极致享受尽在开云真人。</p><AppAccess qr="/app-qr-live.png" /></div>
-          <div className="clientCopy panel-login">
-            <h3>官方登录器</h3>
-            <p>开云倾情打造，自主开发防劫持安全登录器。<br/>登录器支持 Windows｜MAC｜Android系统平台，使用登录器可直接访问开云WEB站点，有效防御和避免站点被拦截/劫持等问题。登录器安装简单，能给玩家提供安全的游戏环境体验！</p>
-            <div className="downloads">
-              <a href="http://5257y.com/" target="_blank" rel="noopener noreferrer"><i className="os win"></i><span>Windows 版本</span><b>下载</b></a>
-              <a href="http://5257y.com/" target="_blank" rel="noopener noreferrer"><i className="os mac"></i><span>MacOS 版本</span><b>下载</b></a>
-              <a href="http://5257y.com/" target="_blank" rel="noopener noreferrer"><i className="os android"></i><span>Android 版本</span><b>下载</b></a>
-            </div>
-          </div>
-        </div>
-      </div></section>
-
       <section id="games" className="dark games"><div className="wrap">
         <p className="eyebrow">KAIYUN GAMES</p>
         <h2 className="gameTitle">开云游戏</h2>
@@ -104,7 +68,7 @@ export default function Home() {
       </div></section>
 
       <section id="policy" className="light"><div className="wrap homeBriefs">
-        <article><p className="eyebrow blue">PARTNERSHIP</p><h2>开云代理合作</h2><p className="sub">合作方式、推广方向和结算规则的说明，放在代理合作页。</p><a className="btn" href="/cooperation">查看详情</a></article>
+        <article><p className="eyebrow blue">APP DOWNLOAD</p><h2>开云APP下载</h2><p className="sub">全站、体育、真人 APP 和登录器的下载方式，放在下载页。</p><a className="btn" href="/cooperation">查看详情</a></article>
         <article><p className="eyebrow blue">RECRUITMENT</p><h2>开云代理招商</h2><p className="sub">佣金比例、有效业绩和结算周期，以及政策图，放在代理招商页。</p><a className="btn" href="/commission">查看详情</a></article>
         <article><p className="eyebrow blue">FAQ</p><h2>开云常见问题</h2><p className="sub">赛事、活动规则和联系方式，整理在常见问题页，首页不再重复全文。</p><a className="btn" href="/faq">查看详情</a></article>
       </div></section>
@@ -129,7 +93,7 @@ export default function Home() {
 
       <footer><div className="partners">{Array.from({length:15},(_,i)=>{const n=String(i+1).padStart(2,'0');return <span className="partner" key={n}><img className="off" src={`/partners/${n}-off.png`} alt="" /><img className="on" src={`/partners/${n}-on.png`} alt="" /></span>})}</div><div className="license"><div className="licenseMarks"><img src="/license/mga.png" alt="MGA" /><img src="/license/bvi.png" alt="BVI" /></div><p>开云体育拥有欧洲马耳他（MGA）颁发的合法执照。<br/>注册于英属维尔京群岛，是受国际行业协会认可的合法公司。进行注册并娱乐前，请确保您年满18周岁！</p></div><div className="wrap foot">
         <div className="footBrand"><a className="brand" href="/" aria-label="KAIYUN.SI"><img src="/logo.png" alt="开云体育 kaiyun.si" style={{height:46,width:'auto',display:'block'}} /></a><p>代理合作 · 行业资讯 · 长期内容</p></div>
-        <div><b>内容</b><a href="/cooperation">开云代理合作</a><a href="/commission">开云代理招商</a><a href="/news">开云新闻资讯</a></div>
+        <div><b>内容</b><a href="/cooperation">开云APP下载</a><a href="/commission">开云代理招商</a><a href="/news">开云新闻资讯</a></div>
         <div><b>联系</b><a href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram1</a><a href="https://t.me/kytyk" target="_blank" rel="noopener noreferrer">Telegram2</a></div>
       </div><div className="copy" style={{border:"none",borderTop:"none",boxShadow:"none"}}>© 2026 KAIYUN.SI · 本站仅提供合作与行业信息，具体政策以实际确认内容为准。</div></footer>
     </main>
