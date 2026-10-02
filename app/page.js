@@ -105,7 +105,7 @@ export default function Home() {
       </div></section>
 
       <section id="policy" className="light"><div className="wrap split">
-        <div><p className="eyebrow blue">POLICY & SETTLEMENT</p><p className="policyName">开云体育佣金政策</p><h2>佣金 · 政策 · 结算</h2><p className="sub">合作前先把规则说清楚。佣金比例、有效业绩和结算周期，应以双方当前确认的合作方案为准。</p><div className="policyBtns"><span className="btn is-idle">咨询当前合作政策</span><a className="btn" href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">TG：@a8802717</a></div></div>
+        <div><p className="eyebrow blue">POLICY & SETTLEMENT</p><p className="policyName">开云体育代理招商</p><h2>开云代理招商</h2><p className="sub">合作前先把规则说清楚。佣金比例、有效业绩和结算周期，应以双方当前确认的合作方案为准。</p><div className="policyBtns"><span className="btn is-idle">咨询当前合作政策</span><a className="btn" href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">TG：@a8802717</a></div></div>
         <PolicyZoom />
       </div></section>
 
@@ -141,7 +141,7 @@ export default function Home() {
 
       <footer><div className="partners">{Array.from({length:15},(_,i)=>{const n=String(i+1).padStart(2,'0');return <span className="partner" key={n}><img className="off" src={`/partners/${n}-off.png`} alt="" /><img className="on" src={`/partners/${n}-on.png`} alt="" /></span>})}</div><div className="license"><div className="licenseMarks"><img src="/license/mga.png" alt="MGA" /><img src="/license/bvi.png" alt="BVI" /></div><p>开云体育拥有欧洲马耳他（MGA）颁发的合法执照。<br/>注册于英属维尔京群岛，是受国际行业协会认可的合法公司。进行注册并娱乐前，请确保您年满18周岁！</p></div><div className="wrap foot">
         <div className="footBrand"><a className="brand" href="/" aria-label="KAIYUN.SI"><img src="/logo.png" alt="开云体育 kaiyun.si" style={{height:46,width:'auto',display:'block'}} /></a><p>代理合作 · 行业资讯 · 长期内容</p></div>
-        <div><b>内容</b><a href="/cooperation">开云代理合作</a><a href="/commission">开云佣金政策</a><a href="/news">开云新闻资讯</a></div>
+        <div><b>内容</b><a href="/cooperation">开云代理合作</a><a href="/commission">开云代理招商</a><a href="/news">开云新闻资讯</a></div>
         <div><b>联系</b><a href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram1</a><a href="https://t.me/kytyk" target="_blank" rel="noopener noreferrer">Telegram2</a></div>
       </div><div className="copy" style={{border:"none",borderTop:"none",boxShadow:"none"}}>© 2026 KAIYUN.SI · 本站仅提供合作与行业信息，具体政策以实际确认内容为准。</div></footer>
     </main>

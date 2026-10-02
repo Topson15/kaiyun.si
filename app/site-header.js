@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const links = [
   ["/", "开云体育首页"],
   ["/cooperation", "开云代理合作"],
-  ["/commission", "开云佣金政策"],
+  ["/commission", "开云代理招商"],
   ["/faq", "开云常见问题"],
   ["/news", "开云新闻资讯"],
 ];
