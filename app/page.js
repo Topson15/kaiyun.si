@@ -1,5 +1,6 @@
 import SiteHeader from "./site-header";
 import ServiceGauges from "./service-gauges";
+import PolicyZoom from "./policy-zoom";
 
 export const metadata = {
   alternates: { canonical: "/" },
@@ -39,6 +40,41 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="insights" className="client"><div className="wrap">
+        <p className="eyebrow blue">APP DOWNLOAD</p>
+        <h2 className="clientTitle">开云APP下载</h2>
+        <div className="clientBox">
+          <input type="radio" name="appTab" id="tab-all" />
+          <input type="radio" name="appTab" id="tab-sport" defaultChecked />
+          <input type="radio" name="appTab" id="tab-live" />
+          <input type="radio" name="appTab" id="tab-login" />
+          <div className="clientTabs">
+            <label htmlFor="tab-all">全站APP</label>
+            <label htmlFor="tab-sport">体育APP</label>
+            <label htmlFor="tab-live">真人APP</label>
+            <label htmlFor="tab-login">登录器</label>
+          </div>
+          <div className="clientStage">
+            <img className="clientArt art-all" src="/app-all.png" alt="开云全站APP" />
+            <img className="clientArt art-sport" src="/app-sport.png" alt="开云体育APP" />
+            <img className="clientArt art-live" src="/app-live.png" alt="开云真人APP" />
+            <img className="clientArt art-login" src="/login-client.png" alt="开云登录器" />
+          </div>
+          <div className="clientCopy panel-all"><h3>全站APP</h3><p>全球首家一体化娱乐原生APP，尽显流畅，完美操作。海量体育、电竞顶尖赛事，真人娱乐、彩票投注及电子游艺等，最新最全娱乐项目尽在掌中体验扫码下载，即刻拥有！</p><div className="appGet"><div className="qrBox"><img src="/app-qr-all.png" alt="开云全站APP下载二维码" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="http://5257y.com/" target="_blank" rel="noopener noreferrer">http://5257y.com/</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div></div></div>
+          <div className="clientCopy panel-sport"><h3>体育APP</h3><p>业内赔率最高！覆盖世界各地赛事，让球、大小、半全场、波胆、单双、总入球、连串过关等多元竞猜。更有动画直播，让您体验轻松聊球，娱乐投注两不误。</p><div className="appGet"><div className="qrBox"><img src="/app-qr-sport.png" alt="开云体育APP下载二维码" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="http://5257y.com/" target="_blank" rel="noopener noreferrer">http://5257y.com/</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div></div></div>
+          <div className="clientCopy panel-live"><h3>真人APP</h3><p>最美荷官在线互动，带您玩转百家乐、骰宝、轮盘、牛牛、炸金花等多款真人视讯游戏。国际标准、公平公正，极致享受尽在开云真人。</p><div className="appGet"><div className="qrBox"><img src="/app-qr-live.png" alt="开云真人APP下载二维码" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="http://5257y.com/" target="_blank" rel="noopener noreferrer">http://5257y.com/</a><b>直接访问</b><span>无需下载，手机输入网址即可</span></div></div></div>
+          <div className="clientCopy panel-login">
+            <h3>官方登录器</h3>
+            <p>开云倾情打造，自主开发防劫持安全登录器。<br/>登录器支持 Windows｜MAC｜Android系统平台，使用登录器可直接访问开云WEB站点，有效防御和避免站点被拦截/劫持等问题。登录器安装简单，能给玩家提供安全的游戏环境体验！</p>
+            <div className="downloads">
+              <a href="http://5257y.com/" target="_blank" rel="noopener noreferrer"><i className="os win"></i><span>Windows 版本</span><b>下载</b></a>
+              <a href="http://5257y.com/" target="_blank" rel="noopener noreferrer"><i className="os mac"></i><span>MacOS 版本</span><b>下载</b></a>
+              <a href="http://5257y.com/" target="_blank" rel="noopener noreferrer"><i className="os android"></i><span>Android 版本</span><b>下载</b></a>
+            </div>
+          </div>
+        </div>
+      </div></section>
+
       <section id="games" className="dark games"><div className="wrap">
         <p className="eyebrow">KAIYUN GAMES</p>
         <h2 className="gameTitle">开云游戏</h2>
@@ -67,10 +103,21 @@ export default function Home() {
         </div>
       </div></section>
 
-      <section id="policy" className="light"><div className="wrap homeBriefs">
-        <article><p className="eyebrow blue">APP DOWNLOAD</p><h2>开云APP下载</h2><p className="sub">全站、体育、真人 APP 和登录器的下载方式，放在下载页。</p><a className="btn" href="/cooperation">查看详情</a></article>
-        <article><p className="eyebrow blue">RECRUITMENT</p><h2>开云代理招商</h2><p className="sub">佣金比例、有效业绩和结算周期，以及政策图，放在代理招商页。</p><a className="btn" href="/commission">查看详情</a></article>
-        <article><p className="eyebrow blue">FAQ</p><h2>开云常见问题</h2><p className="sub">赛事、活动规则和联系方式，整理在常见问题页，首页不再重复全文。</p><a className="btn" href="/faq">查看详情</a></article>
+      <section id="policy" className="light"><div className="wrap split">
+        <div><p className="eyebrow blue">POLICY & SETTLEMENT</p><p className="policyName">开云体育代理招商</p><h2>开云代理招商</h2><p className="sub">合作前先把规则说清楚。佣金比例、有效业绩和结算周期，应以双方当前确认的合作方案为准。</p><div className="policyBtns"><span className="btn is-idle">咨询当前合作政策</span><a className="btn" href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">TG：@a8802717</a></div></div>
+        <PolicyZoom />
+      </div></section>
+
+      <section id="faq" className="faq"><div className="wrap">
+        <p className="eyebrow">FAQ</p><h2>常见问题</h2>
+        {[
+          ['在这里可以了解哪些开云体育信息？','本站整理开云体育相关介绍、热门赛事与活动资讯，方便访客按需查阅。具体服务内容与规则，请以对应服务页面的最新说明为准。'],
+          ['怎样查看自己关注的足球或电竞赛事？','可以从开云体育APP进入，按联赛、赛事名称或参赛队伍查找相关信息。比赛时间和赛程可能调整，请留意赛事主办方的最新公告。'],
+          ['浏览网站需要下载开云App吗？','本站公开内容无需下载开云App，使用手机或电脑浏览器即可。涉及其他服务时，请先核实来源及使用要求。'],
+          ['查看活动时，需要注意哪些规则？','建议先确认好开云体育的活动期限、参与资格、申请方式及奖励条件。不同活动的要求可能不同，具体以活动页面公布的规则为准。'],
+          ['页面信息与最新公告不一致怎么办？','赛事安排和活动规则可能更新。如发现日期、内容或链接不一致，可以通过联系页面反馈，并以对应赛事或服务方的最新公告为准。'],
+          ['有其他问题，如何联系咨询？','请通过本站联系页面公布的方式咨询。描述问题时，可以附上相关页面名称或截图，方便核对；请勿提供账户密码或验证码。']
+        ].map(x=><details key={x[0]}><summary>{x[0]}<b>＋</b></summary><p>{x[1]}</p></details>)}
       </div></section>
 
       <section id="service" className="service"><div className="wrap">
