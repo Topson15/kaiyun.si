@@ -5,7 +5,7 @@ header{position:relative;z-index:100;width:100%;background:#ffffff;border-bottom
 header .nav{min-height:92px;}
 header .brand{color:#087bc1;font-weight:800;}
 header .brand span{color:#36b9f3;}
-header nav a{color:#26384a;font-weight:600;}
+header nav{font-size:18px}header nav a{color:#26384a;font-weight:600;}
 header nav a:hover{color:#168fd3;}
 .navActions{display:flex;align-items:center;gap:16px;}
 .registerBtn,.serviceBtn{display:inline-flex;align-items:center;justify-content:center;min-width:112px;height:46px;padding:0 24px;border-radius:24px;font-size:16px;font-weight:700;text-decoration:none;transition:.2s ease;}
@@ -105,7 +105,7 @@ header .nav{min-height:0;height:auto;flex-wrap:wrap;align-items:center;row-gap:8
 header .brand img{height:44px!important}
 .navActions{margin-left:auto;gap:8px}
 header nav{display:flex;order:3;width:100%;justify-content:space-between;gap:8px;overflow-x:auto}
-header nav a{font-size:14px;white-space:nowrap}
+header nav a{font-size:16px;white-space:nowrap}
 .registerBtn,.serviceBtn{min-width:auto;height:36px;padding:0 12px;font-size:13px}
 .hero{min-height:auto;padding:24px 0 8px}
 .heroGrid,.split,.gamePanel{grid-template-columns:1fr}
