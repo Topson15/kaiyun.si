@@ -20,8 +20,52 @@ function sessionId() {
   return id;
 }
 
+function playDing() {
+  const Ctx = window.AudioContext || window.webkitAudioContext;
+  if (!Ctx) return;
+  const ctx = new Ctx();
+  const tone = (freq, start, dur) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.value = freq;
+    gain.gain.setValueAtTime(0.0001, start);
+    gain.gain.exponentialRampToValueAtTime(0.18, start + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, start + dur);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(start);
+    osc.stop(start + dur);
+  };
+  const start = ctx.currentTime + 0.02;
+  tone(784, start, 0.16);
+  tone(1046, start + 0.14, 0.28);
+  ctx.resume().catch(() => {});
+  if (ctx.state === "suspended") {
+    const unlock = () => {
+      ctx.resume().catch(() => {});
+      window.removeEventListener("pointerdown", unlock);
+    };
+    window.addEventListener("pointerdown", unlock);
+  }
+}
+
+function Welcome() {
+  return (
+    <>
+      <p>您好，开云体育祝您财源广进，事事顺利！</p>
+      <p>
+        您可以在此处发消息咨询客服，也可以添加客服联系方式：
+        <a href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram @a8802717</a>
+        {" "}
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=946901189&site=qq&menu=yes" target="_blank" rel="noopener noreferrer">QQ：946901189</a>
+      </p>
+    </>
+  );
+}
 export default function SupportWidget() {
   const [open, setOpen] = useState(false);
+  const [hello, setHello] = useState(true);
   const [text, setText] = useState("");
   const [msgs, setMsgs] = useState([]);
   const [unread, setUnread] = useState(0);
@@ -30,6 +74,10 @@ export default function SupportWidget() {
   const since = useRef(0);
   const openRef = useRef(false);
   const logRef = useRef(null);
+
+  useEffect(() => {
+    playDing();
+  }, []);
 
   useEffect(() => {
     sid.current = sessionId();
@@ -103,7 +151,12 @@ export default function SupportWidget() {
   }
 
   return (
-    <div className={open ? "csDock is-open" : "csDock"}>
+    <div className={open ? "csDock is-open" : hello ? "csDock is-alert" : "csDock"}>
+      {!open && hello && (
+        <div className="csHello" role="status">
+          <Welcome />
+        </div>
+      )}
       {open && (
         <section className="csPanel" aria-label="在线客服">
           <header className="csHead">
@@ -111,7 +164,7 @@ export default function SupportWidget() {
             <span>留言后会在这里收到回复</span>
           </header>
           <div className="csLog" ref={logRef}>
-            {msgs.length === 0 && <p className="csMsg sys">有问题直接留言，客服会在这个窗口回复你。</p>}
+            <div className="csMsg agent"><Welcome /></div>
             {msgs.map((m) => (
               <p className={`csMsg ${m.from}`} key={m.id}>{m.text}</p>
             ))}
@@ -122,7 +175,7 @@ export default function SupportWidget() {
           </form>
         </section>
       )}
-      <button className="csFab" type="button" aria-label="打开客服" onClick={() => setOpen((v) => !v)}>
+      <button className="csFab" type="button" aria-label="打开客服" onClick={() => { setHello(false); setOpen((v) => !v); }}>
         {open ? "×" : "客服"}
         {unread > 0 && !open && <i>{unread}</i>}
       </button>
