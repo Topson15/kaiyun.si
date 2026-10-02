@@ -150,7 +150,10 @@ header nav a{font-size:15px;white-space:nowrap}
 .newsPage h1{font-size:40px;margin:0 0 8px}
 .newsPage .sub{margin:0 0 28px}
 .newsList{display:flex;flex-direction:column;background:#fff;border:1px solid #e4ebf3;border-radius:18px;overflow:hidden}
-.newsItem{display:grid;grid-template-columns:92px 1fr;gap:22px;padding:26px 28px;border-top:1px solid #e8eef5}
+.newsItem.has-cover{grid-template-columns:92px 1fr 240px;align-items:center}
+.newsCover{width:100%;height:132px;object-fit:cover;border-radius:12px;background:#f3f8fd}
+.newsHero,.newsInline{width:100%;border-radius:14px;margin:0 0 22px}
+.adminCover{width:240px;height:132px;object-fit:cover;border-radius:12px}
 .newsItem:first-child{border-top:0}
 .newsItem time{display:flex;flex-direction:column;align-items:center;justify-content:center;width:78px;height:78px;border-radius:14px;background:#f3f8fd;color:#168fd3}
 .newsItem time b{font-size:28px;line-height:1}
@@ -184,6 +187,8 @@ header nav a{font-size:15px;white-space:nowrap}
 .newsPage{padding:42px 0 56px}
 .newsPage h1,.newsPage.article h1{font-size:28px}
 .newsItem{grid-template-columns:1fr;gap:12px;padding:18px}
+.newsItem.has-cover{grid-template-columns:1fr}
+.newsCover{height:180px}
 .newsItem h2{font-size:18px}
 }
 
