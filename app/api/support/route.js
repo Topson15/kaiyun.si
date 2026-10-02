@@ -31,6 +31,7 @@ function authed(req, sessionId) {
 }
 
 function allowed(req) {
+  if (req.headers.get("sec-fetch-site") === "same-origin") return true;
   const origin = req.headers.get("origin");
   if (!origin) return false;
   let host = "";
