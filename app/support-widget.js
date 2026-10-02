@@ -1,25 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-function sessionId() {
-  const key = "ky_support_sid";
-  let id = "";
-  try {
-    id = localStorage.getItem(key) || "";
-  } catch {
-    id = "";
-  }
-  if (!/^[a-f0-9]{8,32}$/i.test(id)) {
-    id = crypto.randomUUID().replace(/-/g, "").slice(0, 12);
-    try {
-      localStorage.setItem(key, id);
-    } catch {
-      /* 隐私模式也能继续聊，只是刷新后换成新会话 */
-    }
-  }
-  return id;
-}
-
 function playDing() {
   const Ctx = window.AudioContext || window.webkitAudioContext;
   if (!Ctx) return;
@@ -82,12 +63,13 @@ export default function SupportWidget() {
   }, []);
 
   useEffect(() => {
-    sid.current = sessionId();
     let stop = false;
+    let timer = 0;
     const tick = async () => {
-      if (!sid.current) return;
+      if (stop || !sid.current) return;
       try {
-        const res = await fetch(`/api/support?session=${sid.current}&since=${since.current}`, { cache: "no-store" });
+        const res = await fetch(`/api/support?session=${sid.current}&since=${since.current}`, { cache: "no-store", credentials: "same-origin" });
+        if (!res.ok) return;
         const data = await res.json();
         const incoming = data.messages || [];
         if (!incoming.length) return;
@@ -104,16 +86,29 @@ export default function SupportWidget() {
         const replies = incoming.filter((m) => m.from === "agent").length;
         if (replies && !openRef.current) setUnread((n) => n + replies);
       } catch {
-        /* 预览或网络断开时保持窗口可用 */
+        /* 网络断开时保持窗口可用 */
       }
     };
-    tick();
-    const timer = setInterval(() => {
-      if (!stop) tick();
-    }, 3000);
+    (async () => {
+      try {
+        const res = await fetch("/api/support", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          credentials: "same-origin",
+          body: JSON.stringify({ op: "open" }),
+        });
+        const data = await res.json();
+        if (!data.sessionId || stop) return;
+        sid.current = data.sessionId;
+      } catch {
+        return;
+      }
+      tick();
+      timer = window.setInterval(tick, 3000);
+    })();
     return () => {
       stop = true;
-      clearInterval(timer);
+      window.clearInterval(timer);
     };
   }, []);
 
@@ -139,6 +134,7 @@ export default function SupportWidget() {
       const res = await fetch("/api/support", {
         method: "POST",
         headers: { "content-type": "application/json" },
+        credentials: "same-origin",
         body: JSON.stringify({ sessionId: sid.current, text: value }),
       });
       const data = await res.json();
