@@ -1,7 +1,7 @@
 import PageFrame from "../page-frame";
 
 export const metadata = {
-  title: "常见问题",
+  title: "开云常见问题",
   alternates: { canonical: "/faq" },
   openGraph: { url: "/faq" },
 };
