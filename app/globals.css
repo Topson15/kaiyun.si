@@ -161,3 +161,5 @@ header nav a{font-size:15px;white-space:nowrap}
 .csDock.is-alert .csFab::after{width:15px;height:15px;animation-duration:.8s}
 
 .ctaJoin{display:inline-flex;align-items:center;margin:20px auto 0;border-radius:999px;background:linear-gradient(135deg,#e5bc63,#f6dc9a);color:#1c1608;overflow:hidden}.ctaJoin a{padding:14px 22px;font-weight:800}.ctaJoin span{width:1px;align-self:stretch;margin:10px 0;background:rgba(28,22,8,.28)}@media(max-width:800px){.ctaJoin a{padding:12px 14px;font-size:13px}}
+
+.policyStack{flex-direction:column;align-items:flex-start}.policyStack .btn{min-width:220px}
