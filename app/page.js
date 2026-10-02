@@ -3,13 +3,13 @@ import ServiceGauges from "./service-gauges";
 import PolicyZoom from "./policy-zoom";
 
 export const metadata = {
-  title: { absolute: "开云体育｜开云游戏、开云代理、开云下载与开云链接" },
-  description: "开云体育、开云游戏、开云代理、开云下载与开云链接，集中查看合作说明与访问入口。",
+  title: { absolute: "开云体育官方网站" },
+  description: "开云体育官方网站，查看代理合作、下载入口与常见问题。",
   alternates: { canonical: "/" },
   openGraph: {
     url: "/",
-    title: "开云体育｜开云游戏、开云代理、开云下载与开云链接",
-    description: "开云体育、开云游戏、开云代理、开云下载与开云链接，集中查看合作说明与访问入口。",
+    title: "开云体育官方网站",
+    description: "开云体育官方网站，查看代理合作、下载入口与常见问题。",
   },
 };
 
@@ -25,7 +25,7 @@ export default function Home() {
     "@type": "WebSite",
     name: "开云体育",
     url: "https://kaiyun.si",
-    description: "开云体育、开云游戏、开云代理、开云下载与开云链接，集中查看合作说明与访问入口。",
+    description: "开云体育官方网站，查看代理合作、下载入口与常见问题。",
     inLanguage: "zh-CN",
   };
   return (
