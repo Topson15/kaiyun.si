@@ -32,7 +32,7 @@ export default function NewsPage() {
             {posts.map((post) => {
               const date = dateParts(post.publishedAt);
               return (
-                <article className="newsItem" key={post.id}>
+                <article className={post.cover ? "newsItem has-cover" : "newsItem"} key={post.id}>
                   <time dateTime={post.publishedAt}>
                     <b>{date.day}</b>
                     <span>{date.month}</span>
@@ -43,6 +43,7 @@ export default function NewsPage() {
                     <p>{post.excerpt}</p>
                     <Link className="more" href={`/news/${post.id}`}>继续阅读 →</Link>
                   </div>
+                  {post.cover && <img className="newsCover" src={post.cover} alt="" />}
                 </article>
               );
             })}

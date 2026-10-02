@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const empty = { id: "", title: "", category: "新闻资讯", excerpt: "", body: "", publishedAt: "" };
+const empty = { id: "", title: "", category: "新闻资讯", excerpt: "", body: "", publishedAt: "", cover: "" };
 
 export default function Editor() {
   const [ready, setReady] = useState(false);
@@ -74,6 +74,42 @@ export default function Editor() {
     if (res.ok) setPosts(data.posts || []);
   }
 
+  async function upload(file) {
+    const body = new FormData();
+    body.append("file", file);
+    const res = await fetch("/api/admin/upload", { method: "POST", body });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "上传失败");
+    return data.url;
+  }
+
+  async function onCover(event) {
+    const file = event.target.files?.[0];
+    event.target.value = "";
+    if (!file) return;
+    setError("");
+    try {
+      setForm((current) => ({ ...current, cover: "" }));
+      const url = await upload(file);
+      setForm((current) => ({ ...current, cover: url }));
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
+  async function insertImage(event) {
+    const file = event.target.files?.[0];
+    event.target.value = "";
+    if (!file) return;
+    setError("");
+    try {
+      const url = await upload(file);
+      setForm((current) => ({ ...current, body: `${current.body.trim()}\n\n![](${url})`.trim() }));
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
   async function logout() {
     await fetch("/api/admin", {
       method: "POST",
@@ -112,8 +148,15 @@ export default function Editor() {
                 </select>
               </label>
               <label>日期<input type="date" value={form.publishedAt.slice(0, 10)} onChange={(e) => setForm({ ...form, publishedAt: e.target.value })} /></label>
+              <label>标题图
+                <input type="file" accept="image/jpeg,image/png,image/webp,image/gif" onChange={onCover} />
+              </label>
+              {form.cover && <img className="adminCover" src={form.cover} alt="" />}
               <label>摘要<textarea value={form.excerpt} maxLength={180} onChange={(e) => setForm({ ...form, excerpt: e.target.value })} /></label>
               <label>正文<textarea className="tall" value={form.body} onChange={(e) => setForm({ ...form, body: e.target.value })} /></label>
+              <label className="adminFile">插入正文图片
+                <input type="file" accept="image/jpeg,image/png,image/webp,image/gif" onChange={insertImage} />
+              </label>
               {error && <p className="adminError">{error}</p>}
               <button type="submit">{form.id ? "保存修改" : "发布文章"}</button>
             </form>
@@ -124,7 +167,7 @@ export default function Editor() {
                     <b>{post.title}</b>
                     <span>{post.category}</span>
                   </div>
-                  <button type="button" onClick={() => setForm(post)}>编辑</button>
+                  <button type="button" onClick={() => setForm({ ...post, cover: post.cover || "" })}>编辑</button>
                   <button type="button" onClick={() => remove(post.id)}>删除</button>
                 </li>
               ))}
