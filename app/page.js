@@ -129,7 +129,7 @@ export default function Home() {
       </div></section>
 
       <section id="contact" className="cta"><div className="wrap">
-        <p className="eyebrow">Want to know more?</p><h2>想进一步了解代理合作？</h2><p>联系锦鲤，了解当前合作方式与业务方向。</p>
+        <p className="eyebrow">WANT TO KNOW MORE?</p><h2>想进一步了解代理合作？</h2><p>联系锦鲤，了解当前合作方式与业务方向。</p>
         <a className="btn gold" href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram：@a8802717</a>
         <a className="btn gold" href="https://t.me/kytyk" target="_blank" rel="noopener noreferrer">助手TG：@kytyk</a>
       </div></section>
