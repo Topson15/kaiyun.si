@@ -65,11 +65,17 @@ export default function SupportWidget() {
   useEffect(() => {
     let stop = false;
     let timer = 0;
+    let fails = 0;
     const tick = async () => {
       if (stop || !sid.current) return;
       try {
         const res = await fetch(`/api/support?session=${sid.current}&since=${since.current}`, { cache: "no-store", credentials: "same-origin" });
-        if (!res.ok) return;
+        if (!res.ok) {
+          fails += 1;
+          if (fails >= 3) window.clearInterval(timer);
+          return;
+        }
+        fails = 0;
         const data = await res.json();
         const incoming = data.messages || [];
         if (!incoming.length) return;
