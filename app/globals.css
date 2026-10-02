@@ -165,8 +165,9 @@ header nav a{font-size:15px;white-space:nowrap}
 .policyStack{flex-direction:column;align-items:stretch;width:fit-content;max-width:100%}.policyStack .btn{width:100%;min-width:240px;text-align:center;justify-content:center;flex:none}@media(max-width:800px){.policyStack .btn{flex:none}}
 
 .csFab{width:64px;height:64px;display:grid;place-items:center;padding:0;background:linear-gradient(160deg,#5dffb0,#16d072 58%,#0eae5c);box-shadow:0 12px 26px rgba(14,174,92,.42), inset 0 1px 0 rgba(255,255,255,.7)}
-.csDock:not(.is-open) .csFab{animation:csGlow 2.6s ease-in-out infinite}
-@keyframes csGlow{50%{box-shadow:0 14px 30px rgba(14,174,92,.5), 0 0 0 8px rgba(61,255,154,.18), inset 0 1px 0 rgba(255,255,255,.7)}}
+.csFab{isolation:isolate;background:linear-gradient(165deg,#7dffc4 0%,#22d67a 46%,#0eae5c 100%);box-shadow:0 10px 18px rgba(10,120,62,.28), inset 0 1px 0 rgba(255,255,255,.72)}
+.csDock:not(.is-open) .csFab::before{content:"";position:absolute;inset:-14px;border-radius:inherit;z-index:-1;pointer-events:none;background:radial-gradient(circle, rgba(120,255,190,.55) 0%, rgba(34,214,122,.22) 38%, rgba(34,214,122,0) 68%);animation:csGlow 3.2s ease-in-out infinite}
+@keyframes csGlow{0%,100%{transform:scale(.82);opacity:.45}50%{transform:scale(1);opacity:.9}}
 .csFab svg{width:30px;height:30px;display:block}
 .csFab::after{display:none}
 .csFab i{top:-2px;right:-2px;box-shadow:0 0 0 0 rgba(255,59,48,.7);animation:csPing 1.6s ease-out infinite}
