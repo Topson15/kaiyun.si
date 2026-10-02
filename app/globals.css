@@ -162,4 +162,4 @@ header nav a{font-size:15px;white-space:nowrap}
 
 .ctaJoin{display:inline-flex;align-items:center;margin:20px auto 0;border-radius:999px;background:linear-gradient(135deg,#e5bc63,#f6dc9a);color:#1c1608;overflow:hidden}.ctaJoin a{padding:14px 22px;font-weight:800}.ctaJoin span{width:1px;align-self:stretch;margin:10px 0;background:rgba(28,22,8,.28)}@media(max-width:800px){.ctaJoin a{padding:12px 14px;font-size:13px}}
 
-.policyStack{flex-direction:column;align-items:flex-start}.policyStack .btn{min-width:220px}
+.policyStack{flex-direction:column;align-items:stretch;width:fit-content;max-width:100%}.policyStack .btn{width:100%;min-width:240px;text-align:center;justify-content:center;flex:none}@media(max-width:800px){.policyStack .btn{flex:none}}
