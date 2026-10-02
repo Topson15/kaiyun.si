@@ -3,8 +3,14 @@ import ServiceGauges from "./service-gauges";
 import PolicyZoom from "./policy-zoom";
 
 export const metadata = {
+  title: { absolute: "开云体育｜开云游戏、开云代理、开云下载与开云链接" },
+  description: "开云体育、开云游戏、开云代理、开云下载与开云链接，集中查看合作说明与访问入口。",
   alternates: { canonical: "/" },
-  openGraph: { url: "/", title: "KAIYUN.SI｜代理合作与行业资讯" },
+  openGraph: {
+    url: "/",
+    title: "开云体育｜开云游戏、开云代理、开云下载与开云链接",
+    description: "开云体育、开云游戏、开云代理、开云下载与开云链接，集中查看合作说明与访问入口。",
+  },
 };
 
 const articles = [
@@ -17,9 +23,9 @@ export default function Home() {
   const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "KAIYUN.SI",
+    name: "开云体育",
     url: "https://kaiyun.si",
-    description: "代理合作、佣金政策、推广经验与行业资讯。",
+    description: "开云体育、开云游戏、开云代理、开云下载与开云链接，集中查看合作说明与访问入口。",
     inLanguage: "zh-CN",
   };
   return (
