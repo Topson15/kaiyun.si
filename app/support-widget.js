@@ -62,7 +62,6 @@ function Welcome() {
 }
 export default function SupportWidget() {
   const [open, setOpen] = useState(false);
-  const [hello, setHello] = useState(true);
   const [text, setText] = useState("");
   const [msgs, setMsgs] = useState([]);
   const [unread, setUnread] = useState(0);
@@ -148,12 +147,7 @@ export default function SupportWidget() {
   }
 
   return (
-    <div className={open ? "csDock is-open" : hello ? "csDock is-alert" : "csDock"}>
-      {!open && hello && (
-        <div className="csHello" role="status">
-          <Welcome />
-        </div>
-      )}
+    <div className={open ? "csDock is-open" : "csDock"}>
       {open && (
         <section className="csPanel" aria-label="在线客服">
           <header className="csHead">
@@ -172,7 +166,7 @@ export default function SupportWidget() {
           </form>
         </section>
       )}
-      <button className="csFab" type="button" aria-label="打开客服" onClick={() => { setHello(false); setOpen((v) => !v); }}>
+      <button className="csFab" type="button" aria-label="打开客服" onClick={() => setOpen((v) => !v)}>
         {open ? "×" : "客服"}
         {unread > 0 && !open && <i>{unread}</i>}
       </button>
