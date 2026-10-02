@@ -36,7 +36,7 @@ export default function CommissionPage() {
               <a className="btn" href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">TG：@a8802717</a>
             </div>
           </div>
-          <PolicyZoom />
+          <PolicyZoom label="开云代理政策" />
         </div>
       </section>
     </PageFrame>
