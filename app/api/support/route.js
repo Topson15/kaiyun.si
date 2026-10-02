@@ -31,17 +31,17 @@ function authed(req, sessionId) {
 }
 
 function allowed(req) {
-  if (req.headers.get("sec-fetch-site") === "same-origin") return true;
+  const site = (req.headers.get("sec-fetch-site") || "").toLowerCase();
+  if (site === "cross-site") return false;
   const origin = req.headers.get("origin");
-  if (!origin) return false;
-  let host = "";
+  if (!origin) return true;
   try {
-    host = new URL(origin).host.toLowerCase();
+    const host = new URL(origin).host.toLowerCase().replace(/:\d+$/, "");
+    const self = (req.headers.get("host") || "").toLowerCase().replace(/:\d+$/, "");
+    return host === self || host === "kaiyun.si" || host === "www.kaiyun.si";
   } catch {
     return false;
   }
-  const self = (req.headers.get("host") || "").toLowerCase();
-  return host === self || host === "kaiyun.si" || host === "www.kaiyun.si";
 }
 
 function ipOf(req) {
@@ -67,7 +67,7 @@ function reply(body, status = 200, sessionId) {
     "Cache-Control": "no-store",
   });
   if (sessionId) {
-    const base = "HttpOnly; Path=/; SameSite=Strict; Max-Age=2592000";
+    const base = "HttpOnly; Path=/; Secure; SameSite=Lax; Max-Age=2592000";
     headers.append("set-cookie", `ky_sid=${sessionId}; ${base}`);
     headers.append("set-cookie", `ky_sig=${sign(sessionId)}; ${base}`);
   }
@@ -80,7 +80,7 @@ export async function GET(req) {
   if (tooMany(`get:${ip}`, 40, 60 * 1000)) return reply({ ok: false, error: "请求太频繁" }, 429);
   startPolling();
   const sessionId = new URL(req.url).searchParams.get("session") || "";
-  if (!authed(req, sessionId)) return reply({ ok: false }, 401);
+  if (!authed(req, sessionId)) return reply({ ok: true, messages: [] });
   const sinceId = new URL(req.url).searchParams.get("since");
   return reply({ ok: true, messages: since(sessionId, sinceId) });
 }
