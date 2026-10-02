@@ -1,7 +1,11 @@
 import PageFrame from "../page-frame";
 import PolicyZoom from "../policy-zoom";
 
-export const metadata = { title: "佣金政策" };
+export const metadata = {
+  title: "佣金政策",
+  alternates: { canonical: "/commission" },
+  openGraph: { url: "/commission" },
+};
 
 export default function CommissionPage() {
   return (
