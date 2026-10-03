@@ -27,7 +27,6 @@ export default function NewsPage() {
         <div className="wrap">
           <p className="eyebrow blue">KAIYUN NEWS</p>
           <h1>开云新闻资讯</h1>
-          <p className="sub">下载说明、代理合作和站内更新放在这里。</p>
           <div className="newsList">
             {posts.map((post) => {
               const date = dateParts(post.publishedAt);
