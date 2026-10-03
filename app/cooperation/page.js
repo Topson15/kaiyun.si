@@ -15,7 +15,7 @@ function AppAccess({ qr, alt }) {
   return (
     <div className="appGet">
       <div className="qrBox"><img loading="lazy" decoding="async" src={qr} alt={alt} /><b>扫码下载</b><span>支持iOS&Android</span></div>
-      <div className="directBox"><a href="http://5257y.com/" target="_blank" rel="sponsored noopener noreferrer">http://5257y.com/</a><b>直接访问</b><span>无需下载，手机输入网址即可</span><span>请用国内网络打开即可</span></div>
+      <div className="directBox"><a href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer">http://4003y.com</a><b>直接访问</b><span>无需下载，手机输入网址即可</span><span>请用国内网络打开即可</span></div>
     </div>
   );
 }
@@ -50,9 +50,9 @@ export default function CooperationPage() {
             <h3>官方登录器</h3>
             <p>开云倾情打造，自主开发防劫持安全登录器。<br/>登录器支持 Windows｜MAC｜Android系统平台，使用登录器可直接访问开云WEB站点，有效防御和避免站点被拦截/劫持等问题。登录器安装简单，能给玩家提供安全的游戏环境体验！</p>
             <div className="downloads">
-              <a href="http://5257y.com/" target="_blank" rel="sponsored noopener noreferrer"><i className="os win"></i><span>Windows 版本</span><b>下载</b></a>
-              <a href="http://5257y.com/" target="_blank" rel="sponsored noopener noreferrer"><i className="os mac"></i><span>MacOS 版本</span><b>下载</b></a>
-              <a href="http://5257y.com/" target="_blank" rel="sponsored noopener noreferrer"><i className="os android"></i><span>Android 版本</span><b>下载</b></a>
+              <a href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer"><i className="os win"></i><span>Windows 版本</span><b>下载</b></a>
+              <a href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer"><i className="os mac"></i><span>MacOS 版本</span><b>下载</b></a>
+              <a href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer"><i className="os android"></i><span>Android 版本</span><b>下载</b></a>
             </div>
           </div>
         </div>
