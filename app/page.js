@@ -41,7 +41,7 @@ export default function Home() {
             <p className="eyebrow"><span className="domName">kaiyun</span><span className="domDot">.</span><span className="domTld">si</span></p>
             <p className="lead">了解代理合作、佣金政策、结算规则与推广方向。把常用合作信息集中整理，让合作更清晰、更简单。</p>
             <div className="actions">
-              <a className="btn" href="http://5257y.com/" target="_blank" rel="sponsored noopener noreferrer">开云体育注册</a>
+              <a className="btn" href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer">开云体育注册</a>
               <a className="ghost heroSecondBtn" href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">了解代理合作</a>
             </div>
           </div>
