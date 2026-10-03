@@ -133,8 +133,10 @@ header nav a{font-size:15px;white-space:nowrap}
 .gameCard{min-height:0;padding:22px 16px}
 .gameCard h3{font-size:26px}
 .svcStats{grid-template-columns:1fr 1fr;gap:18px 8px}
-.svcRing{width:136px;height:136px}
-.svcRing b{font-size:34px}
+.svcRing{width:min(136px,100%);height:auto;aspect-ratio:1}
+.svcRing p{font-size:8px;letter-spacing:0;line-height:1.15;max-width:46%;margin-left:auto;margin-right:auto}
+.svcRing b{font-size:26px}
+.svcRing span{font-size:11px}
 .svcList{grid-template-columns:1fr}
 .svcList li{padding:16px}
 .foot{grid-template-columns:1fr 1fr;gap:22px}
