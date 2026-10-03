@@ -39,7 +39,7 @@ export default function Home() {
           <div>
             <h1>开云体育官方<br/><em>代理合作</em></h1>
             <p className="eyebrow"><span className="domName">kaiyun</span><span className="domDot">.</span><span className="domTld">si</span></p>
-            <p className="lead">了解代理合作、佣金政策、结算规则与推广方向。把常用合作信息集中整理，让合作更清晰、更简单。</p>
+            <p className="lead">开云体育（KAIYUN SPORTS）围绕全球体育赛事与多元娱乐内容，为用户提供足球、篮球、电子竞技等热门赛事资讯，并涵盖真人娱乐、棋牌游戏、电子游戏、彩票及多种互动娱乐项目。平台整合赛事数据、动画直播与视频内容，让用户能够更便捷地关注赛程动态和热门比赛，同时持续推出不同主题的活动与会员福利。通过下方入口即可进一步了解开云体育相关服务、赛事内容及当前开云代理活动信息。</p>
             <div className="actions">
               <a className="btn" href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer">开云体育注册</a>
               <a className="ghost heroSecondBtn" href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">了解代理合作</a>
