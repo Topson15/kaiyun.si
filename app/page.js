@@ -3,12 +3,12 @@ import ServiceGauges from "./service-gauges";
 import PolicyZoom from "./policy-zoom";
 
 export const metadata = {
-  title: { absolute: "开云体育官方网站" },
+  title: { absolute: "开云官方代理招商·KAIYUN.SI" },
   description: "开云体育官方网站，查看代理合作、下载入口与常见问题。",
   alternates: { canonical: "/" },
   openGraph: {
     url: "/",
-    title: "开云体育官方网站",
+    title: "开云官方代理招商·KAIYUN.SI",
     description: "开云体育官方网站，查看代理合作、下载入口与常见问题。",
   },
 };
