@@ -32,7 +32,7 @@ header nav a:hover{color:#0c649f;}
 @media(max-width:800px){.hero{padding:70px 0 55px;}.heroArt{max-height:420px;margin:10px auto 0}.heroGrid{grid-template-columns:1fr;}.hero h1{font-size:46px;}.hero .actions{width:100%;grid-template-columns:1fr 1fr;gap:12px;}}
 
 .partners{max-width:1180px;margin:8px auto 28px;padding:0 20px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px}
-.partner{position:relative;width:92px;height:36px;flex:0 0 92px}
+.partner{position:relative;width:110px;height:44px;flex:0 0 110px}
 .partner img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .2s ease}
 .partner .on{opacity:0}
 .partner:hover .off{opacity:0}
