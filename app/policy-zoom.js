@@ -39,6 +39,7 @@ export default function PolicyZoom({ label }) {
   const stageRef = useRef(null);
   const zoomRef = useRef(zoom);
   const blockClick = useRef(false);
+  const blockClose = useRef(false);
   const slide = slides[index];
 
   const go = (direction) => {
@@ -127,7 +128,8 @@ export default function PolicyZoom({ label }) {
       }
     };
     const onEnd = (event) => {
-      if (gesture?.type === "pan" && gesture.scale <= 1 && gesture.moved && event.changedTouches[0]) {
+      if (gesture?.type === "pinch" || (gesture?.type === "pan" && gesture.moved)) blockClose.current = true;
+      if (gesture?.type === "pan" && gesture.scale <= 1 && gesture.moved && event.changedTouches?.[0]) {
         const dx = event.changedTouches[0].clientX - gesture.x;
         const dy = event.changedTouches[0].clientY - gesture.y;
         if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
@@ -162,9 +164,9 @@ export default function PolicyZoom({ label }) {
       {label ? <p className="policyCaption">{label}</p> : null}
       <p className="policyHint">左右滑动切换，点击放大后可双指缩放</p>
       {open && (
-        <div className="policyLight" onClick={() => setOpen(false)}>
+        <div className="policyLight" onClick={() => { if (blockClose.current) { blockClose.current = false; return; } setOpen(false); }}>
           <Arrow dir="prev" onClick={step(-1)} />
-          <div className={pinching ? "policyStage is-pinch" : "policyStage"} ref={stageRef} onClick={(event) => event.stopPropagation()}>
+          <div className={pinching ? "policyStage is-pinch" : "policyStage"} ref={stageRef}>
             <img key={slide.src} className={zoom.scale > 1 ? "zoomed" : dir > 0 ? "from-next" : "from-prev"} style={{ transform: `translate(${zoom.x}px, ${zoom.y}px) scale(${zoom.scale})` }} loading="lazy" decoding="async" width="860" height="678" src={slide.src} alt={slide.alt} />
           </div>
           <Arrow dir="next" onClick={step(1)} />
