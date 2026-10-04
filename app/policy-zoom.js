@@ -17,22 +17,34 @@ function Arrow({ dir, onClick }) {
   );
 }
 
+function offset(i, index) {
+  const n = slides.length;
+  let d = i - index;
+  d = ((d % n) + n) % n;
+  if (d > n / 2) d -= n;
+  return d;
+}
+
 export default function PolicyZoom({ label }) {
   const [index, setIndex] = useState(0);
+  const [dir, setDir] = useState(1);
   const [open, setOpen] = useState(false);
   const slide = slides[index];
-  const step = (dir) => (event) => {
+  const step = (direction) => (event) => {
     event.stopPropagation();
-    setIndex((i) => (i + dir + slides.length) % slides.length);
+    setDir(direction);
+    setIndex((i) => (i + direction + slides.length) % slides.length);
   };
 
   return (
     <div className="policyZoom">
       <div className="policyFrame">
+        {slides.map((item, i) => (
+          <button key={item.src} type="button" className="policyShotBtn" style={{ transform: `translateX(${offset(i, index) * 100}%)`, zIndex: i === index ? 1 : 0 }} onClick={() => setOpen(true)} aria-label="放大查看" tabIndex={i === index ? 0 : -1}>
+            <img loading="lazy" decoding="async" width="860" height="678" className="policyShot" src={item.src} alt={item.alt} />
+          </button>
+        ))}
         <Arrow dir="prev" onClick={step(-1)} />
-        <button type="button" className="policyShotBtn" onClick={() => setOpen(true)} aria-label="放大查看开云体育佣金政策">
-          <img loading="lazy" decoding="async" width="860" height="678" className="policyShot" src={slide.src} alt={slide.alt} />
-        </button>
         <Arrow dir="next" onClick={step(1)} />
       </div>
       {label ? <p className="policyCaption">{label}</p> : null}
@@ -40,7 +52,7 @@ export default function PolicyZoom({ label }) {
       {open && (
         <div className="policyLight" onClick={() => setOpen(false)}>
           <Arrow dir="prev" onClick={step(-1)} />
-          <img loading="lazy" decoding="async" width="860" height="678" src={slide.src} alt={slide.alt} />
+          <div className="policyStage"><img key={slide.src} className={dir > 0 ? "from-next" : "from-prev"} loading="lazy" decoding="async" width="860" height="678" src={slide.src} alt={slide.alt} /></div>
           <Arrow dir="next" onClick={step(1)} />
         </div>
       )}
