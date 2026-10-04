@@ -269,3 +269,9 @@ header nav a{font-size:15px;white-space:nowrap}
 .csMark img{width:34px;max-height:30px}
 .csMark b{font-size:11px;letter-spacing:3px;padding-left:3px}
 }
+@media(max-width:800px){
+.svcStats li{min-width:0}
+.svcRing div{width:72%;text-align:center}
+.svcRing p{width:100%;max-width:none;margin:0;text-align:center;font-size:8px;letter-spacing:.3px;line-height:1.25}
+.svcStats small{display:block;letter-spacing:0;font-size:10px;line-height:1.35;overflow-wrap:break-word}
+}
