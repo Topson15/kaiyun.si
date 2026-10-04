@@ -217,6 +217,20 @@ header nav a{font-size:15px;white-space:nowrap}
 .csFab::after{display:none}
 .csFab i{top:-2px;right:-2px;box-shadow:0 0 0 0 rgba(255,59,48,.7);animation:csPing 1.6s ease-out infinite}
 .csFab{width:68px;height:68px;font-size:16px;font-weight:800;letter-spacing:1px;color:#04210f}
+.client + .dark{background:linear-gradient(180deg,#f3f7fb,#071422 56px)}
+.dark + .light{background:linear-gradient(180deg,#071422,#f5f8fc 56px)}
+.light + .faq{background:linear-gradient(180deg,#f5f8fc,#0a1929 56px)}
+.faq + .service{background:linear-gradient(180deg,#0a1929,#f7fbfe 56px,#eef5fb)}
+.service + .cta{background:linear-gradient(180deg,#eef5fb,rgba(7,19,33,0) 72px),radial-gradient(circle at 50% 100%,#19466b,#071321 60%)}
+.client + footer,.light + footer,.newsPage + footer{background:linear-gradient(180deg,#f4f7fb,#040b13 56px)}
+@media(max-width:800px){
+.client + .dark{background:linear-gradient(180deg,#f3f7fb,#071422 32px)}
+.dark + .light{background:linear-gradient(180deg,#071422,#f5f8fc 32px)}
+.light + .faq{background:linear-gradient(180deg,#f5f8fc,#0a1929 32px)}
+.faq + .service{background:linear-gradient(180deg,#0a1929,#f7fbfe 32px,#eef5fb)}
+.service + .cta{background:linear-gradient(180deg,#eef5fb,rgba(7,19,33,0) 40px),radial-gradient(circle at 50% 100%,#19466b,#071321 60%)}
+.client + footer,.light + footer,.newsPage + footer{background:linear-gradient(180deg,#f4f7fb,#040b13 32px)}
+}
 @media(min-width:801px){
 .heroGrid>div:first-child{padding-top:0;padding-bottom:72px}
 .hero h1{margin-bottom:22px;letter-spacing:0;line-height:1.2}
