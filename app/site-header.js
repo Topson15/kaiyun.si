@@ -15,7 +15,12 @@ export default function SiteHeader() {
   const barRef = useRef(null);
   const barH = useRef(92);
   const [stuck, setStuck] = useState(false);
+  const [menu, setMenu] = useState(false);
   const path = usePathname();
+
+  useEffect(() => {
+    setMenu(false);
+  }, [path]);
 
   useEffect(() => {
     let on = false;
@@ -34,7 +39,7 @@ export default function SiteHeader() {
   }, []);
 
   return (
-    <header className={stuck ? "is-stuck" : undefined} style={stuck ? { height: barH.current } : undefined}>
+    <header className={[stuck ? "is-stuck" : "", menu ? "is-menu" : ""].filter(Boolean).join(" ") || undefined} style={stuck ? { height: barH.current } : undefined}>
       <div className="nav" ref={barRef}>
         <a className="brand" href="/" aria-label="KAIYUN.SI">
           <img decoding="async" fetchPriority="low" width="360" height="109" src="/brand/logo.webp" alt="开云体育 kaiyun.si" style={{ height: 58, width: "auto", display: "block" }} />
@@ -47,6 +52,11 @@ export default function SiteHeader() {
         <div className="navActions">
           <a className="registerBtn" href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer">立即注册</a>
           <a className="serviceBtn" href="https://t.me/caijin101" target="_blank" rel="noopener noreferrer">彩金客服</a>
+          <button className={menu ? "menuBtn is-open" : "menuBtn"} type="button" aria-label={menu ? "关闭菜单" : "打开菜单"} aria-expanded={menu} onClick={() => setMenu((v) => !v)}>
+            <span />
+            <span />
+            <span />
+          </button>
         </div>
       </div>
     </header>
