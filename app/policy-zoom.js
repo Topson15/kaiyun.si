@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const slides = [
   { src: "/policy/sheet.webp", alt: "开云体育佣金政策" },
+  { src: "/policy/brands.webp", alt: "开云体育集团旗下品牌" },
 ];
 
 function Arrow({ dir, onClick }) {
