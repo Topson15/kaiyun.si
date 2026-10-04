@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const slides = [
   { src: "/policy/sheet.webp", alt: "开云体育佣金政策" },
+  { src: "/policy/venues.webp", alt: "开云体育游戏场馆" },
   { src: "/policy/brands.webp", alt: "开云体育集团旗下品牌" },
 ];
 
