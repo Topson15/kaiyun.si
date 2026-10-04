@@ -48,7 +48,7 @@ export default function Home() {
           <div className="heroStage">
             <div className="heroArtWrap">
               <div className="heroArtEdge" aria-hidden="true" />
-              <img className="heroArt" fetchPriority="high" decoding="async" width="840" height="728" src="/hero-art.webp" alt="" />
+              <img className="heroArt" fetchPriority="high" decoding="async" width="840" height="728" src="/hero/hero-art.webp" alt="" />
             </div>
             <div className="heroReflect" aria-hidden="true" />
           </div>
@@ -70,14 +70,14 @@ export default function Home() {
             <label htmlFor="tab-login">登录器</label>
           </div>
           <div className="clientStage">
-            <img loading="lazy" decoding="async" width="640" height="560" className="clientArt art-all" src="/app-all.webp" alt="开云全站APP" />
-            <img loading="lazy" decoding="async" width="700" height="493" className="clientArt art-sport" src="/app-sport.webp" alt="开云体育APP" />
-            <img loading="lazy" decoding="async" width="700" height="493" className="clientArt art-live" src="/app-live.webp" alt="开云真人APP" />
-            <img loading="lazy" decoding="async" width="700" height="493" className="clientArt art-login" src="/login-client.webp" alt="开云登录器" />
+            <img loading="lazy" decoding="async" width="640" height="560" className="clientArt art-all" src="/app/all.webp" alt="开云全站APP" />
+            <img loading="lazy" decoding="async" width="700" height="493" className="clientArt art-sport" src="/app/sport.webp" alt="开云体育APP" />
+            <img loading="lazy" decoding="async" width="700" height="493" className="clientArt art-live" src="/app/live.webp" alt="开云真人APP" />
+            <img loading="lazy" decoding="async" width="700" height="493" className="clientArt art-login" src="/app/login.webp" alt="开云登录器" />
           </div>
-          <div className="clientCopy panel-all"><h3>全站APP</h3><p>全球首家一体化娱乐原生APP，尽显流畅，完美操作。海量体育、电竞顶尖赛事，真人娱乐、彩票投注及电子游艺等，最新最全娱乐项目尽在掌中体验扫码下载，即刻拥有！</p><div className="appGet"><div className="qrBox"><img loading="lazy" decoding="async" width="512" height="512" src="/app-qr-all-2.webp" alt="开云全站APP下载二维码" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer">http://4003y.com</a><b>直接访问</b><span>无需下载，手机输入网址即可</span><span>请用国内网络打开即可</span></div></div></div>
-          <div className="clientCopy panel-sport"><h3>体育APP</h3><p>业内赔率最高！覆盖世界各地赛事，让球、大小、半全场、波胆、单双、总入球、连串过关等多元竞猜。更有动画直播，让您体验轻松聊球，娱乐投注两不误。</p><div className="appGet"><div className="qrBox"><img loading="lazy" decoding="async" width="512" height="512" src="/app-qr-sport-2.webp" alt="开云体育APP下载二维码" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer">http://4003y.com</a><b>直接访问</b><span>无需下载，手机输入网址即可</span><span>请用国内网络打开即可</span></div></div></div>
-          <div className="clientCopy panel-live"><h3>真人APP</h3><p>最美荷官在线互动，带您玩转百家乐、骰宝、轮盘、牛牛、炸金花等多款真人视讯游戏。国际标准、公平公正，极致享受尽在开云真人。</p><div className="appGet"><div className="qrBox"><img loading="lazy" decoding="async" width="512" height="512" src="/app-qr-live-2.webp" alt="开云真人APP下载二维码" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer">http://4003y.com</a><b>直接访问</b><span>无需下载，手机输入网址即可</span><span>请用国内网络打开即可</span></div></div></div>
+          <div className="clientCopy panel-all"><h3>全站APP</h3><p>全球首家一体化娱乐原生APP，尽显流畅，完美操作。海量体育、电竞顶尖赛事，真人娱乐、彩票投注及电子游艺等，最新最全娱乐项目尽在掌中体验扫码下载，即刻拥有！</p><div className="appGet"><div className="qrBox"><img loading="lazy" decoding="async" width="512" height="512" src="/qr/all.webp" alt="开云全站APP下载二维码" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer">http://4003y.com</a><b>直接访问</b><span>无需下载，手机输入网址即可</span><span>请用国内网络打开即可</span></div></div></div>
+          <div className="clientCopy panel-sport"><h3>体育APP</h3><p>业内赔率最高！覆盖世界各地赛事，让球、大小、半全场、波胆、单双、总入球、连串过关等多元竞猜。更有动画直播，让您体验轻松聊球，娱乐投注两不误。</p><div className="appGet"><div className="qrBox"><img loading="lazy" decoding="async" width="512" height="512" src="/qr/sport.webp" alt="开云体育APP下载二维码" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer">http://4003y.com</a><b>直接访问</b><span>无需下载，手机输入网址即可</span><span>请用国内网络打开即可</span></div></div></div>
+          <div className="clientCopy panel-live"><h3>真人APP</h3><p>最美荷官在线互动，带您玩转百家乐、骰宝、轮盘、牛牛、炸金花等多款真人视讯游戏。国际标准、公平公正，极致享受尽在开云真人。</p><div className="appGet"><div className="qrBox"><img loading="lazy" decoding="async" width="512" height="512" src="/qr/live.webp" alt="开云真人APP下载二维码" /><b>扫码下载</b><span>支持iOS&Android</span></div><div className="directBox"><a href="http://4003y.com" target="_blank" rel="sponsored noopener noreferrer">http://4003y.com</a><b>直接访问</b><span>无需下载，手机输入网址即可</span><span>请用国内网络打开即可</span></div></div></div>
           <div className="clientCopy panel-login">
             <h3>官方登录器</h3>
             <p>开云倾情打造，自主开发防劫持安全登录器。<br/>登录器支持 Windows｜MAC｜Android系统平台，使用登录器可直接访问开云WEB站点，有效防御和避免站点被拦截/劫持等问题。登录器安装简单，能给玩家提供安全的游戏环境体验！</p>
@@ -153,7 +153,7 @@ export default function Home() {
       </div></section>
 
       <footer><div className="partners">{Array.from({length:15},(_,i)=>{const n=String(i+1).padStart(2,'0');return <span className="partner" key={n}><img loading="lazy" decoding="async" width="180" height="90" className="off" src={`/partners/${n}-off.webp`} alt="" /><img loading="lazy" decoding="async" width="180" height="90" className="on" src={`/partners/${n}-on.webp`} alt="" /></span>})}</div><div className="license"><div className="licenseMarks"><img loading="lazy" decoding="async" width="195" height="40" src="/license/mga.webp" alt="MGA" /><img loading="lazy" decoding="async" width="195" height="47" src="/license/bvi.webp" alt="BVI" /></div><p>开云体育拥有欧洲马耳他（MGA）颁发的合法执照。<br/>注册于英属维尔京群岛，是受国际行业协会认可的合法公司。进行注册并娱乐前，请确保您年满18周岁！</p></div><div className="wrap foot">
-        <div className="footBrand"><a className="brand" href="/" aria-label="KAIYUN.SI"><img loading="lazy" decoding="async" width="360" height="109" src="/logo.webp" alt="开云体育 kaiyun.si" style={{height:46,width:'auto',display:'block'}} /></a><p><a href="https://linktr.ee/kaiyunK" target="_blank" rel="noopener noreferrer">代理合作 · 行业资讯 · 长期内容</a></p></div>
+        <div className="footBrand"><a className="brand" href="/" aria-label="KAIYUN.SI"><img loading="lazy" decoding="async" width="360" height="109" src="/brand/logo.webp" alt="开云体育 kaiyun.si" style={{height:46,width:'auto',display:'block'}} /></a><p><a href="https://linktr.ee/kaiyunK" target="_blank" rel="noopener noreferrer">代理合作 · 行业资讯 · 长期内容</a></p></div>
         <div><b>内容</b><a href="/cooperation">开云APP下载</a><a href="/commission">开云代理招商</a><a href="/news">开云新闻资讯</a></div>
         <div><b>联系</b><a href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram1</a><a href="https://t.me/kytyk" target="_blank" rel="noopener noreferrer">Telegram2</a></div>
       </div><div className="copy" style={{border:"none",borderTop:"none",boxShadow:"none"}}>© 2026 KAIYUN.SI · 本站仅提供合作与行业信息，具体政策以实际确认内容为准。</div></footer>
