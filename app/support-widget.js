@@ -175,7 +175,7 @@ export default function SupportWidget() {
         </section>
       )}
       <button className="csFab" type="button" aria-label="打开客服" onClick={() => setOpen((v) => !v)}>
-        {open ? "×" : "客服"}
+        {open ? <span className="csClose">×</span> : <span className="csMark"><img src="/brand/mark.webp" alt="" width="46" height="36" /><b>客服</b></span>}
         {unread > 0 && !open && <i>{unread}</i>}
       </button>
     </div>

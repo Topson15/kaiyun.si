@@ -257,3 +257,14 @@ header nav a{font-size:15px;white-space:nowrap}
 .hero .eyebrow{margin:8px 0 26px;letter-spacing:1px}
 .hero .lead{font-size:14px;line-height:1.75;letter-spacing:0}
 }
+.csFab{width:76px;height:86px;border-radius:18px;display:flex;align-items:center;justify-content:center;padding:8px 6px 7px;background:#fff;color:#1687e0;box-shadow:0 12px 26px rgba(18,74,130,.22), inset 0 0 0 1px rgba(22,135,224,.16)}
+.csDock:not(.is-open) .csFab::before{background:radial-gradient(circle, rgba(90,176,255,.4) 0%, rgba(40,140,230,.12) 42%, rgba(40,140,230,0) 70%)}
+.csMark{display:flex;flex-direction:column;align-items:center;gap:1px;line-height:1}
+.csMark img{width:44px;height:auto;display:block}
+.csMark b{color:#1687e0;font-size:13px;font-weight:800;letter-spacing:2px}
+.csClose{font-size:30px;line-height:1;color:#1687e0;font-weight:400}
+@media(max-width:800px){
+.csFab{width:70px;height:80px}
+.csMark img{width:40px}
+.csMark b{font-size:12px}
+}
