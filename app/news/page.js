@@ -32,13 +32,17 @@ export default function NewsPage() {
               const date = dateParts(post.publishedAt);
               return (
                 <article className={post.cover ? "newsItem has-cover" : "newsItem"} key={post.id}>
-                  <time dateTime={post.publishedAt}>
-                    <b>{date.day}</b>
-                    <span>{date.month}</span>
-                  </time>
-                  <div>
-                    <em>{post.category}</em>
-                    <h2><Link href={`/news/${post.id}`}>{post.title}</Link></h2>
+                  <div className="newsCopy">
+                    <div className="newsTop">
+                      <time dateTime={post.publishedAt}>
+                        <b>{date.day}</b>
+                        <span>{date.month}</span>
+                      </time>
+                      <div>
+                        <em>{post.category}</em>
+                        <h2><Link href={`/news/${post.id}`}>{post.title}</Link></h2>
+                      </div>
+                    </div>
                     <p>{post.excerpt}</p>
                     <Link className="more" href={`/news/${post.id}`}>继续阅读 →</Link>
                   </div>
