@@ -372,3 +372,11 @@ header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .sponsorBlock{padding:20px 16px 8px}
 .sponsorGreet{padding:8px 16px 16px}
 }
+@media(min-width:801px){.sponsorNav{position:sticky;top:108px;max-height:calc(100vh - 124px);overflow:auto}}
+.sponsorHead{padding:34px 28px 8px;text-align:center}
+.sponsorMarks{display:flex;align-items:center;justify-content:center;gap:22px}
+.sponsorBrand{height:52px;width:auto}
+.sponsorMarks i{width:1px;height:56px;background:rgba(255,255,255,.45)}
+.sponsorCrest{width:78px;height:78px;object-fit:contain}
+.sponsorHead h2{margin:16px 0 4px;font-size:28px;color:#fff}
+.sponsorHead p{margin:0;font-size:20px;font-weight:800;color:#fff}
