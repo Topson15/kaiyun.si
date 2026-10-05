@@ -329,3 +329,46 @@ header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .gameGo{color:#fff;background:linear-gradient(180deg,#3a3a3a 0%,#1a1a1a 48%,#000 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),inset 0 -3px 0 rgba(0,0,0,.35),0 4px 0 #000,0 8px 14px rgba(0,0,0,.28)}
 .btn:hover,.registerBtn:hover,.serviceBtn:hover,.gameGo:hover,#tab-all:checked ~ .clientTabs label:hover{transform:translateY(2px)}
 .btn:hover,.registerBtn:hover,#tab-all:checked ~ .clientTabs label[for="tab-all"]:hover,#tab-sport:checked ~ .clientTabs label[for="tab-sport"]:hover,#tab-live:checked ~ .clientTabs label[for="tab-live"]:hover,#tab-login:checked ~ .clientTabs label[for="tab-login"]:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -2px 0 rgba(12,86,145,.28),0 2px 0 #1577b4,0 5px 10px rgba(21,119,180,.24)}
+
+.sponsorPage{background:#f4f7fb;padding:72px 0 90px;color:#16324f}
+.sponsorPage h1{margin:0 0 22px;font-size:40px}
+.sponsorBox{position:relative;display:grid;grid-template-columns:300px minmax(0,1fr);gap:18px;align-items:start}
+.sponsorBox>input{position:absolute;opacity:0;pointer-events:none}
+.sponsorNav{background:#fff;border:1px solid #e4ebf3;border-radius:16px;overflow:hidden}
+.sponsorNav label{display:flex;gap:12px;align-items:center;padding:12px 14px;cursor:pointer;border-top:1px solid #eef3f8}
+.sponsorNav label:first-child{border-top:0}
+.sponsorNav img{width:46px;height:46px;object-fit:contain;flex:none;background:#f7fafc;border-radius:8px}
+.sponsorNav b{display:block;font-size:14px;line-height:1.35;color:#16324f}
+.sponsorNav small{display:block;margin-top:3px;color:#708198;font-size:12px}
+.sponsorStage{background:linear-gradient(180deg,#0046a2,#00327e);border-radius:18px;color:#fff;overflow:hidden;min-height:520px}
+.sponsorPanel{display:none}
+.sponsorBanner{width:100%;height:auto;display:block;background:#00327e}
+.sponsorBlock{padding:26px 28px 8px}
+.sponsorBlock h2{margin:16px 0 8px;font-size:28px;color:#fff}
+.sponsorBlock h2 span{display:block;margin-top:4px;font-size:18px;font-weight:700}
+.sponsorBlock p{margin:0 0 14px;line-height:1.8;color:#d7e7ff}
+.sponsorBlock video{width:100%;border-radius:12px;background:#000;display:block}
+.sponsorGreet{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:8px 28px 18px}
+.sponsorGreet article{background:rgba(0,20,60,.35);border-radius:12px;overflow:hidden}
+.sponsorGreet img{width:100%;height:148px;object-fit:cover;display:block}
+.sponsorGreet h3{margin:0;padding:12px 12px 0;font-size:16px}
+.sponsorGreet p{margin:0;padding:8px 12px 12px;font-size:13px;line-height:1.65;color:#d7e7ff}
+.sponsorMedia{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 16px}
+.sponsorMedia div{background:#0093fa;border-radius:12px;padding:16px 18px}
+.sponsorMedia b{display:block;font-size:22px}
+.sponsorMedia span{display:block;font-weight:800;margin-top:4px}
+.sponsorMedia small{display:block;margin-top:4px;opacity:.9}
+.sponsorSimple{display:flex;flex-direction:column;align-items:flex-start;min-height:280px;padding-bottom:36px}
+.sponsorSimple img{width:92px;height:92px;object-fit:contain;background:#fff;border-radius:12px;padding:8px}
+#sp-rm:checked ~ .sponsorNav label[for="sp-rm"],#sp-inter:checked ~ .sponsorNav label[for="sp-inter"],#sp-milan:checked ~ .sponsorNav label[for="sp-milan"],#sp-lazio:checked ~ .sponsorNav label[for="sp-lazio"],#sp-piero:checked ~ .sponsorNav label[for="sp-piero"],#sp-leverkusen:checked ~ .sponsorNav label[for="sp-leverkusen"],#sp-villarreal:checked ~ .sponsorNav label[for="sp-villarreal"],#sp-betis:checked ~ .sponsorNav label[for="sp-betis"],#sp-torino:checked ~ .sponsorNav label[for="sp-torino"]{background:#e8f4ff}
+#sp-rm:checked ~ .sponsorStage .panel-rm,#sp-inter:checked ~ .sponsorStage .panel-inter,#sp-milan:checked ~ .sponsorStage .panel-milan,#sp-lazio:checked ~ .sponsorStage .panel-lazio,#sp-piero:checked ~ .sponsorStage .panel-piero,#sp-leverkusen:checked ~ .sponsorStage .panel-leverkusen,#sp-villarreal:checked ~ .sponsorStage .panel-villarreal,#sp-betis:checked ~ .sponsorStage .panel-betis,#sp-torino:checked ~ .sponsorStage .panel-torino{display:block}
+@media(max-width:800px){
+.sponsorPage{padding:42px 0 56px}
+.sponsorPage h1{font-size:28px}
+.sponsorBox{grid-template-columns:1fr}
+.sponsorNav{display:flex;overflow:auto}
+.sponsorNav label{min-width:210px;border-top:0;border-right:1px solid #eef3f8}
+.sponsorGreet,.sponsorMedia{grid-template-columns:1fr}
+.sponsorBlock{padding:20px 16px 8px}
+.sponsorGreet{padding:8px 16px 16px}
+}
