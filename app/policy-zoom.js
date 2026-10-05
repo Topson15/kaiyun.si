@@ -43,6 +43,11 @@ export default function PolicyZoom({ label }) {
   const blockClick = useRef(false);
   const blockClose = useRef(false);
   const slide = slides[index];
+  const prevIndex = useRef(index);
+  const from = prevIndex.current;
+  useEffect(() => {
+    prevIndex.current = index;
+  }, [index]);
 
   const go = (direction) => {
     setDir(direction);
@@ -155,11 +160,14 @@ export default function PolicyZoom({ label }) {
   return (
     <div className="policyZoom">
       <div className="policyFrame" ref={frameRef}>
-        {slides.map((item, i) => (
-          <button key={item.src} type="button" className="policyShotBtn" style={{ transform: `translateX(${offset(i, index) * 100}%)`, zIndex: i === index ? 1 : 0 }} onClick={() => { if (blockClick.current) { blockClick.current = false; return; } setOpen(true); }} aria-label="放大查看" tabIndex={i === index ? 0 : -1}>
-            <img loading="lazy" decoding="async" width="860" height="678" className="policyShot" src={item.src} alt={item.alt} />
+        {slides.map((item, i) => {
+          const jump = Math.abs(offset(i, index) - offset(i, from)) > 1;
+          return (
+          <button key={item.src} type="button" className={jump ? "policyShotBtn is-jump" : "policyShotBtn"} style={{ transform: `translate3d(${offset(i, index) * 100}%,0,0)`, zIndex: i === index ? 1 : 0 }} onClick={() => { if (blockClick.current) { blockClick.current = false; return; } setOpen(true); }} aria-label="放大查看" tabIndex={i === index ? 0 : -1}>
+            <img decoding="async" width="860" height="678" className="policyShot" src={item.src} alt={item.alt} />
           </button>
-        ))}
+          );
+        })}
         <Arrow dir="prev" onClick={step(-1)} />
         <Arrow dir="next" onClick={step(1)} />
       </div>

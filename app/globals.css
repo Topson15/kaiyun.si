@@ -311,7 +311,8 @@ header .nav{padding-left:14px;padding-right:12px}
 .policyLight .policyNav.next{right:8px}
 .policyLight .policyNav svg{width:38px;height:38px;filter:drop-shadow(0 1px 3px rgba(0,0,0,.35))}
 .policyFrame{overflow:hidden;aspect-ratio:860/678;border-radius:16px;background:#eef3f8;box-shadow:0 16px 40px rgba(22,50,79,.12);touch-action:pan-y}
-.policyFrame .policyShotBtn{position:absolute;inset:0;width:100%;height:100%;transition:transform .45s ease}
+.policyFrame .policyShotBtn{position:absolute;inset:0;width:100%;height:100%;transition:transform .55s cubic-bezier(.22,.8,.24,1);backface-visibility:hidden}
+.policyFrame .policyShotBtn.is-jump{transition:none}
 .policyFrame .policyShot{width:100%;height:100%;object-fit:contain;border-radius:0;box-shadow:none}
 .policyStage{width:min(920px,100%);height:min(86vh,820px);display:flex;align-items:center;justify-content:center;touch-action:none;overflow:hidden}
 .policyStage img{max-width:100%;max-height:100%;object-fit:contain;animation:policyNext .4s ease;transform-origin:center center}
