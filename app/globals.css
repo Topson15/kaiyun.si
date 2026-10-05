@@ -332,11 +332,11 @@ header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .sideRail{position:fixed;left:0;top:50%;z-index:1100;display:flex;align-items:stretch;transform:translate(-100%,-50%);transition:transform .35s ease}
 .sideRail.is-seen{transform:translate(0,-50%)}
 .sideRailPanel{width:0;padding:0;overflow:hidden;display:flex;align-items:center;background:transparent;transition:width .35s ease}
-.sideRail.is-open .sideRailPanel{width:188px;padding:0;background:transparent;box-shadow:none}
-.sideRailBtn{display:flex;align-items:center;gap:6px;width:188px;height:52px;padding:0 4px 0 12px;border-radius:999px;color:#fff;text-decoration:none;background:linear-gradient(180deg,#3aa8ff 0%,#157fe0 100%);box-shadow:0 8px 18px rgba(14,90,170,.28)}
+.sideRail.is-open .sideRailPanel{width:164px;padding:0;background:transparent;box-shadow:none}
+.sideRailBtn{display:flex;align-items:center;gap:4px;width:164px;height:48px;padding:0 4px 0 10px;border-radius:999px;color:#fff;text-decoration:none;background:linear-gradient(180deg,#3aa8ff 0%,#157fe0 100%);box-shadow:0 8px 18px rgba(14,90,170,.28)}
 .sideRailCopy{display:flex;flex-direction:column;line-height:1.15;min-width:0}
-.sideRailCopy b{font-size:13px;font-weight:800}
-.sideRailCopy small{font-size:11px;font-weight:700}
-.sideRailIcon{width:40px;height:40px;margin-left:auto;flex:none;display:grid;place-items:center;border-radius:14px;background:#fff;color:#157fe0}
+.sideRailCopy b{font-size:12px;font-weight:800}
+.sideRailCopy small{font-size:10px;font-weight:700;letter-spacing:-.2px}
+.sideRailIcon{width:34px;height:34px;margin-left:auto;flex:none;display:grid;place-items:center;border-radius:12px;background:#fff;color:#157fe0}
 .sideRailToggle{width:36px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:0;border-radius:0 14px 14px 0;background:#0c649f;color:#fff;font-weight:800;cursor:pointer;padding:12px 0;line-height:1.15}
 .sideRailToggle span{display:block}
