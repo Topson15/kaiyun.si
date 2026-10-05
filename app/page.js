@@ -4,12 +4,12 @@ import PolicyZoom from "./policy-zoom";
 
 export const metadata = {
   title: { absolute: "开云官方代理招商·KAIYUN.SI" },
-  description: "开云体育官方网站，查看代理合作、下载入口与常见问题。",
+  description: "开云体育官方网站，查看代理合作、下载入口与代理常见问题。",
   alternates: { canonical: "/" },
   openGraph: {
     url: "/",
     title: "开云官方代理招商·KAIYUN.SI",
-    description: "开云体育官方网站，查看代理合作、下载入口与常见问题。",
+    description: "开云体育官方网站，查看代理合作、下载入口与代理常见问题。",
   },
 };
 
@@ -25,7 +25,7 @@ export default function Home() {
     "@type": "WebSite",
     name: "开云体育",
     url: "https://kaiyun.si",
-    description: "开云体育官方网站，查看代理合作、下载入口与常见问题。",
+    description: "开云体育官方网站，查看代理合作、下载入口与代理常见问题。",
     inLanguage: "zh-CN",
   };
   return (
@@ -124,7 +124,7 @@ export default function Home() {
       </div></section>
 
       <section id="faq" className="faq"><div className="wrap">
-        <p className="eyebrow">FAQ</p><h2>常见问题</h2>
+        <p className="eyebrow">FAQ</p><h2>代理常见问题</h2>
         {[
           ['浏览本站需要下载开云APP吗？','看首页、游戏介绍和合作说明，用手机或电脑浏览器即可。需要安装客户端时，再到开云APP下载里选择对应版本。'],
           ['开云全站APP、开云体育APP、开云真人APP和登录器有什么区别？','全站APP包含体育、电竞、真人、彩票和电子。体育APP侧重赛事竞猜，真人APP侧重真人视讯。登录器用于在 Windows、Mac 和 Android 上打开网页版。'],

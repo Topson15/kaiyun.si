@@ -1,9 +1,9 @@
 import PageFrame from "../page-frame";
 
 export const metadata = {
-  title: "开云常见问题",
+  title: "开云代理常见问题",
   alternates: { canonical: "/faq" },
-  openGraph: { url: "/faq", title: "开云常见问题｜KAIYUN.SI" },
+  openGraph: { url: "/faq", title: "开云代理常见问题｜KAIYUN.SI" },
 };
 
 const faqs = [
@@ -37,7 +37,7 @@ export default function FaqPage() {
       <section className="faq">
         <div className="wrap">
           <p className="eyebrow">FAQ</p>
-          <h2>开云常见问题</h2>
+          <h2>开云代理常见问题</h2>
           {faqs.map(([q, a]) => (
             <details key={q}>
               <summary>{q}<b>＋</b></summary>
