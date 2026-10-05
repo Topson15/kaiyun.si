@@ -272,6 +272,9 @@ header nav a{font-size:15px;white-space:nowrap}
 .csMark img{width:34px;max-height:30px}
 .csMark b{font-size:11px;letter-spacing:3px;padding-left:3px}
 }
+.hero .actions .heroSecondBtn{color:#fff;border:0;border-radius:999px;background:linear-gradient(180deg,#8ad8ff 0%,#45baf6 42%,#1e96df 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -3px 0 rgba(12,86,145,.28),0 4px 0 #1577b4,0 8px 14px rgba(21,119,180,.28);text-shadow:0 1px 0 rgba(10,70,120,.22)}
+.hero .actions .heroSecondBtn:hover{transform:translateY(2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -2px 0 rgba(12,86,145,.28),0 2px 0 #1577b4,0 5px 10px rgba(21,119,180,.24)}
+.ctaJoin{background:linear-gradient(180deg,#fbe7b0 0%,#efc56a 46%,#e0b04a 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.72)}
 @media(max-width:800px){
 .svcStats li{min-width:0}
 .svcRing div{width:72%;text-align:center}
