@@ -38,6 +38,7 @@ function Welcome() {
       <p>您可以在此处发消息咨询客服，也可以添加客服联系方式：</p>
       <p><a href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram @a8802717</a></p>
       <p><a href="https://wpa.qq.com/msgrd?v=3&uin=946901189&site=qq&menu=yes" target="_blank" rel="noopener noreferrer">QQ：946901189</a></p>
+      <p><a href="https://t.me/jinliqun" target="_blank" rel="noopener noreferrer">点击加入开云体育交流群</a></p>
     </>
   );
 }
@@ -45,7 +46,7 @@ export default function SupportWidget() {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState("");
   const [msgs, setMsgs] = useState([]);
-  const [unread, setUnread] = useState(0);
+  const [unread, setUnread] = useState(1);
   const [sending, setSending] = useState(false);
   const sid = useRef("");
   const since = useRef(0);
