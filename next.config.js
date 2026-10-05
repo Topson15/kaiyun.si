@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: { inlineCss: true },
+  async redirects() {
+    return [{ source: "/cooperation", destination: "/download", permanent: true }];
+  },
   async headers() {
     return [
       {
