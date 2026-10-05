@@ -342,7 +342,7 @@ header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .sideRailToggle span{display:block}
 .sideRailMark{display:none}
 @media(max-width:800px){
-.sideRail.is-seen:not(.is-open) .sideRailToggle{width:26px;height:48px;border-radius:0 24px 24px 0;background:linear-gradient(180deg,#3aa8ff,#157fe0);color:#fff}
+.sideRail.is-seen:not(.is-open) .sideRailToggle{width:30px;height:52px;border-radius:0 26px 26px 0;background:linear-gradient(180deg,#3aa8ff,#157fe0);color:#fff}
 .sideRail.is-seen:not(.is-open) .sideRailToggle span{display:none}
-.sideRail.is-seen:not(.is-open) .sideRailMark{display:grid;place-items:center;transform:translateX(3px)}
+.sideRail.is-seen:not(.is-open) .sideRailMark{display:grid;place-items:center;transform:translateX(4px)}
 }
