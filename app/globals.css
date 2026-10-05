@@ -342,7 +342,7 @@ header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .sponsorNav small{display:block;margin-top:3px;color:#708198;font-size:12px}
 .sponsorStage{background:linear-gradient(180deg,#0046a2,#00327e);border-radius:18px;color:#fff;overflow:hidden;min-height:520px}
 .sponsorPanel{display:none}
-.sponsorBanner{width:100%;height:auto;display:block;background:#00327e}
+.sponsorBanner{width:100%;height:auto;display:block;background:transparent}
 .sponsorBlock{padding:26px 28px 8px}
 .sponsorBlock h2{margin:16px 0 8px;font-size:28px;color:#fff}
 .sponsorBlock h2 span{display:block;margin-top:4px;font-size:18px;font-weight:700}
