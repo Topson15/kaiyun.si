@@ -319,3 +319,5 @@ header .nav{padding-left:14px;padding-right:12px}
 @media(prefers-reduced-motion:reduce){.policyFrame .policyShotBtn{transition:none}.policyStage img{animation:none}}
 header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .cta{background:radial-gradient(ellipse 100% 70% at 50% 118%,#1a527c 0%,#0c2d4a 42%,rgba(7,19,33,0) 70%),linear-gradient(#071321,#040b13)}
+.games>.wrap{position:relative;z-index:3}
+.games .eyebrow{color:#8fd4ff}
