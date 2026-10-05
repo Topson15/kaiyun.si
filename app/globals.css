@@ -406,3 +406,15 @@ header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .sponsorFull .sponsorHead .role{font-size:26px}
 .sponsorShots .shotPeople{height:160px;margin-top:-36px}
 }
+.sponsorFull .sponsorBox{grid-template-columns:248px minmax(0,1fr)}
+.sponsorFull .sponsorNav{border-radius:16px;padding:6px;gap:0;align-items:stretch}
+.sponsorFull .sponsorNav label{width:auto;height:auto;border-radius:12px;display:flex;align-items:center;gap:10px;padding:10px 10px;justify-content:flex-start}
+.sponsorFull .sponsorNav img{width:42px;height:42px;flex:none}
+.sponsorFull .sponsorNav b{display:block;color:#16324f;font-size:13px;line-height:1.35;text-align:left}
+.sponsorFull .sponsorNav small{display:block;margin-top:2px;color:#708198;font-size:12px;text-align:left}
+#sp-rm:checked ~ .sponsorNav label[for="sp-rm"],#sp-inter:checked ~ .sponsorNav label[for="sp-inter"],#sp-milan:checked ~ .sponsorNav label[for="sp-milan"],#sp-lazio:checked ~ .sponsorNav label[for="sp-lazio"],#sp-piero:checked ~ .sponsorNav label[for="sp-piero"],#sp-leverkusen:checked ~ .sponsorNav label[for="sp-leverkusen"],#sp-villarreal:checked ~ .sponsorNav label[for="sp-villarreal"],#sp-betis:checked ~ .sponsorNav label[for="sp-betis"],#sp-torino:checked ~ .sponsorNav label[for="sp-torino"]{background:#e8f4ff}
+@media(max-width:800px){
+.sponsorFull .sponsorBox{grid-template-columns:1fr}
+.sponsorFull .sponsorNav{flex-direction:column;overflow:visible}
+.sponsorFull .sponsorNav label{min-width:0}
+}
