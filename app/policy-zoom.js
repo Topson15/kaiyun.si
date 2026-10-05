@@ -2,11 +2,11 @@
 import { useEffect, useRef, useState } from "react";
 
 const slides = [
-  { src: "/policy/sheet.webp", alt: "开云体育佣金政策" },
-  { src: "/policy/nba.webp", alt: "NBA冠军盘免单" },
-  { src: "/policy/s16.webp", alt: "S16总决赛签到" },
-  { src: "/policy/leagues.webp", alt: "五大联赛冠军盘免单" },
-  { src: "/policy/welcome.webp", alt: "注册送100元首存加赠" },
+  { src: "/policy/sheet.webp?v=2", alt: "开云体育佣金政策" },
+  { src: "/policy/nba.webp?v=2", alt: "NBA冠军盘免单" },
+  { src: "/policy/s16.webp?v=2", alt: "S16总决赛签到" },
+  { src: "/policy/leagues.webp?v=2", alt: "五大联赛冠军盘免单" },
+  { src: "/policy/welcome.webp?v=2", alt: "注册送100元首存加赠" },
 ];
 
 function Arrow({ dir, onClick }) {
