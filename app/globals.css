@@ -331,8 +331,12 @@ header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .btn:hover,.registerBtn:hover,#tab-all:checked ~ .clientTabs label[for="tab-all"]:hover,#tab-sport:checked ~ .clientTabs label[for="tab-sport"]:hover,#tab-live:checked ~ .clientTabs label[for="tab-live"]:hover,#tab-login:checked ~ .clientTabs label[for="tab-login"]:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -2px 0 rgba(12,86,145,.28),0 2px 0 #1577b4,0 5px 10px rgba(21,119,180,.24)}
 .sideRail{position:fixed;left:0;top:50%;z-index:1100;display:flex;align-items:stretch;transform:translate(-100%,-50%);transition:transform .35s ease}
 .sideRail.is-seen{transform:translate(0,-50%)}
-.sideRailPanel{width:0;padding:0;overflow:hidden;display:flex;align-items:center;background:#fff;transition:width .35s ease,padding .35s ease}
-.sideRail.is-open .sideRailPanel{width:148px;padding:14px 12px 14px 14px;border-radius:0 0 0 0;box-shadow:0 14px 34px rgba(7,20,34,.18)}
-.sideRailBtn{display:inline-flex;align-items:center;justify-content:center;min-width:112px;height:42px;padding:0 16px;border-radius:999px;color:#fff;font-weight:800;white-space:nowrap;background:linear-gradient(180deg,#8ad8ff 0%,#45baf6 42%,#1e96df 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -3px 0 rgba(12,86,145,.28),0 4px 0 #1577b4}
+.sideRailPanel{width:0;padding:0;overflow:hidden;display:flex;align-items:center;background:transparent;transition:width .35s ease}
+.sideRail.is-open .sideRailPanel{width:228px;padding:0;background:transparent;box-shadow:none}
+.sideRailBtn{display:flex;align-items:center;gap:8px;width:228px;height:58px;padding:0 6px 0 16px;border-radius:999px;color:#fff;text-decoration:none;background:linear-gradient(180deg,#3aa8ff 0%,#157fe0 100%);box-shadow:0 8px 18px rgba(14,90,170,.28)}
+.sideRailCopy{display:flex;flex-direction:column;line-height:1.2;min-width:0}
+.sideRailCopy b{font-size:15px;font-weight:800}
+.sideRailCopy small{font-size:12px;font-weight:700}
+.sideRailIcon{width:46px;height:46px;margin-left:auto;flex:none;display:grid;place-items:center;border-radius:16px;background:#fff;color:#157fe0}
 .sideRailToggle{width:36px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:0;border-radius:0 14px 14px 0;background:#0c649f;color:#fff;font-weight:800;cursor:pointer;padding:12px 0;line-height:1.15}
 .sideRailToggle span{display:block}
