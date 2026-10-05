@@ -272,8 +272,8 @@ header nav a{font-size:15px;white-space:nowrap}
 .csMark img{width:34px;max-height:30px}
 .csMark b{font-size:11px;letter-spacing:3px;padding-left:3px}
 }
-.hero .actions .heroSecondBtn{color:#f4f8ff;border:1px solid rgba(214,228,255,.42);border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,0) 46%),linear-gradient(180deg,#1c5f9e,#0d3f72);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 10px 22px rgba(8,32,62,.16);text-shadow:none;letter-spacing:.6px;backdrop-filter:none}
-.hero .actions .heroSecondBtn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.62);box-shadow:inset 0 1px 0 rgba(255,255,255,.34),0 14px 26px rgba(8,32,62,.2)}
+.hero .actions .heroSecondBtn{color:#0e5f96;border:1px solid rgba(14,95,150,.4);border-radius:999px;background-color:rgba(255,255,255,.88);box-shadow:none;text-shadow:none;letter-spacing:.4px;backdrop-filter:none;transition:background-color .4s ease,color .4s ease,border-color .4s ease}
+.hero .actions .heroSecondBtn:hover{color:#fff;background-color:#1280c4;border-color:#1280c4;transform:none;box-shadow:none}
 .ctaJoin{background:linear-gradient(180deg,#fbe7b0 0%,#efc56a 46%,#e0b04a 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.72)}
 @media(max-width:800px){
 .svcStats li{min-width:0}
@@ -325,12 +325,12 @@ header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .games>.wrap{position:relative;z-index:3}
 .games .eyebrow{color:#8fd4ff}
 .btn,.homeBriefs .btn{color:#fff;border:1.5px solid rgba(255,255,255,.72);border-radius:18px;background:linear-gradient(180deg,rgba(92,184,255,.9),rgba(28,138,226,.84));box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 8px 18px rgba(18,90,160,.16);text-shadow:none;backdrop-filter:blur(8px)}
-.hero .actions .btn,.registerBtn{color:#f4f8ff;border:1px solid rgba(214,228,255,.42);border-radius:999px;background-color:#145892;background-image:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,0) 46%);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 10px 22px rgba(8,32,62,.16);text-shadow:none;letter-spacing:.6px;backdrop-filter:none}
+.registerBtn{color:#f4f8ff;border:1px solid rgba(214,228,255,.42);border-radius:999px;background-color:#145892;background-image:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,0) 46%);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 10px 22px rgba(8,32,62,.16);text-shadow:none;letter-spacing:.6px;backdrop-filter:none}
+.hero .actions .btn{color:#fff;border:1px solid rgba(255,255,255,.72);border-radius:999px;background-color:#1280c4;background-image:none;box-shadow:0 8px 18px rgba(18,90,150,.14);text-shadow:none;letter-spacing:.4px;transition:background-color .4s ease,box-shadow .4s ease}
 .registerBtn{transition:background-color .45s ease,border-color .45s ease,box-shadow .45s ease}
 .serviceBtn{color:#f6edd4;border:1px solid rgba(214,184,122,.72);border-radius:999px;background-color:#152536;background-image:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,0) 48%);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 10px 22px rgba(8,18,32,.14);text-shadow:none;letter-spacing:.6px;backdrop-filter:none;transition:background-color .45s ease,border-color .45s ease,box-shadow .45s ease}
 .btn:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 10px 20px rgba(18,90,160,.2)}
-.hero .actions .btn:hover,.serviceBtn:hover{transform:translateY(-1px)}
-.hero .actions .btn:hover{border-color:rgba(255,255,255,.62);box-shadow:inset 0 1px 0 rgba(255,255,255,.34),0 14px 26px rgba(8,32,62,.2)}
+.hero .actions .btn:hover{background-color:#0d6eab;border-color:rgba(255,255,255,.8);box-shadow:0 10px 20px rgba(18,90,150,.16);transform:none}
 .clientTabs{position:relative;display:grid;grid-template-rows:repeat(4,46px);gap:8px}
 .clientTabs label{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;text-align:center;height:46px;padding:0 8px;margin:0;background:transparent;border:0;border-radius:999px;box-shadow:none;color:#5d7290;transform:none}
 .clientTabs::before{content:"";position:absolute;left:0;right:0;top:0;box-sizing:border-box;height:46px;border-radius:999px;border:1.5px solid rgba(18,72,140,.62);background:rgba(14,62,120,.12);box-shadow:none;transition:transform .48s cubic-bezier(.22,.8,.24,1);z-index:0;pointer-events:none}
@@ -391,5 +391,10 @@ header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .gameCard .gameGo{width:168px;height:42px;margin:18px auto 2px;color:#f6edd4;border:1px solid rgba(214,184,122,.75);border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0)),#13263c;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);letter-spacing:1px;font-weight:700;font-family:"Microsoft YaHei","微软雅黑",SimHei,"黑体",sans-serif;backdrop-filter:none}
 .gameCard .gameGo:hover{transform:translateY(-1px);border-color:rgba(232,208,150,.95);background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,0)),#183049;box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
 @media(max-width:800px){.gameCard h3{font-size:24px;letter-spacing:1px}}
+.policyStack .btn{height:48px;border-radius:999px;font-family:"Microsoft YaHei","微软雅黑",SimHei,"黑体",sans-serif;font-weight:700;letter-spacing:.4px;text-shadow:none;backdrop-filter:none;transition:background-color .4s ease,color .4s ease,border-color .4s ease}
+.policyStack .btn:first-child{color:#f6edd4;background:#152536;border:1px solid rgba(214,184,122,.75);box-shadow:0 10px 22px rgba(12,28,48,.08)}
+.policyStack .btn:first-child:hover{background:#1d3348;transform:none}
+.policyStack .btn:last-child{color:#12324e;background:#fff;border:1px solid rgba(18,50,78,.22);box-shadow:none}
+.policyStack .btn:last-child:hover{background:#f4f7fb;border-color:#12324e;transform:none}
 .registerBtn:hover{color:#f4f8ff;background-color:#1d6eaf;background-image:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,0) 46%);border-color:rgba(214,228,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 10px 22px rgba(8,32,62,.16);transform:none}
 .serviceBtn:hover{color:#f6edd4;background-color:#24384f;background-image:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,0) 48%);border-color:rgba(214,184,122,.82);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 10px 22px rgba(8,18,32,.14);transform:none}
