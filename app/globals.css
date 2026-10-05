@@ -324,10 +324,10 @@ header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .cta{background:radial-gradient(ellipse 100% 70% at 50% 118%,#1a527c 0%,#0c2d4a 42%,rgba(7,19,33,0) 70%),linear-gradient(#071321,#040b13)}
 .games>.wrap{position:relative;z-index:3}
 .games .eyebrow{color:#8fd4ff}
-.btn,.homeBriefs .btn,.gameGo{color:#fff;border:1.5px solid rgba(255,255,255,.72);border-radius:18px;background:linear-gradient(180deg,rgba(92,184,255,.9),rgba(28,138,226,.84));box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 8px 18px rgba(18,90,160,.16);text-shadow:none;backdrop-filter:blur(8px)}
+.btn,.homeBriefs .btn{color:#fff;border:1.5px solid rgba(255,255,255,.72);border-radius:18px;background:linear-gradient(180deg,rgba(92,184,255,.9),rgba(28,138,226,.84));box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 8px 18px rgba(18,90,160,.16);text-shadow:none;backdrop-filter:blur(8px)}
 .hero .actions .btn,.registerBtn{color:#f4f8ff;border:1px solid rgba(214,228,255,.42);border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,0) 46%),linear-gradient(180deg,#1c5f9e,#0d3f72);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 10px 22px rgba(8,32,62,.16);text-shadow:none;letter-spacing:.6px;backdrop-filter:none}
 .serviceBtn{color:#f6edd4;border:1px solid rgba(214,184,122,.72);border-radius:999px;background:linear-gradient(180deg,#1b2c42,#101b2a);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 10px 22px rgba(8,18,32,.14);text-shadow:none;letter-spacing:.6px;backdrop-filter:none}
-.btn:hover,.gameGo:hover{transform:translateY(-1px)}
+.btn:hover{transform:translateY(-1px)}
 .hero .actions .btn:hover,.registerBtn:hover,.serviceBtn:hover{transform:translateY(-1px)}
 .btn:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 10px 20px rgba(18,90,160,.2)}
 .hero .actions .btn:hover,.registerBtn:hover{border-color:rgba(255,255,255,.62);box-shadow:inset 0 1px 0 rgba(255,255,255,.34),0 14px 26px rgba(8,32,62,.2)}
@@ -386,3 +386,9 @@ header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .sideRail.is-seen:not(.is-open) .sideRailToggle span{display:none}
 .sideRail.is-seen:not(.is-open) .sideRailMark{position:relative;z-index:1;display:grid;place-items:center;width:28px;transform:translateX(-2px)}
 }
+.gameCard{background:linear-gradient(165deg,#173e68 0%,#102844 58%,#0c1e34 100%);color:#e7eef6;border:1px solid rgba(176,206,236,.32);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 18px 36px rgba(0,0,0,.28);font-family:"Microsoft YaHei","微软雅黑",SimHei,"黑体",sans-serif}
+.gameCard h3{color:#f7f4ea;font-weight:700;letter-spacing:2px;font-size:30px}
+.gameCard p{color:rgba(214,226,240,.84);font-weight:400}
+.gameCard .gameGo{width:168px;height:42px;margin:18px auto 2px;color:#f6edd4;border:1px solid rgba(214,184,122,.75);border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0)),#13263c;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);letter-spacing:1px;font-weight:700;font-family:"Microsoft YaHei","微软雅黑",SimHei,"黑体",sans-serif;backdrop-filter:none}
+.gameCard .gameGo:hover{transform:translateY(-1px);border-color:rgba(232,208,150,.95);background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,0)),#183049;box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
+@media(max-width:800px){.gameCard h3{font-size:24px;letter-spacing:1px}}
