@@ -343,7 +343,7 @@ header .nav nav a:hover,header nav a:hover{color:#0c649f}
 .sideRailMark{display:none}
 @media(max-width:800px){
 .sideRail.is-seen:not(.is-open) .sideRailToggle{position:relative;width:30px;height:52px;border-radius:0;background:transparent;color:#fff}
-.sideRail.is-seen:not(.is-open) .sideRailToggle::before{content:"";position:absolute;left:0;top:50%;width:22px;height:40px;transform:translateY(-50%);border-radius:0 20px 20px 0;background:linear-gradient(180deg,#3aa8ff,#157fe0)}
+.sideRail.is-seen:not(.is-open) .sideRailToggle::before{content:"";position:absolute;left:0;top:50%;width:28px;height:44px;transform:translateY(-50%);border-radius:0 22px 22px 0;background:linear-gradient(180deg,#3aa8ff,#157fe0)}
 .sideRail.is-seen:not(.is-open) .sideRailToggle span{display:none}
-.sideRail.is-seen:not(.is-open) .sideRailMark{position:relative;z-index:1;display:grid;place-items:center;width:22px;transform:translateX(6px)}
+.sideRail.is-seen:not(.is-open) .sideRailMark{position:relative;z-index:1;display:grid;place-items:center;width:28px;transform:translateX(-2px)}
 }
