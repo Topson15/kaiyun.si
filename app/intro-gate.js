@@ -110,8 +110,8 @@ function drawBall(ctx, spin) {
   g.addColorStop(1, "#b7c3cf");
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, S, S);
-  const ax = spin;
-  const ay = spin * 0.42;
+  const ax = spin * 1.25;
+  const ay = spin * 0.16;
   const drawn = [];
   for (const face of FACES) {
     const pts = face.pts.map((p) => rot(p, ax, ay));
@@ -180,8 +180,17 @@ function curve(u) {
   return [cm(p0[0], p1[0], p2[0], p3[0]), cm(p0[1], p1[1], p2[1], p3[1])];
 }
 
+const MARKS = [[0, 0], [0.1, 0.012], [0.32, 0.56], [0.46, 0.66], [0.54, 0.692], [0.73, 0.708], [0.86, 0.9], [1, 1]];
+
 function easeFlight(t) {
-  return 1 - (1 - t) ** 1.55;
+  let i = 1;
+  while (i < MARKS.length && MARKS[i][0] < t) i += 1;
+  const a = MARKS[i - 1];
+  const b = MARKS[Math.min(MARKS.length - 1, i)];
+  const span = b[0] - a[0] || 1;
+  const k = Math.min(1, Math.max(0, (t - a[0]) / span));
+  const s = k * k * (3 - 2 * k);
+  return a[1] + (b[1] - a[1]) * s;
 }
 
 function playKick(fly, canvas, logo) {
@@ -193,34 +202,38 @@ function playKick(fly, canvas, logo) {
     fly.style.transform = "none";
     return () => {};
   }
-  const FLIGHT = 3000;
-  const COAST = 900;
-  const FADE = 420;
+  const FLIGHT = 3400;
+  const COAST = 980;
+  const FADE = 380;
   let roll = 0;
-  let landed = 0;
+  let omega = 8;
   let last = null;
+  let lastNow = performance.now();
   let fade = 0;
-  const t0 = performance.now();
+  const t0 = lastNow;
   let raf = 0;
   const frame = (now) => {
     const elapsed = now - t0;
-    let u = 1;
-    if (elapsed < FLIGHT) u = easeFlight(elapsed / FLIGHT);
-    const [x, y] = curve(Math.min(1, u));
+    const dt = Math.min(0.05, (now - lastNow) / 1000);
+    lastNow = now;
+    const u = elapsed < FLIGHT ? easeFlight(elapsed / FLIGHT) : 1;
+    const [x, y] = curve(u);
     const px = (x / 100) * window.innerWidth;
     const py = (y / 100) * window.innerHeight;
     const radius = Math.max(22, fly.offsetWidth * 0.46);
-    if (last && elapsed <= FLIGHT) roll += Math.hypot(px - last[0], py - last[1]) / radius * 1.7;
+    const dist = last ? Math.hypot(px - last[0], py - last[1]) : 0;
     last = [px, py];
-    let spin = roll;
-    if (elapsed >= FLIGHT) {
-      if (!landed) landed = roll;
-      const dt = (elapsed - FLIGHT) / 1000;
-      spin = landed + (14 / 2.4) * (1 - Math.exp(-2.4 * dt));
+    if (elapsed < FLIGHT) {
+      const kicked = dist / Math.max(dt, 0.001) / radius;
+      const target = Math.min(46, Math.max(28, kicked * 2.4));
+      omega += (target - omega) * Math.min(1, dt * 7);
+    } else {
+      omega *= Math.exp(-1.7 * dt);
     }
+    roll += omega * dt;
     const scale = 1.14 - 0.14 * Math.min(1, u);
     fly.style.transform = `translate3d(${x}vw, ${y}vh, 0) scale(${scale})`;
-    drawBall(ctx, spin);
+    drawBall(ctx, roll);
     if (elapsed >= FLIGHT + COAST) {
       fade = Math.min(1, (elapsed - FLIGHT - COAST) / FADE);
       canvas.style.opacity = String(1 - fade);
