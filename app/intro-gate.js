@@ -95,26 +95,10 @@ function rot(v, ax, ay) {
   return [x2, y, z2];
 }
 
-function drawBall(ctx, spin) {
-  const S = ctx.canvas.width;
-  const c = S / 2;
-  const R = S * 0.46;
-  ctx.clearRect(0, 0, S, S);
-  ctx.save();
-  ctx.beginPath();
-  ctx.arc(c, c, R, 0, Math.PI * 2);
-  ctx.clip();
-  const g = ctx.createRadialGradient(c - R * 0.32, c - R * 0.38, R * 0.08, c, c, R);
-  g.addColorStop(0, "#ffffff");
-  g.addColorStop(0.7, "#e7edf2");
-  g.addColorStop(1, "#b7c3cf");
-  ctx.fillStyle = g;
-  ctx.fillRect(0, 0, S, S);
-  const ax = spin * 1.25;
-  const ay = spin * 0.16;
+function paintPanels(ctx, c, R, yaw, alpha) {
   const drawn = [];
   for (const face of FACES) {
-    const pts = face.pts.map((p) => rot(p, ax, ay));
+    const pts = face.pts.map((p) => rot(p, 0, yaw));
     let cx = 0;
     let cy = 0;
     let cz = 0;
@@ -126,22 +110,20 @@ function drawBall(ctx, spin) {
     cx /= pts.length;
     cy /= pts.length;
     cz /= pts.length;
-    const n = norm(rot(cross(sub(face.pts[1], face.pts[0]), sub(face.pts[2], face.pts[0])), ax, ay));
-    const mid = [cx, cy, cz];
-    const nn = dot(n, mid) < 0 ? [-n[0], -n[1], -n[2]] : n;
+    const n = norm(rot(cross(sub(face.pts[1], face.pts[0]), sub(face.pts[2], face.pts[0])), 0, yaw));
+    const nn = dot(n, [cx, cy, cz]) < 0 ? [-n[0], -n[1], -n[2]] : n;
     const shade = Math.max(0, dot(nn, LIGHT));
-    const col = face.dark
-      ? Math.round(12 + shade * 55)
-      : Math.round(214 + shade * 41);
-    drawn.push({ z: cz, pts, col, dark: face.dark });
+    const col = face.dark ? Math.round(10 + shade * 48) : Math.round(226 + shade * 29);
+    drawn.push({ z: cz, pts, col });
   }
   drawn.sort((a, b) => a.z - b.z);
+  ctx.globalAlpha = alpha;
   for (const face of drawn) {
     const m = face.pts.reduce((s, p) => [s[0] + p[0], s[1] + p[1], s[2] + p[2]], [0, 0, 0]).map((v) => v / face.pts.length);
     ctx.beginPath();
     face.pts.forEach((p, i) => {
-      const x = m[0] + (p[0] - m[0]) * 0.93;
-      const y = m[1] + (p[1] - m[1]) * 0.93;
+      const x = m[0] + (p[0] - m[0]) * 0.94;
+      const y = m[1] + (p[1] - m[1]) * 0.94;
       const sx = c + x * R;
       const sy = c + y * R;
       if (i === 0) ctx.moveTo(sx, sy);
@@ -151,9 +133,33 @@ function drawBall(ctx, spin) {
     ctx.fillStyle = `rgb(${face.col},${face.col},${face.col})`;
     ctx.fill();
   }
+  ctx.globalAlpha = 1;
+}
+
+function drawBall(ctx, spin, omega) {
+  const S = ctx.canvas.width;
+  const c = S / 2;
+  const R = S * 0.46;
+  const smear = Math.min(2.1, 0.35 + (omega || 0) * 0.028);
+  ctx.clearRect(0, 0, S, S);
+  ctx.save();
+  ctx.beginPath();
+  ctx.arc(c, c, R, 0, Math.PI * 2);
+  ctx.clip();
+  const g = ctx.createRadialGradient(c - R * 0.32, c - R * 0.38, R * 0.08, c, c, R);
+  g.addColorStop(0, "#ffffff");
+  g.addColorStop(0.7, "#e7edf2");
+  g.addColorStop(1, "#b7c3cf");
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, S, S);
+  const steps = 9;
+  for (let i = steps; i >= 1; i--) {
+    paintPanels(ctx, c, R, spin - smear * (i / steps), 0.12 + 0.32 * (1 - i / steps));
+  }
+  paintPanels(ctx, c, R, spin, 1);
   const hl = ctx.createRadialGradient(c - R * 0.34, c - R * 0.4, R * 0.02, c - R * 0.1, c - R * 0.16, R * 0.55);
-  hl.addColorStop(0, "rgba(255,255,255,.75)");
-  hl.addColorStop(0.45, "rgba(255,255,255,.18)");
+  hl.addColorStop(0, "rgba(255,255,255,.72)");
+  hl.addColorStop(0.45, "rgba(255,255,255,.16)");
   hl.addColorStop(1, "rgba(255,255,255,0)");
   ctx.fillStyle = hl;
   ctx.fillRect(0, 0, S, S);
@@ -225,7 +231,7 @@ function playKick(fly, canvas, logo) {
     last = [px, py];
     if (elapsed < FLIGHT) {
       const kicked = dist / Math.max(dt, 0.001) / radius;
-      const target = Math.min(46, Math.max(28, kicked * 2.4));
+      const target = Math.min(78, Math.max(58, kicked * 3.6));
       omega += (target - omega) * Math.min(1, dt * 7);
     } else {
       omega *= Math.exp(-1.7 * dt);
@@ -233,7 +239,7 @@ function playKick(fly, canvas, logo) {
     roll += omega * dt;
     const scale = 1.14 - 0.14 * Math.min(1, u);
     fly.style.transform = `translate3d(${x}vw, ${y}vh, 0) scale(${scale})`;
-    drawBall(ctx, roll);
+    drawBall(ctx, roll, omega);
     if (elapsed >= FLIGHT + COAST) {
       fade = Math.min(1, (elapsed - FLIGHT - COAST) / FADE);
       canvas.style.opacity = String(1 - fade);
@@ -241,7 +247,7 @@ function playKick(fly, canvas, logo) {
     }
     if (fade < 1) raf = requestAnimationFrame(frame);
   };
-  drawBall(ctx, 0);
+  drawBall(ctx, 0, 0);
   fly.style.transform = `translate3d(${PATH[0][0]}vw, ${PATH[0][1]}vh, 0) scale(1.14)`;
   raf = requestAnimationFrame(frame);
   return () => cancelAnimationFrame(raf);
