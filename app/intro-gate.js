@@ -152,7 +152,7 @@ function drawBall(ctx, spin, omega) {
   g.addColorStop(1, "#b7c3cf");
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, S, S);
-  const steps = 9;
+  const steps = 5;
   for (let i = steps; i >= 1; i--) {
     paintPanels(ctx, c, R, spin - smear * (i / steps), 0.12 + 0.32 * (1 - i / steps));
   }
@@ -186,17 +186,31 @@ function curve(u) {
   return [cm(p0[0], p1[0], p2[0], p3[0]), cm(p0[1], p1[1], p2[1], p3[1])];
 }
 
-const MARKS = [[0, 0], [0.1, 0.012], [0.32, 0.56], [0.46, 0.66], [0.54, 0.692], [0.73, 0.708], [0.86, 0.9], [1, 1]];
+function speedAt(t) {
+  if (t < 0.14) return 0.35 + 2.15 * (t / 0.14);
+  if (t < 0.42) return 2.5;
+  if (t < 0.52) return 2.5 + (0.08 - 2.5) * ((t - 0.42) / 0.1);
+  if (t < 0.68) return 0.08;
+  if (t < 0.78) return 0.08 + 2.22 * ((t - 0.68) / 0.1);
+  if (t < 0.92) return 2.3;
+  return 2.3 * (1 - (t - 0.92) / 0.08);
+}
+
+const FLIGHT_U = (() => {
+  const n = 300;
+  const raw = [0];
+  for (let i = 0; i < n; i++) raw.push(raw[i] + speedAt(i / n) / n);
+  const end = raw[n] || 1;
+  return raw.map((v) => v / end);
+})();
 
 function easeFlight(t) {
-  let i = 1;
-  while (i < MARKS.length && MARKS[i][0] < t) i += 1;
-  const a = MARKS[i - 1];
-  const b = MARKS[Math.min(MARKS.length - 1, i)];
-  const span = b[0] - a[0] || 1;
-  const k = Math.min(1, Math.max(0, (t - a[0]) / span));
-  const s = k * k * (3 - 2 * k);
-  return a[1] + (b[1] - a[1]) * s;
+  const x = Math.min(1, Math.max(0, t)) * (FLIGHT_U.length - 1);
+  const i = Math.floor(x);
+  const f = x - i;
+  const a = FLIGHT_U[i];
+  const b = FLIGHT_U[Math.min(FLIGHT_U.length - 1, i + 1)];
+  return a + (b - a) * f;
 }
 
 function playKick(fly, canvas, logo) {
@@ -209,10 +223,11 @@ function playKick(fly, canvas, logo) {
     return () => {};
   }
   const FLIGHT = 3400;
-  const COAST = 980;
+  const COAST = 1800;
   const FADE = 380;
   let roll = 0;
   let omega = 8;
+  let landedOmega = 0;
   let last = null;
   let lastNow = performance.now();
   let fade = 0;
@@ -234,7 +249,9 @@ function playKick(fly, canvas, logo) {
       const target = Math.min(78, Math.max(58, kicked * 3.6));
       omega += (target - omega) * Math.min(1, dt * 7);
     } else {
-      omega *= Math.exp(-1.7 * dt);
+      if (!landedOmega) landedOmega = Math.max(42, omega);
+      const k = Math.min(1, (elapsed - FLIGHT) / COAST);
+      omega = landedOmega * (1 - k) ** 1.15;
     }
     roll += omega * dt;
     const scale = 1.14 - 0.14 * Math.min(1, u);
