@@ -39,10 +39,10 @@ export default async function ArticlePage({ params }) {
           <p className="eyebrow blue">{post.category}</p>
           <h1>{post.title}</h1>
           <p className="newsMeta">{label}</p>
-          {post.cover && <img loading="lazy" decoding="async" className="newsHero" src={post.cover} alt="" />}
+          {post.cover && <img loading="lazy" decoding="async" className="newsHero" src={post.cover} alt={post.title} />}
           {post.body.split(/\n{2,}/).map((paragraph) => {
             const image = paragraph.trim().match(/^!\[([^\]]*)\]\((\/api\/media\/[a-z0-9]+\.(?:jpg|png|webp|gif)|https:\/\/\S+)\)$/);
-            if (image) return <img loading="lazy" decoding="async" className="newsInline" key={image[2]} src={image[2]} alt={image[1]} />;
+            if (image) return <img loading="lazy" decoding="async" className="newsInline" key={image[2]} src={image[2]} alt={image[1] || post.title} />;
             return <p key={paragraph.slice(0, 24)}>{paragraph}</p>;
           })}
           <Link className="more" href="/news">返回开云新闻资讯</Link>

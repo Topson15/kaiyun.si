@@ -26,7 +26,7 @@ export default function CommissionPage() {
         <div className="wrap split">
           <div>
             <p className="eyebrow blue">RECRUITMENT</p>
-            <h2>开云代理招商</h2>
+            <h1>开云代理招商</h1>
             <p className="sub">为有意了解代理合作的个人与团队，提供合作信息与咨询。已有推广渠道，或正在规划业务，都可以按自身资源咨询适合的合作方式。</p>
             <p className="sub">申请前建议先确认结算规则、考核条件和活动细则，再评估投入与发展方向。具体政策以双方确认的最新方案为准。</p>
             <ul className="recruitPoints">

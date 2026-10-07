@@ -25,7 +25,7 @@ export default function DownloadPage() {
     <PageFrame>
       <section id="insights" className="client"><div className="wrap">
         <p className="eyebrow blue">APP DOWNLOAD</p>
-        <h2 className="clientTitle">开云APP下载</h2>
+        <h1 className="clientTitle">开云APP下载</h1>
         <div className="clientBox">
           <input type="radio" name="appTab" id="tab-all" />
           <input type="radio" name="appTab" id="tab-sport" defaultChecked />

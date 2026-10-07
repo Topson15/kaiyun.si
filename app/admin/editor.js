@@ -151,7 +151,7 @@ export default function Editor() {
               <label>标题图
                 <input type="file" accept="image/jpeg,image/png,image/webp,image/gif" onChange={onCover} />
               </label>
-              {form.cover && <img loading="lazy" decoding="async" className="adminCover" src={form.cover} alt="" />}
+              {form.cover && <img loading="lazy" decoding="async" className="adminCover" src={form.cover} alt="文章标题图" />}
               <label>摘要<textarea value={form.excerpt} maxLength={180} onChange={(e) => setForm({ ...form, excerpt: e.target.value })} /></label>
               <label>正文<textarea className="tall" value={form.body} onChange={(e) => setForm({ ...form, body: e.target.value })} /></label>
               <label className="adminFile">插入正文图片
