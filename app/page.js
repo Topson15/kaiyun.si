@@ -1,6 +1,7 @@
 import SiteHeader from "./site-header";
 import ServiceGauges from "./service-gauges";
 import PolicyZoom from "./policy-zoom";
+import IntroGate from "./intro-gate";
 
 export const metadata = {
   title: { absolute: "开云官方代理招商·KAIYUN.SI" },
@@ -31,6 +32,8 @@ export default function Home() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }} />
+      <noscript><style>{`.introGate{display:none!important}header,.csDock{visibility:visible!important}`}</style></noscript>
+      <IntroGate />
       <SiteHeader />
 
       <section className="hero">
