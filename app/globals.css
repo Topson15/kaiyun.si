@@ -408,18 +408,22 @@ header nav a{letter-spacing:0}
 
 .heroIntro{min-height:560px;flex-direction:column;justify-content:center;padding:72px 20px 48px}
 .heroIntro:after{z-index:0}
-.logoDrop{position:relative;z-index:1;width:min(760px,92vw);margin:0 auto;animation:logoIn .9s ease both}
+.logoDrop{position:relative;z-index:1;width:min(760px,92vw);margin:0 auto;animation:logoIn 2.15s cubic-bezier(.16,1,.3,1) both}
 .logoDropImg{width:100%;height:auto;display:block}
 .logoMark{position:absolute;left:19.693%;top:30.859%;width:15.92%;height:auto;display:block}
 .logoDropTitle{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.logoDropActions{position:relative;z-index:1;opacity:0;animation:logoBtns .7s ease .45s forwards;margin:36px auto 0}
-@keyframes logoIn{from{opacity:0}to{opacity:1}}
-@keyframes logoBtns{to{opacity:1}}
+.logoDropActions{position:relative;z-index:1;margin:36px auto 0}
+.logoDropActions .btn,.logoDropActions .heroSecondBtn{opacity:0;animation:logoBtns 1.15s cubic-bezier(.16,1,.3,1) forwards}
+.logoDropActions .btn{animation-delay:1.25s}
+.logoDropActions .heroSecondBtn{animation-delay:1.55s}
+@keyframes logoIn{from{opacity:0;filter:blur(12px);transform:translateY(22px) scale(.965)}to{opacity:1;filter:blur(0);transform:none}}
+@keyframes logoBtns{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .introGate{position:fixed;inset:0;z-index:400;box-sizing:border-box;height:100vh;min-height:100vh;padding:0 20px 64px;overflow:hidden;transition:transform .72s cubic-bezier(.22,.61,.36,1)}
 .introGate.is-leaving{transform:translateY(-100%);pointer-events:none}
-.introMore{position:absolute;left:50%;bottom:26px;z-index:3;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;border:0;background:transparent;color:#168ad3;font:700 15px "Microsoft YaHei","微软雅黑",sans-serif;letter-spacing:.18em;cursor:pointer}
+.introMore{position:absolute;left:50%;bottom:26px;z-index:3;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;border:0;background:transparent;color:#168ad3;font:700 15px "Microsoft YaHei","微软雅黑",sans-serif;letter-spacing:.18em;cursor:pointer;opacity:0;animation:introCue 1.1s ease 1.9s forwards}
 .introMore i{width:11px;height:11px;border-right:2px solid #168ad3;border-bottom:2px solid #168ad3;animation:introNudge 1.15s ease-in-out infinite}
 @keyframes introNudge{0%,100%{transform:translateY(0) rotate(45deg)}50%{transform:translateY(7px) rotate(45deg)}}
+@keyframes introCue{to{opacity:1}}
 main:has(.introGate:not(.is-leaving)) header,main:has(.introGate:not(.is-leaving)) ~ .csDock{visibility:hidden}
 main:has(.introGate.is-leaving) header{animation:headIn .7s ease both}
 main:has(.introGate.is-leaving) > section.hero:not(.introGate){animation:pageRise .72s cubic-bezier(.22,.61,.36,1) both}
@@ -429,10 +433,11 @@ main:has(.introGate.is-leaving) > section.hero:not(.introGate){animation:pageRis
   .heroIntro{min-height:0;padding:28px 16px 20px}
   .introGate{height:100svh;min-height:100svh;max-height:100svh;padding:12px 16px calc(20px + env(safe-area-inset-bottom));display:flex;flex-direction:column;justify-content:center;align-items:center}
   .logoDropActions{width:100%;margin-top:22px}
-  .introMore{position:relative;left:auto;bottom:auto;transform:none;margin-top:28px;color:#0c649f;font-size:16px;z-index:5}
+  .introMore{position:relative;left:auto;bottom:auto;transform:none;margin-top:28px;color:#0c649f;font-size:16px;z-index:5;opacity:0;animation:introCue 1.1s ease 1.9s forwards}
   .introMore i{border-color:#0c649f}
 }
 @media(prefers-reduced-motion:reduce){
-  .logoDrop,.logoDropActions,.introMore i{animation:none}
-  .logoDrop,.logoDropActions{opacity:1}
+  .logoDrop,.logoDropActions .btn,.logoDropActions .heroSecondBtn,.introMore,.introMore i{animation:none}
+  .logoDrop,.logoDropActions .btn,.logoDropActions .heroSecondBtn,.introMore{opacity:1;filter:none}
+  .logoDrop,.logoDropActions .btn,.logoDropActions .heroSecondBtn{transform:none}
 }
