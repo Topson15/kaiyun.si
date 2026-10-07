@@ -63,6 +63,7 @@ export default function IntroGate() {
       <div className="logoDrop">
         <img className="logoDropImg" src="/intro/logo-base.webp?v=4" width="848" height="256" alt="开云体育 kaiyun.si" />
         <span className="logoBallFly">
+          <img className="ballReal" src="/intro/ball-real.webp" width="256" height="256" alt="" />
           <img className="logoBall" src="/intro/logo-ball.webp" width="135" height="133" alt="" />
         </span>
       </div>
