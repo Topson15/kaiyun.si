@@ -408,14 +408,13 @@ header nav a{letter-spacing:0}
 
 .heroIntro{min-height:560px;flex-direction:column;justify-content:center;padding:72px 20px 48px}
 .heroIntro:after{z-index:0}
-.logoDrop{position:relative;z-index:1;width:min(760px,92vw);margin:0 auto}
+.logoDrop{position:relative;z-index:1;width:min(760px,92vw);margin:0 auto;animation:logoIn .9s ease both}
 .logoDropImg{width:100%;height:auto;display:block}
+.logoMark{position:absolute;left:19.693%;top:30.859%;width:15.92%;height:auto;display:block}
 .logoDropTitle{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.logoDropActions{position:relative;z-index:1;opacity:0;transform:translateY(14px);animation:logoBtns .55s ease 5.3s forwards;margin:36px auto 0}
-.logoBallFly{position:absolute;z-index:4;left:19.693%;top:30.859%;width:15.92%;height:auto;transform:translate3d(56vw,62vh,0);will-change:transform}
-.ballReal{position:absolute;left:0;top:0;width:100%;height:auto;pointer-events:none}
-.logoBall{display:block;width:100%;height:auto;opacity:0}
-@keyframes logoBtns{to{opacity:1;transform:none}}
+.logoDropActions{position:relative;z-index:1;opacity:0;animation:logoBtns .7s ease .45s forwards;margin:36px auto 0}
+@keyframes logoIn{from{opacity:0}to{opacity:1}}
+@keyframes logoBtns{to{opacity:1}}
 .introGate{position:fixed;inset:0;z-index:400;box-sizing:border-box;height:100vh;min-height:100vh;padding:0 20px 64px;overflow:hidden;transition:transform .72s cubic-bezier(.22,.61,.36,1)}
 .introGate.is-leaving{transform:translateY(-100%);pointer-events:none}
 .introMore{position:absolute;left:50%;bottom:26px;z-index:3;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;border:0;background:transparent;color:#168ad3;font:700 15px "Microsoft YaHei","微软雅黑",sans-serif;letter-spacing:.18em;cursor:pointer}
@@ -434,9 +433,6 @@ main:has(.introGate.is-leaving) > section.hero:not(.introGate){animation:pageRis
   .introMore i{border-color:#0c649f}
 }
 @media(prefers-reduced-motion:reduce){
-  .logoBallFly,.logoDropActions,.introMore i{animation:none}
-  .logoBallFly{transform:none}
-  .logoDropActions{opacity:1;transform:none}
-  .ballReal{display:none}
-  .logoBall{opacity:1}
+  .logoDrop,.logoDropActions,.introMore i{animation:none}
+  .logoDrop,.logoDropActions{opacity:1}
 }
