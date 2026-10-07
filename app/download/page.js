@@ -38,10 +38,10 @@ export default function DownloadPage() {
             <label htmlFor="tab-login">登录器</label>
           </div>
           <div className="clientStage">
-            <img loading="lazy" decoding="async" className="clientArt art-all" src="/app/all.webp?v=2" alt="开云全站APP" />
-            <img loading="lazy" decoding="async" className="clientArt art-sport" src="/app/sport.webp?v=2" alt="开云体育APP" />
-            <img loading="lazy" decoding="async" className="clientArt art-live" src="/app/live.webp?v=2" alt="开云真人APP" />
-            <img loading="lazy" decoding="async" className="clientArt art-login" src="/app/login.webp?v=2" alt="开云登录器" />
+            <img loading="lazy" decoding="async" className="clientArt art-all" src="/app/all.webp?v=2" alt="开云全站APP界面" />
+            <img loading="lazy" decoding="async" className="clientArt art-sport" src="/app/sport.webp?v=2" alt="开云体育APP界面" />
+            <img loading="lazy" decoding="async" className="clientArt art-live" src="/app/live.webp?v=2" alt="开云真人APP界面" />
+            <img loading="lazy" decoding="async" className="clientArt art-login" src="/app/login.webp?v=2" alt="开云登录器界面" />
           </div>
           <div className="clientCopy panel-all"><h3>全站APP</h3><p>全球首家一体化娱乐原生APP，尽显流畅，完美操作。海量体育、电竞顶尖赛事，真人娱乐、彩票投注及电子游艺等，最新最全娱乐项目尽在掌中体验扫码下载，即刻拥有！</p><AppAccess qr="/qr/all.webp?v=2" alt="开云全站APP下载二维码" /></div>
           <div className="clientCopy panel-sport"><h3>体育APP</h3><p>业内赔率最高！覆盖世界各地赛事，让球、大小、半全场、波胆、单双、总入球、连串过关等多元竞猜。更有动画直播，让您体验轻松聊球，娱乐投注两不误。</p><AppAccess qr="/qr/sport.webp?v=2" alt="开云体育APP下载二维码" /></div>
