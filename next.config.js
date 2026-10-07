@@ -2,7 +2,12 @@
 const nextConfig = {
   experimental: { inlineCss: true },
   async redirects() {
-    return [{ source: "/cooperation", destination: "/download", permanent: true }];
+    return [
+      { source: "/cooperation", destination: "/download", permanent: true },
+      { source: "/news/app-which-one", destination: "/news/1", permanent: true },
+      { source: "/news/agent-before-apply", destination: "/news/2", permanent: true },
+      { source: "/news/faq-three", destination: "/news/3", permanent: true },
+    ];
   },
   async headers() {
     return [
