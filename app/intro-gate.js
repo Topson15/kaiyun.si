@@ -61,7 +61,7 @@ export default function IntroGate() {
   return (
     <section className={phase === "out" ? "hero heroIntro introGate is-leaving" : "hero heroIntro introGate"} aria-label="开云体育">
       <div className="logoDrop">
-        <img className="logoDropImg" src="/intro/logo-base.webp" width="848" height="256" alt="开云体育 kaiyun.si" />
+        <img className="logoDropImg" src="/intro/logo-base.webp?v=3" width="848" height="256" alt="开云体育 kaiyun.si" />
         <span className="logoBallFly">
           <img className="logoBall" src="/intro/logo-ball.webp" width="135" height="133" alt="" />
         </span>
