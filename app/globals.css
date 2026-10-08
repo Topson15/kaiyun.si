@@ -157,6 +157,12 @@ header nav a{font-size:15px;white-space:nowrap}
 .newsTop{display:flex;gap:16px;align-items:flex-start}
 .newsCover{width:100%;height:100%;min-height:260px;object-fit:cover;border-radius:0;background:#f3f8fd}
 .newsHero,.newsInline{width:100%;border-radius:14px;margin:0 0 22px}
+.articleBack{display:inline-flex;align-items:center;gap:6px;margin:0 0 16px;padding:0;border:0;background:transparent;color:#0c649f;font:600 14px "Microsoft YaHei","微软雅黑",sans-serif;cursor:pointer}
+.articleBack:before{content:"";width:7px;height:7px;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg)}
+.newsShot{display:block;width:100%;margin:0 0 22px;padding:0;border:0;background:transparent;cursor:zoom-in}
+.newsShot .newsInline{margin:0}
+.newsZoom{position:fixed;inset:0;z-index:520;display:flex;align-items:center;justify-content:center;padding:32px 22px;background:rgba(10,18,30,.62);cursor:zoom-out}
+.newsZoom img{width:auto;height:auto;max-width:min(860px,90vw);max-height:78vh;object-fit:contain;border-radius:12px;background:#fff}
 .adminCover{width:240px;height:132px;object-fit:cover;border-radius:12px}
 .newsItem:first-child{border-top:0}
 .newsItem time{display:flex;flex:none;flex-direction:column;align-items:center;justify-content:center;width:78px;height:78px;border-radius:14px;background:#f3f8fd;color:#0c649f}

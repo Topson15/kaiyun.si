@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageFrame from "../../page-frame";
+import ArticleView from "../article-view";
 import { getPost } from "../../../lib/news-store";
 
 export const dynamic = "force-dynamic";
@@ -35,18 +35,7 @@ export default async function ArticlePage({ params }) {
     <PageFrame>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <article className="newsPage article">
-        <div className="wrap narrow">
-          <p className="eyebrow blue">{post.category}</p>
-          <h1>{post.title}</h1>
-          <p className="newsMeta">{label}</p>
-          {post.cover && <img loading="lazy" decoding="async" className="newsHero" src={post.cover} alt={post.title} />}
-          {post.body.split(/\n{2,}/).map((paragraph) => {
-            const image = paragraph.trim().match(/^!\[([^\]]*)\]\((\/api\/media\/[a-z0-9]+\.(?:jpg|png|webp|gif)|https:\/\/\S+)\)$/);
-            if (image) return <img loading="lazy" decoding="async" className="newsInline" key={image[2]} src={image[2]} alt={image[1] || "文内配图"} />;
-            return <p key={paragraph.slice(0, 24)}>{paragraph}</p>;
-          })}
-          <Link className="more" href="/news">返回开云新闻资讯</Link>
-        </div>
+        <ArticleView category={post.category} title={post.title} label={label} cover={post.cover} body={post.body} />
       </article>
     </PageFrame>
   );
