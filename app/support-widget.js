@@ -31,21 +31,57 @@ function playDing() {
   }
 }
 
-function Welcome() {
-  return (
-    <>
-      <p>您好，开云体育祝您财源广进，事事顺利！</p>
-      <p>您可以在此处发消息咨询客服，也可以添加客服联系方式：</p>
-      <p><a href="https://t.me/a8802717" target="_blank" rel="noopener noreferrer">Telegram @a8802717</a></p>
-      <p><a href="https://wpa.qq.com/msgrd?v=3&uin=946901189&site=qq&menu=yes" target="_blank" rel="noopener noreferrer">QQ：946901189</a></p>
-      <p><a href="https://t.me/jinliqun" target="_blank" rel="noopener noreferrer">点击加入开云体育交流群</a></p>
-    </>
-  );
+const DEFAULT_GREETING = [
+  "您好，开云体育祝您财源广进，事事顺利！",
+  "您可以在此处发消息咨询客服，也可以添加客服联系方式：",
+  "Telegram @a8802717 https://t.me/a8802717",
+  "QQ：946901189 https://wpa.qq.com/msgrd?v=3&uin=946901189&site=qq&menu=yes",
+  "点击加入开云体育交流群 https://t.me/jinliqun",
+].join("\n");
+
+function safeUrl(raw) {
+  const url = String(raw || "").replace(/[),.;，。]+$/g, "");
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return "";
+    return parsed.href;
+  } catch {
+    return "";
+  }
+}
+
+function linkLine(line) {
+  const found = line.match(/https?:\/\/[^\s<>"']+/g) || [];
+  if (found.length === 1) {
+    const href = safeUrl(found[0]);
+    const label = line.replace(found[0], "").trim();
+    if (href && label) return <a href={href} target="_blank" rel="noopener noreferrer">{label}</a>;
+  }
+  const nodes = [];
+  const re = /https?:\/\/[^\s<>"']+/g;
+  let last = 0;
+  let match;
+  let key = 0;
+  while ((match = re.exec(line))) {
+    if (match.index > last) nodes.push(line.slice(last, match.index));
+    const href = safeUrl(match[0]);
+    nodes.push(href ? <a key={key} href={href} target="_blank" rel="noopener noreferrer">{href}</a> : match[0]);
+    key += 1;
+    last = match.index + match[0].length;
+  }
+  if (last < line.length) nodes.push(line.slice(last));
+  return nodes;
+}
+
+function Greeting({ text }) {
+  const lines = String(text || DEFAULT_GREETING).split(/\n+/).map((line) => line.trim()).filter(Boolean);
+  return lines.map((line, index) => <p key={index}>{linkLine(line)}</p>);
 }
 export default function SupportWidget() {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState("");
   const [msgs, setMsgs] = useState([]);
+  const [greeting, setGreeting] = useState(DEFAULT_GREETING);
   const [unread, setUnread] = useState(1);
   const [sending, setSending] = useState(false);
   const sid = useRef("");
@@ -78,6 +114,9 @@ export default function SupportWidget() {
         }
         fails = 0;
         const data = await res.json();
+        if (typeof data.greeting === "string" && data.greeting.trim()) {
+          setGreeting((current) => (current === data.greeting ? current : data.greeting));
+        }
         const incoming = data.messages || [];
         if (!incoming.length) return;
         since.current = incoming[incoming.length - 1].id;
@@ -107,6 +146,7 @@ export default function SupportWidget() {
         const data = await res.json();
         if (!data.sessionId || stop) return;
         sid.current = data.sessionId;
+        if (typeof data.greeting === "string" && data.greeting.trim()) setGreeting(data.greeting);
       } catch {
         return;
       }
@@ -164,7 +204,7 @@ export default function SupportWidget() {
             <span>留言后会在这里收到回复</span>
           </header>
           <div className="csLog" ref={logRef}>
-            <div className="csMsg agent"><Welcome /></div>
+            <div className="csMsg agent"><Greeting text={greeting} /></div>
             {msgs.map((m) => (
               <p className={`csMsg ${m.from}`} key={m.id}>{m.text}</p>
             ))}

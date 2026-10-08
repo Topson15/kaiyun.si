@@ -1,5 +1,5 @@
 import crypto from "node:crypto";
-import { append, limited, since, validSession } from "../../../lib/support-store";
+import { append, getGreeting, limited, since, validSession } from "../../../lib/support-store";
 import { pushVisitor, startPolling } from "../../../lib/telegram-bridge";
 
 export const runtime = "nodejs";
@@ -80,9 +80,9 @@ export async function GET(req) {
   if (tooMany(`get:${ip}`, 40, 60 * 1000)) return reply({ ok: false, error: "请求太频繁" }, 429);
   startPolling();
   const sessionId = new URL(req.url).searchParams.get("session") || "";
-  if (!authed(req, sessionId)) return reply({ ok: true, messages: [] });
+  if (!authed(req, sessionId)) return reply({ ok: true, messages: [], greeting: getGreeting() });
   const sinceId = new URL(req.url).searchParams.get("since");
-  return reply({ ok: true, messages: since(sessionId, sinceId) });
+  return reply({ ok: true, messages: since(sessionId, sinceId), greeting: getGreeting() });
 }
 
 export async function POST(req) {
@@ -92,9 +92,9 @@ export async function POST(req) {
   if (body.op === "open") {
     if (tooMany(`open:${ip}`, 20, 10 * 60 * 1000)) return reply({ ok: false, error: "请求太频繁" }, 429);
     const existing = cookies(req).ky_sid || "";
-    if (authed(req, existing)) return reply({ ok: true, sessionId: existing });
+    if (authed(req, existing)) return reply({ ok: true, sessionId: existing, greeting: getGreeting() });
     const sessionId = crypto.randomBytes(16).toString("hex");
-    return reply({ ok: true, sessionId }, 200, sessionId);
+    return reply({ ok: true, sessionId, greeting: getGreeting() }, 200, sessionId);
   }
   startPolling();
   const sessionId = String(body.sessionId || "");
