@@ -249,7 +249,7 @@ header nav a{font-size:15px;white-space:nowrap}
 .dark + .light::before{background:linear-gradient(180deg,rgba(7,20,34,0),#f5f8fc)}
 .light + .faq::before{background:linear-gradient(180deg,rgba(245,248,252,0),#0a1929)}
 .faq + .service::before{background:linear-gradient(180deg,rgba(10,25,41,0),#f7fbfe)}
-.service + .cta::before{background:linear-gradient(180deg,rgba(238,245,251,0),#071321)}
+.service + .cta::before{background:linear-gradient(180deg,rgba(4,11,19,0),#040b13)}
 .client + footer::before,.light + footer::before,.newsPage + footer::before{background:linear-gradient(180deg,rgba(244,247,251,0),#040b13)}
 @media(max-width:800px){
 .client + .dark::before,
@@ -329,7 +329,7 @@ header .nav{padding-left:14px;padding-right:12px}
 @keyframes policyPrev{from{opacity:.2;transform:translateX(-28px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.policyFrame .policyShotBtn{transition:none}.policyStage img{animation:none}}
 header .nav nav a:hover,header nav a:hover{color:#0c649f}
-.cta{background:radial-gradient(ellipse 100% 70% at 50% 118%,#1a527c 0%,#0c2d4a 42%,rgba(7,19,33,0) 70%),linear-gradient(#071321,#040b13)}
+.cta{background:radial-gradient(ellipse 80% 46% at 50% 125%,rgba(20,74,120,.9) 0%,rgba(4,11,19,0) 62%),#040b13}
 .games>.wrap{position:relative;z-index:3}
 .games .eyebrow{color:#8fd4ff}
 .btn,.homeBriefs .btn{color:#fff;border:1.5px solid rgba(255,255,255,.72);border-radius:18px;background:linear-gradient(180deg,rgba(92,184,255,.9),rgba(28,138,226,.84));box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 8px 18px rgba(18,90,160,.16);text-shadow:none;backdrop-filter:blur(8px)}
