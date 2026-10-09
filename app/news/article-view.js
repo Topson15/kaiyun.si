@@ -16,6 +16,22 @@ function back() {
   window.location.href = "/news";
 }
 
+function Paragraph({ text }) {
+  const parts = [];
+  const re = /\[([^\]]+)\]\((\/news\/[1-9]\d{0,5})\)/g;
+  let last = 0;
+  let match;
+  let key = 0;
+  while ((match = re.exec(text))) {
+    if (match.index > last) parts.push(text.slice(last, match.index));
+    parts.push(<Link key={key} href={match[2]}>{match[1]}</Link>);
+    key += 1;
+    last = match.index + match[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return <p>{parts}</p>;
+}
+
 export default function ArticleView({ category, title, label, cover, body }) {
   const [shot, setShot] = useState(null);
   const blocks = String(body || "").split(/\n{2,}/);
@@ -52,7 +68,7 @@ export default function ArticleView({ category, title, label, cover, body }) {
             </button>
           );
         }
-        return <p key={paragraph.slice(0, 24)}>{paragraph}</p>;
+        return <Paragraph key={paragraph.slice(0, 24)} text={paragraph} />;
       })}
       <Link className="more" href="/news">返回开云新闻资讯</Link>
       {shot && (
