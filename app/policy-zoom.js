@@ -3,10 +3,12 @@ import { useEffect, useRef, useState } from "react";
 
 const slides = [
   { src: "/policy/sheet.webp?v=2", alt: "开云体育佣金政策" },
-  { src: "/policy/nba.webp?v=2", alt: "NBA冠军盘免单" },
-  { src: "/policy/s16.webp?v=2", alt: "S16总决赛签到" },
-  { src: "/policy/leagues.webp?v=2", alt: "五大联赛冠军盘免单" },
-  { src: "/policy/welcome.webp?v=2", alt: "注册送100元首存加赠" },
+  { src: "/policy/rate-55.webp?v=1", alt: "开云代理长期55%佣金比例" },
+  { src: "/policy/bet-bonus.webp?v=1", alt: "开云代理新增投注奖励" },
+  { src: "/policy/sprint-bonus.webp?v=1", alt: "开云代理新增冲刺奖金" },
+  { src: "/policy/trial-bonus.webp?v=1", alt: "开云代理新会员体验金" },
+  { src: "/policy/active-bonus.webp?v=1", alt: "开云代理月活跃奖励" },
+  { src: "/policy/deposit-bonus.webp?v=1", alt: "开云代理首存复存礼遇" },
 ];
 
 function Arrow({ dir, onClick }) {
