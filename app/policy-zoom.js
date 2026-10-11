@@ -2,13 +2,13 @@
 import { useEffect, useRef, useState } from "react";
 
 const slides = [
-  { src: "/policy/sheet.webp?v=2", alt: "开云体育佣金政策" },
-  { src: "/policy/rate-55.webp?v=1", alt: "开云代理长期55%佣金比例" },
-  { src: "/policy/bet-bonus.webp?v=1", alt: "开云代理新增投注奖励" },
-  { src: "/policy/sprint-bonus.webp?v=1", alt: "开云代理新增冲刺奖金" },
-  { src: "/policy/trial-bonus.webp?v=1", alt: "开云代理新会员体验金" },
-  { src: "/policy/active-bonus.webp?v=1", alt: "开云代理月活跃奖励" },
-  { src: "/policy/deposit-bonus.webp?v=1", alt: "开云代理首存复存礼遇" },
+  { src: "/policy/sheet.webp?v=2", alt: "开云体育佣金政策：合营伙伴负盈利55%分成", caption: "开云体育佣金政策：合营伙伴负盈利55%分成" },
+  { src: "/policy/rate-55.webp?v=1", alt: "开云代理长期55%佣金比例", caption: "开云代理长期55%佣金比例" },
+  { src: "/policy/bet-bonus.webp?v=1", alt: "开云代理新增投注奖励，最高100万元", caption: "开云代理新增投注奖励，最高100万元" },
+  { src: "/policy/sprint-bonus.webp?v=1", alt: "开云代理新增冲刺奖金，最高30万元", caption: "开云代理新增冲刺奖金，最高30万元" },
+  { src: "/policy/trial-bonus.webp?v=1", alt: "开云代理新会员体验金", caption: "开云代理新会员体验金" },
+  { src: "/policy/active-bonus.webp?v=1", alt: "开云代理月活跃奖励", caption: "开云代理月活跃奖励" },
+  { src: "/policy/deposit-bonus.webp?v=1", alt: "开云代理首存复存礼遇", caption: "开云代理首存复存礼遇" },
 ];
 
 function Arrow({ dir, onClick }) {
@@ -33,7 +33,7 @@ function span(touches) {
   return Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY);
 }
 
-export default function PolicyZoom({ label }) {
+export default function PolicyZoom() {
   const [index, setIndex] = useState(0);
   const [dir, setDir] = useState(1);
   const [open, setOpen] = useState(false);
@@ -173,7 +173,7 @@ export default function PolicyZoom({ label }) {
         <Arrow dir="prev" onClick={step(-1)} />
         <Arrow dir="next" onClick={step(1)} />
       </div>
-      {label ? <p className="policyCaption">{label}</p> : null}
+      <p className="policyCaption" aria-live="polite">{slide.caption}</p>
       <p className="policyHint">左右滑动切换，点击放大后可双指缩放</p>
       {open && (
         <div className="policyLight" onClick={() => { if (blockClose.current) { blockClose.current = false; return; } setOpen(false); }}>
