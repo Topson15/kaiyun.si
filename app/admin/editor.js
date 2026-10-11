@@ -164,6 +164,8 @@ export default function Editor() {
       el.setSelectionRange(cursor, cursor);
     });
   }
+
+  async function logout() {
     await fetch("/api/admin", {
       method: "POST",
       headers: { "content-type": "application/json" },
