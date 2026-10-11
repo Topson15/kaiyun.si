@@ -29,7 +29,7 @@ function Paragraph({ text }) {
     last = match.index + match[0].length;
   }
   if (last < text.length) parts.push(text.slice(last));
-  return <p className="articleP">{parts}</p>;
+  return <p>{parts}</p>;
 }
 
 export default function ArticleView({ category, title, label, cover, body }) {
