@@ -16,15 +16,30 @@ function back() {
   window.location.href = "/news";
 }
 
+function safeHref(raw) {
+  const url = String(raw || "").trim();
+  if (/^\/(?!\/)\S+$/.test(url)) return url;
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol === "http:" || parsed.protocol === "https:") return parsed.href;
+  } catch {
+    /* 只接受站内路径和网页地址 */
+  }
+  return "";
+}
+
 function Paragraph({ text }) {
   const parts = [];
-  const re = /\[([^\]]+)\]\((\/news\/[1-9]\d{0,5})\)/g;
+  const re = /\[([^\]]+)\]\(([^)\s]+)\)/g;
   let last = 0;
   let match;
   let key = 0;
   while ((match = re.exec(text))) {
     if (match.index > last) parts.push(text.slice(last, match.index));
-    parts.push(<Link key={key} href={match[2]}>{match[1]}</Link>);
+    const href = safeHref(match[2]);
+    if (!href) parts.push(match[0]);
+    else if (href.startsWith("/")) parts.push(<Link key={key} href={href}>{match[1]}</Link>);
+    else parts.push(<a key={key} href={href} target="_blank" rel="nofollow noopener">{match[1]}</a>);
     key += 1;
     last = match.index + match[0].length;
   }

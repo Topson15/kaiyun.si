@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const empty = { id: "", title: "", category: "新闻资讯", excerpt: "", body: "", publishedAt: "", cover: "" };
 
@@ -11,6 +11,8 @@ export default function Editor() {
   const [posts, setPosts] = useState([]);
   const [form, setForm] = useState(empty);
   const [error, setError] = useState("");
+  const [linkBox, setLinkBox] = useState(null);
+  const bodyRef = useRef(null);
 
   async function load() {
     const res = await fetch("/api/admin", { cache: "no-store" });
@@ -110,7 +112,58 @@ export default function Editor() {
     }
   }
 
-  async function logout() {
+  function openLink() {
+    const el = bodyRef.current;
+    if (!el) return;
+    const start = el.selectionStart ?? 0;
+    const end = el.selectionEnd ?? start;
+    const selected = form.body.slice(start, end);
+    const existing = selected.match(/^\[([^\]]*)\]\(([^)]+)\)$/);
+    setError("");
+    setLinkBox({
+      start,
+      end,
+      text: existing ? existing[1] : selected,
+      url: existing ? existing[2] : "",
+    });
+  }
+
+  function onBodyKey(event) {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+      event.preventDefault();
+      openLink();
+    }
+  }
+
+  function applyLink() {
+    if (!linkBox) return;
+    const text = linkBox.text.trim();
+    const url = linkBox.url.trim();
+    const internal = /^\/(?!\/)\S+$/.test(url);
+    let external = false;
+    try {
+      const parsed = new URL(url);
+      external = parsed.protocol === "http:" || parsed.protocol === "https:";
+    } catch {
+      external = false;
+    }
+    if (!text || (!internal && !external) || /[\[\]]/.test(text)) {
+      setError("请填写显示文字，链接用 https:// 或 /news/1 这种地址");
+      return;
+    }
+    const markdown = `[${text}](${url})`;
+    const body = form.body.slice(0, linkBox.start) + markdown + form.body.slice(linkBox.end);
+    const cursor = linkBox.start + markdown.length;
+    setForm({ ...form, body });
+    setLinkBox(null);
+    setError("");
+    requestAnimationFrame(() => {
+      const el = bodyRef.current;
+      if (!el) return;
+      el.focus();
+      el.setSelectionRange(cursor, cursor);
+    });
+  }
     await fetch("/api/admin", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -153,7 +206,16 @@ export default function Editor() {
               </label>
               {form.cover && <img loading="lazy" decoding="async" className="adminCover" src={form.cover} alt="文章标题图" />}
               <label>摘要<textarea value={form.excerpt} maxLength={180} onChange={(e) => setForm({ ...form, excerpt: e.target.value })} /></label>
-              <label>正文<textarea className="tall" value={form.body} onChange={(e) => setForm({ ...form, body: e.target.value })} /></label>
+              <label>正文<textarea ref={bodyRef} className="tall" value={form.body} onChange={(e) => setForm({ ...form, body: e.target.value })} onKeyDown={onBodyKey} /></label>
+              <p className="adminHint">选中文字后按 Ctrl+K，可以插入或修改链接</p>
+              {linkBox && (
+                <div className="adminLink">
+                  <input value={linkBox.text} placeholder="显示文字" onChange={(e) => setLinkBox({ ...linkBox, text: e.target.value })} onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); applyLink(); } }} />
+                  <input value={linkBox.url} placeholder="https:// 或 /news/1" autoFocus onChange={(e) => setLinkBox({ ...linkBox, url: e.target.value })} onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); applyLink(); } if (e.key === "Escape") setLinkBox(null); }} />
+                  <button type="button" onClick={applyLink}>插入链接</button>
+                  <button type="button" className="ghost" onClick={() => setLinkBox(null)}>取消</button>
+                </div>
+              )}
               <label className="adminFile">插入正文图片
                 <input type="file" accept="image/jpeg,image/png,image/webp,image/gif" onChange={insertImage} />
               </label>
