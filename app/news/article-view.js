@@ -47,9 +47,28 @@ function Paragraph({ text }) {
   return <p>{parts}</p>;
 }
 
-export default function ArticleView({ category, title, label, cover, body }) {
+export default function ArticleView({ id, views = 0, category, title, label, cover, body }) {
   const [shot, setShot] = useState(null);
+  const [count, setCount] = useState(views);
   const blocks = String(body || "").split(/\n{2,}/);
+
+  useEffect(() => {
+    if (!id) return;
+    let stop = false;
+    fetch("/api/news/view", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ id }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!stop && Number.isFinite(data.views)) setCount(data.views);
+      })
+      .catch(() => {});
+    return () => {
+      stop = true;
+    };
+  }, [id]);
 
   useEffect(() => {
     if (!shot) return;
@@ -70,7 +89,7 @@ export default function ArticleView({ category, title, label, cover, body }) {
       <button className="articleBack" type="button" onClick={back}>返回上一级</button>
       <p className="eyebrow blue">{category}</p>
       <h1>{title}</h1>
-      <p className="newsMeta">{label}</p>
+      <p className="newsMeta">{label}<span className="newsViews">阅读 {count.toLocaleString("zh-CN")}</span></p>
       {cover && <img loading="lazy" decoding="async" className="newsHero" src={cover} alt={title} />}
       {blocks.map((paragraph) => {
         const image = paragraph.trim().match(/^!\[([^\]]*)\]\((\/api\/media\/[a-z0-9]+\.(?:jpg|png|webp|gif)|https:\/\/\S+)\)$/);

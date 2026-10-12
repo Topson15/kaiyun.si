@@ -35,7 +35,7 @@ export default async function ArticlePage({ params }) {
     <PageFrame>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <article className="newsPage article">
-        <ArticleView category={post.category} title={post.title} label={label} cover={post.cover} body={post.body} />
+        <ArticleView id={post.id} views={Number(post.views) || 0} category={post.category} title={post.title} label={label} cover={post.cover} body={post.body} />
       </article>
     </PageFrame>
   );
